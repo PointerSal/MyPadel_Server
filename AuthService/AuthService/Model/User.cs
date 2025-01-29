@@ -8,6 +8,8 @@ namespace AuthService.Models
         public Guid Guid { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
         public string Password { get; set; }
         public string Cell { get; set; }

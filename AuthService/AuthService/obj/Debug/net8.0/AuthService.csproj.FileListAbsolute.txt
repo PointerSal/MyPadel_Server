@@ -123,6 +123,7 @@ E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.A
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.csproj.CoreCompileInputs.cache
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.MvcApplicationPartsAssemblyInfo.cs
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.MvcApplicationPartsAssemblyInfo.cache
+E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.sourcelink.json
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\scopedcss\bundle\AuthService.styles.css
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\staticwebassets.build.json
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\staticwebassets.development.json

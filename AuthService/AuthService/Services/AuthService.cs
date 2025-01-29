@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using BCrypt.Net;
 using System;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace AuthService.Services
 {
@@ -23,6 +24,10 @@ namespace AuthService.Services
         {
             try
             {
+                if (!IsValidEmail(request.Email))
+                {
+                    return new Status { Code = "1002", Message = "Invalid email format", Data = null };
+                }
                 var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
                 if (existingUser != null)
                 {
@@ -144,6 +149,11 @@ namespace AuthService.Services
             await _context.SaveChangesAsync();
 
             return new Status { Code = "0000", Message = "Account deleted successfully", Data = null };
+        }
+        private bool IsValidEmail(string email)
+        {
+            var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$"; // Basic email regex
+            return Regex.IsMatch(email, emailPattern);
         }
     }
 }

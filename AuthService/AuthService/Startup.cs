@@ -44,6 +44,7 @@ namespace AuthService
 
             services.AddSingleton<TokenService>();
             services.AddScoped<IAuthService, AuthService.Services.AuthService>();
+            services.AddScoped<IUserService, UserService>();
 
             services.AddControllers();
 
