@@ -51,6 +51,25 @@ namespace AuthService.Controllers
             return Ok(result);
         }
 
+        [HttpPost("resend-otp")]
+        public async Task<IActionResult> ResendOTP([FromBody] ResendOTPRequest request)
+        {
+            var result = await _authService.ResendEmailOTP(request.Email);
+
+            if (result.Code == "0000")
+            {
+                return Ok(new { Message = "OTP resent successfully" });
+            }
+            return BadRequest(result);
+        }
+        // Add Phone Number
+        [HttpPost("add-phone-number")]
+        public async Task<IActionResult> AddPhoneNumber([FromBody] AddPhoneNumberRequest request)
+        {
+            var result = await _authService.AddPhoneNumber(request.Email, request.PhoneNumber);
+            return Ok(result);
+        }
+
         /// <summary>
         /// Verifies phone with OTP
         /// </summary>

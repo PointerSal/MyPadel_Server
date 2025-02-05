@@ -9,7 +9,9 @@ E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\AuthService.p
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Azure.Core.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Azure.Identity.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\BCrypt.Net-Next.dll
+E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Humanizer.dll
+E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\MailKit.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -34,6 +36,7 @@ E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Microsoft.Ide
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Microsoft.OpenApi.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\MimeKit.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Mono.TextTemplating.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -49,6 +52,7 @@ E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\System.Drawin
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\System.Memory.Data.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\System.Runtime.Caching.dll
+E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\System.Security.Permissions.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\System.Windows.Extensions.dll
@@ -114,6 +118,7 @@ E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\runtimes\win\
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.csproj.AssemblyReference.cache
@@ -141,3 +146,4 @@ E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\refint\AuthSe
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.pdb
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.genruntimeconfig.cache
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\ref\AuthService.dll
+E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Newtonsoft.Json.dll

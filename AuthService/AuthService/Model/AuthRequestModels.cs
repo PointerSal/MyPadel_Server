@@ -6,13 +6,22 @@
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string Cell { get; set; }
     }
 
+    public class AddPhoneNumberRequest
+    {
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+    }
     public class LoginRequest
     {
         public string Email { get; set; }
         public string Password { get; set; }
+    }
+
+    public class ResendOTPRequest
+    {
+        public string Email { get; set; }
     }
 
     public class VerifyEmailRequest

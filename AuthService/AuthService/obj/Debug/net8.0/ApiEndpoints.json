@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "AuthService.Controllers.AuthController",
+    "Method": "AddPhoneNumber",
+    "RelativePath": "api/auth/add-phone-number",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AuthService.Models.AddPhoneNumberRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.AuthController",
     "Method": "DeleteAccount",
     "RelativePath": "api/auth/delete-account",
     "HttpMethod": "DELETE",
@@ -42,6 +58,22 @@
       {
         "Name": "request",
         "Type": "AuthService.Models.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.AuthController",
+    "Method": "ResendOTP",
+    "RelativePath": "api/auth/resend-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AuthService.Models.ResendOTPRequest",
         "IsRequired": true
       }
     ],

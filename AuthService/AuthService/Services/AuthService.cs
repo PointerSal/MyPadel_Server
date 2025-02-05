@@ -14,12 +14,17 @@ namespace AuthService.Services
     {
         private readonly ApplicationDbContext _context;
         private readonly TokenService _tokenService;
+        private readonly EmailService _emailService; 
+        private readonly PhoneOTPService _phoneOtpService; 
 
-        public AuthService(ApplicationDbContext context, TokenService tokenService)
+        public AuthService(ApplicationDbContext context, TokenService tokenService, EmailService emailService, PhoneOTPService PhoneOTPService)
         {
             _context = context;
             _tokenService = tokenService;
+            _emailService = emailService;
+            _phoneOtpService = PhoneOTPService;
         }
+
         public async Task<Status> RegisterUser(RegisterRequest request)
         {
             try
@@ -28,6 +33,7 @@ namespace AuthService.Services
                 {
                     return new Status { Code = "1002", Message = "Invalid email format", Data = null };
                 }
+
                 var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
                 if (existingUser != null)
                 {
@@ -35,6 +41,8 @@ namespace AuthService.Services
                 }
 
                 var hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
+                // Generate Email OTP
+                string emailOTP = new Random().Next(100000, 999999).ToString();  // Generate a 6-digit OTP
 
                 var newUser = new User
                 {
@@ -43,23 +51,59 @@ namespace AuthService.Services
                     Surname = request.Surname,
                     Email = request.Email,
                     Password = hashedPassword,
-                    Cell = request.Cell,
-                    OTP = new Random().Next(100000, 999999).ToString(), // ✅ Generates a 6-digit OTP
+                    EmailOTP = emailOTP,  // Save the generated Email OTP
+                    EmailOTPExpiry = DateTime.UtcNow.AddSeconds(200),  // Set OTP expiry to 60 seconds from now
                     IsEmailVerified = false,
                     IsPhoneVerified = false,
                     IsActive = true
                 };
 
+
+                // Save the new user to the database
                 await _context.Users.AddAsync(newUser);
                 await _context.SaveChangesAsync();
 
-                return new Status { Code = "0000", Message = "User registered successfully", Data = null };
+                // Send OTP to the user's email
+                string messageBody = $"Your OTP for email verification is: {emailOTP}";
+                bool emailSent = _emailService.SendEmail(request.Email, "Email Verification", messageBody);
+
+                if (emailSent)
+                {
+                    return new Status { Code = "0000", Message = "User registered successfully, verification email sent.", Data = null };
+                }
+                else
+                {
+                    return new Status { Code = "1005", Message = "Failed to send verification email.", Data = null };
+                }
             }
             catch (Exception ex)
             {
                 return new Status { Code = "1111", Message = "Internal Server Error", Data = ex.Message };
             }
         }
+
+        public async Task<Status> VerifyEmail(VerifyEmailRequest request)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email && u.EmailOTP == request.OTP);
+
+            if (user == null)
+            {
+                return new Status { Code = "1003", Message = "Invalid OTP or email", Data = null };
+            }
+
+            // Check if OTP has expired
+            if (user.EmailOTPExpiry.HasValue && user.EmailOTPExpiry.Value < DateTime.UtcNow)
+            {
+                return new Status { Code = "1006", Message = "OTP has expired", Data = null };
+            }
+
+            user.IsEmailVerified = true;  // Mark the email as verified
+            await _context.SaveChangesAsync();
+
+            return new Status { Code = "0000", Message = "Email verified successfully", Data = null };
+        }
+
+
 
         public async Task<Status> LoginUser(LoginRequest request)
         {
@@ -86,6 +130,8 @@ namespace AuthService.Services
                 user.Surname,
                 user.Email,
                 user.Cell,
+                user.IsEmailVerified,
+                user.IsPhoneVerified,
                 Token = token
             };
 
@@ -93,27 +139,92 @@ namespace AuthService.Services
             return new Status { Code = "0000", Message = "Login successful", Data = responseData };
         }
 
-
-        public async Task<Status> VerifyEmail(VerifyEmailRequest request)
+        public async Task<Status> AddPhoneNumber(string email, string phoneNumber)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email && u.OTP == request.OTP);
+            try
+            {
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+                if (user == null)
+                {
+                    return new Status { Code = "1004", Message = "User not found", Data = null };
+                }
+                // Check if the user already has a phone number
+                if (!string.IsNullOrEmpty(user.Cell))
+                {
+                    return new Status { Code = "1003", Message = "Phone number already added", Data = null };
+                }
+                // Save phone number and generate OTP
+                string phoneOTP = new Random().Next(100000, 999999).ToString();  // Generate OTP
+                user.Cell = phoneNumber;  // Save phone number
+                user.PhoneOTP = phoneOTP;  // Save OTP
+                user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);  // Set OTP expiry to 200 seconds
+
+                await _context.SaveChangesAsync();
+
+                // Send OTP to the user's phone number
+                bool phoneSent = await _phoneOtpService.SendPhoneOTP(phoneNumber, phoneOTP);
+
+                if (phoneSent)
+                {
+                    return new Status { Code = "0000", Message = "Phone number added successfully, OTP sent.", Data = null };
+                }
+                else
+                {
+                    return new Status { Code = "1005", Message = "Failed to send OTP", Data = null };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return new Status { Code = "1111", Message = "Internal Server Error", Data = ex.Message };
+            }
+        }
+
+
+        public async Task<Status> ResendPhoneOTP(string email)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
             if (user == null)
             {
-                return new Status { Code = "1003", Message = "Invalid OTP or email", Data = null };
+                return new Status { Code = "1004", Message = "User not found", Data = null };
             }
 
-            user.IsEmailVerified = true;
+            // Generate new OTP
+            string newOTP = new Random().Next(100000, 999999).ToString();  // Generate new OTP
+            user.PhoneOTP = newOTP;  // Save the new OTP
+            user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);  // Set expiry time to 200 seconds
+
             await _context.SaveChangesAsync();
 
-            return new Status { Code = "0000", Message = "Email verified successfully", Data = null };
+            // Send the OTP to the user's phone
+            bool phoneSent = await _phoneOtpService.SendPhoneOTP(user.Cell, newOTP);
+
+            if (phoneSent)
+            {
+                return new Status { Code = "0000", Message = "Phone OTP resent successfully", Data = null };
+            }
+            else
+            {
+                return new Status { Code = "1005", Message = "Failed to send OTP", Data = null };
+            }
+
         }
+
+
+
 
         public async Task<Status> VerifyPhone(VerifyPhoneRequest request)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Cell == request.Cell && u.OTP == request.OTP);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Cell == request.Cell && u.PhoneOTP == request.OTP);
             if (user == null)
             {
                 return new Status { Code = "1003", Message = "Invalid OTP or phone number", Data = null };
+            }
+
+            // Check if OTP has expired
+            if (user.PhoneOTPExpiry.HasValue && user.PhoneOTPExpiry.Value < DateTime.UtcNow)
+            {
+                return new Status { Code = "1006", Message = "OTP has expired", Data = null };
             }
 
             user.IsPhoneVerified = true;
@@ -136,6 +247,36 @@ namespace AuthService.Services
 
             return new Status { Code = "0000", Message = "Password reset successfully", Data = null };
         }
+
+
+        public async Task<Status> ResendEmailOTP(string email)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            if (user == null)
+            {
+                return new Status { Code = "1004", Message = "User not found", Data = null };
+            }
+
+            // Generate new OTP
+            string newOTP = new Random().Next(100000, 999999).ToString();  // Generate a new OTP
+            user.EmailOTP = newOTP;  // Save the new OTP
+            user.EmailOTPExpiry = DateTime.UtcNow.AddSeconds(200);  // Set expiry time to 60 seconds
+
+            await _context.SaveChangesAsync();
+
+            // Send the OTP to the user's email
+            string messageBody = $"Your OTP for email verification is: {newOTP}";
+            bool emailSent = _emailService.SendEmail(user.Email, "Email Verification", messageBody);
+
+            if (emailSent)
+            {
+                return new Status { Code = "0000", Message = "OTP resent successfully", Data = null };
+            }
+
+            return new Status { Code = "1005", Message = "Failed to send OTP", Data = null };
+        }
+
+
 
         public async Task<Status> DeleteAccount(DeleteAccountRequest request)
         {
