@@ -38,6 +38,7 @@ E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Microsoft.Sql
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\MimeKit.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Mono.TextTemplating.dll
+E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Newtonsoft.Json.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -146,4 +147,3 @@ E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\refint\AuthSe
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.pdb
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.genruntimeconfig.cache
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\ref\AuthService.dll
-E:\MyPedalApp\AuthService\AuthService\AuthService\bin\Debug\net8.0\Newtonsoft.Json.dll
