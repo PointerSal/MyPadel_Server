@@ -60,12 +60,27 @@ namespace AuthService.Services
                 await _context.Users.AddAsync(newUser);
                 await _context.SaveChangesAsync();
 
+                var token = _tokenService.GenerateToken(newUser.Guid.ToString(), newUser.Email);
+
+
                 string messageBody = $"Your OTP for email verification is: {emailOTP}";
                 bool emailSent = _emailService.SendEmail(request.Email, "Email Verification", messageBody);
 
                 if (emailSent)
                 {
-                    return new Status { Code = "0000", Message = "User registered successfully, verification email sent.", Data = null };
+                    var responseData = new
+                    {
+                        newUser.Guid,
+                        newUser.Name,
+                        newUser.Surname,
+                        newUser.Email,
+                        newUser.Cell,
+                        newUser.IsEmailVerified,
+                        newUser.IsPhoneVerified,
+                        Token = token
+                    };
+
+                    return new Status { Code = "0000", Message = "User registered successfully, verification email sent.", Data = responseData };
                 }
                 else
                 {

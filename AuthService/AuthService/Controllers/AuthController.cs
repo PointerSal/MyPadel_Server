@@ -56,11 +56,8 @@ namespace AuthService.Controllers
         {
             var result = await _authService.ResendEmailOTP(request.Email);
 
-            if (result.Code == "0000")
-            {
-                return Ok(new { Message = "OTP resent successfully" });
-            }
-            return BadRequest(result);
+            return Ok(result);
+
         }
         
         [HttpPost("add-phone-number")]
@@ -74,11 +71,9 @@ namespace AuthService.Controllers
         {
             var result = await _authService.ResendPhoneOTP(request.Email);
 
-            if (result.Code == "0000")
-            {
-                return Ok(new { Message = "Phone OTP resent successfully" });
-            }
-            return BadRequest(result);
+           
+                return Ok(result);
+            
         }
         /// <summary>
         /// Verifies phone with OTP

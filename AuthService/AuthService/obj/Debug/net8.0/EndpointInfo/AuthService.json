@@ -346,7 +346,7 @@
             "type": "string",
             "nullable": true
           },
-          "phoneNumber": {
+          "cell": {
             "type": "string",
             "nullable": true
           }
