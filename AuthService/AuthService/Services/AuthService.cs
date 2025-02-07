@@ -146,7 +146,7 @@ namespace AuthService.Services
             return new Status { Code = "0000", Message = "Login successful", Data = responseData };
         }
 
-        public async Task<Status> AddPhoneNumber(string email, string Cell)
+        public async Task<Status> AddPhoneNumber(string email, string cell)
         {
             try
             {
@@ -155,29 +155,47 @@ namespace AuthService.Services
                 {
                     return new Status { Code = "1004", Message = "User not found", Data = null };
                 }
-                if (!string.IsNullOrEmpty(user.Cell))
+
+                // If the cell number is the same, just resend the OTP
+                if (user.Cell == cell)
                 {
-                    return new Status { Code = "1003", Message = "Phone number already added", Data = null };
-                }
-                string phoneOTP = new Random().Next(100000, 999999).ToString();   
-                user.Cell = Cell;
-                user.PhoneOTP = phoneOTP;
-                user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);   
+                    string newOTP = new Random().Next(100000, 999999).ToString();
+                    user.PhoneOTP = newOTP;
+                    user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);
 
-                await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
 
-                bool phoneSent = await _phoneOtpService.SendPhoneOTP(Cell, phoneOTP);
+                    bool phoneSent = await _phoneOtpService.SendPhoneOTP(user.Cell, newOTP);
 
-                if (phoneSent)
-                {
-                    return new Status { Code = "0000", Message = "Phone number added successfully, OTP sent.", Data = null };
+                    if (phoneSent)
+                    {
+                        return new Status { Code = "0000", Message = "Phone OTP resent successfully", Data = null };
+                    }
+                    else
+                    {
+                        return new Status { Code = "1005", Message = "Failed to send OTP", Data = null };
+                    }
                 }
                 else
                 {
-                    return new Status { Code = "1005", Message = "Failed to send OTP", Data = null };
+                    string phoneOTP = new Random().Next(100000, 999999).ToString();
+                    user.Cell = cell;
+                    user.PhoneOTP = phoneOTP;
+                    user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);
+
+                    await _context.SaveChangesAsync();
+
+                    bool phoneSent = await _phoneOtpService.SendPhoneOTP(cell, phoneOTP);
+
+                    if (phoneSent)
+                    {
+                        return new Status { Code = "0000", Message = "Phone number added successfully, OTP sent.", Data = null };
+                    }
+                    else
+                    {
+                        return new Status { Code = "1005", Message = "Failed to send OTP", Data = null };
+                    }
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -186,32 +204,8 @@ namespace AuthService.Services
         }
 
 
-        public async Task<Status> ResendPhoneOTP(string email)
-        {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-            if (user == null)
-            {
-                return new Status { Code = "1004", Message = "User not found", Data = null };
-            }
 
-            string newOTP = new Random().Next(100000, 999999).ToString();  
-            user.PhoneOTP = newOTP;   
-            user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);   
-
-            await _context.SaveChangesAsync();
-
-            bool phoneSent = await _phoneOtpService.SendPhoneOTP(user.Cell, newOTP);
-
-            if (phoneSent)
-            {
-                return new Status { Code = "0000", Message = "Phone OTP resent successfully", Data = null };
-            }
-            else
-            {
-                return new Status { Code = "1005", Message = "Failed to send OTP", Data = null };
-            }
-
-        }
+       
 
 
 

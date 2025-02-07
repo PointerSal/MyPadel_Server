@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "E:\\MyPedalApp\\AuthService\\AuthService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\mypedalapp\\authservice\\authservice\\authservice\\migrations\\20250207160228_asdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\migrations\\20250207160228_asdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\mypedalapp\\authservice\\authservice\\authservice\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\mypedalapp\\authservice\\authservice\\authservice\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\mypedalapp\\authservice\\authservice\\authservice\\model\\authrequestmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\model\\authrequestmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\mypedalapp\\authservice\\authservice\\authservice\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\mypedalapp\\authservice\\authservice\\authservice\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\mypedalapp\\authservice\\authservice\\authservice\\services\\phoneotpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,44 +30,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250207160228_asdf.cs",
-              "DocumentMoniker": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Migrations\\20250207160228_asdf.cs",
-              "RelativeDocumentMoniker": "AuthService\\Migrations\\20250207160228_asdf.cs",
-              "ToolTip": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Migrations\\20250207160228_asdf.cs",
-              "RelativeToolTip": "AuthService\\Migrations\\20250207160228_asdf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "AuthService\\Interfaces\\IAuthService.cs",
+              "ToolTip": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "AuthService\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T16:02:30.209Z",
+              "WhenOpened": "2025-02-07T19:34:22.028Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AuthRequestModels.cs",
               "DocumentMoniker": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Model\\AuthRequestModels.cs",
               "RelativeDocumentMoniker": "AuthService\\Model\\AuthRequestModels.cs",
               "ToolTip": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Model\\AuthRequestModels.cs",
               "RelativeToolTip": "AuthService\\Model\\AuthRequestModels.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T00:44:09.285Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "AuthService\\Services\\AuthService.cs",
-              "ToolTip": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Services\\AuthService.cs",
-              "RelativeToolTip": "AuthService\\Services\\AuthService.cs",
-              "ViewState": "AgIAAJMAAACAzMzMzMwgwJgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T15:52:37.593Z",
+              "WhenOpened": "2025-02-07T00:44:09.285Z",
               "EditorCaption": ""
             },
             {
@@ -84,15 +72,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "AuthController.cs",
               "DocumentMoniker": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "AuthService\\Controllers\\AuthController.cs",
               "ToolTip": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Controllers\\AuthController.cs",
               "RelativeToolTip": "AuthService\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowEIAAABYAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAA7wDgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T21:44:14.378Z"
+              "WhenOpened": "2025-02-05T21:44:14.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "AuthService\\Services\\AuthService.cs",
+              "ToolTip": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\Services\\AuthService.cs",
+              "RelativeToolTip": "AuthService\\Services\\AuthService.cs",
+              "ViewState": "AgIAAF8AAACgmZmZmZk5wM8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T15:52:37.593Z",
+              "EditorCaption": ""
             }
           ]
         }

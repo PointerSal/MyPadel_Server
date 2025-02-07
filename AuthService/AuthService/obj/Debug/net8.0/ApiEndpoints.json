@@ -81,22 +81,6 @@
   },
   {
     "ContainingType": "AuthService.Controllers.AuthController",
-    "Method": "ResendPhoneOTP",
-    "RelativePath": "api/auth/resendPhone-otp",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "AuthService.Models.ResendOTPRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AuthService.Controllers.AuthController",
     "Method": "ResetPassword",
     "RelativePath": "api/auth/reset-password",
     "HttpMethod": "POST",
