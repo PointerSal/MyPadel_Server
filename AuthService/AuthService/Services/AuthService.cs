@@ -1,7 +1,7 @@
 ﻿using AuthService.Bridge;
 using AuthService.Interfaces;
 using AuthService.Models;
-using AuthService.Model; 
+using AuthService.Model;
 using Microsoft.EntityFrameworkCore;
 using BCrypt.Net;
 using System;
@@ -14,8 +14,8 @@ namespace AuthService.Services
     {
         private readonly ApplicationDbContext _context;
         private readonly TokenService _tokenService;
-        private readonly EmailService _emailService; 
-        private readonly PhoneOTPService _phoneOtpService; 
+        private readonly EmailService _emailService;
+        private readonly PhoneOTPService _phoneOtpService;
 
         public AuthService(ApplicationDbContext context, TokenService tokenService, EmailService emailService, PhoneOTPService PhoneOTPService)
         {
@@ -41,9 +41,7 @@ namespace AuthService.Services
                 }
 
                 var hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
-                // Generate Email OTP
-                string emailOTP = new Random().Next(100000, 999999).ToString();  // Generate a 6-digit OTP
-
+                string emailOTP = new Random().Next(100000, 999999).ToString();
                 var newUser = new User
                 {
                     Guid = Guid.NewGuid(),
@@ -51,19 +49,17 @@ namespace AuthService.Services
                     Surname = request.Surname,
                     Email = request.Email,
                     Password = hashedPassword,
-                    EmailOTP = emailOTP,  // Save the generated Email OTP
-                    EmailOTPExpiry = DateTime.UtcNow.AddSeconds(200),  // Set OTP expiry to 60 seconds from now
+                    EmailOTP = emailOTP,                   
+                    EmailOTPExpiry = DateTime.UtcNow.AddSeconds(200),                   
                     IsEmailVerified = false,
                     IsPhoneVerified = false,
                     IsActive = true
                 };
 
 
-                // Save the new user to the database
                 await _context.Users.AddAsync(newUser);
                 await _context.SaveChangesAsync();
 
-                // Send OTP to the user's email
                 string messageBody = $"Your OTP for email verification is: {emailOTP}";
                 bool emailSent = _emailService.SendEmail(request.Email, "Email Verification", messageBody);
 
@@ -91,13 +87,12 @@ namespace AuthService.Services
                 return new Status { Code = "1003", Message = "Invalid OTP or email", Data = null };
             }
 
-            // Check if OTP has expired
             if (user.EmailOTPExpiry.HasValue && user.EmailOTPExpiry.Value < DateTime.UtcNow)
             {
                 return new Status { Code = "1006", Message = "OTP has expired", Data = null };
             }
 
-            user.IsEmailVerified = true;  // Mark the email as verified
+            user.IsEmailVerified = true;   
             await _context.SaveChangesAsync();
 
             return new Status { Code = "0000", Message = "Email verified successfully", Data = null };
@@ -119,10 +114,8 @@ namespace AuthService.Services
                 return new Status { Code = "1002", Message = "Invalid email or password", Data = null };
             }
 
-            // Generate JWT token
             var token = _tokenService.GenerateToken(user.Guid.ToString(), user.Email);
 
-            // Include user data in response along with the token
             var responseData = new
             {
                 user.Guid,
@@ -135,11 +128,10 @@ namespace AuthService.Services
                 Token = token
             };
 
-            // Return the user data and token
             return new Status { Code = "0000", Message = "Login successful", Data = responseData };
         }
 
-        public async Task<Status> AddPhoneNumber(string email, string phoneNumber)
+        public async Task<Status> AddPhoneNumber(string email, string Cell)
         {
             try
             {
@@ -148,21 +140,18 @@ namespace AuthService.Services
                 {
                     return new Status { Code = "1004", Message = "User not found", Data = null };
                 }
-                // Check if the user already has a phone number
                 if (!string.IsNullOrEmpty(user.Cell))
                 {
                     return new Status { Code = "1003", Message = "Phone number already added", Data = null };
                 }
-                // Save phone number and generate OTP
-                string phoneOTP = new Random().Next(100000, 999999).ToString();  // Generate OTP
-                user.Cell = phoneNumber;  // Save phone number
-                user.PhoneOTP = phoneOTP;  // Save OTP
-                user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);  // Set OTP expiry to 200 seconds
+                string phoneOTP = new Random().Next(100000, 999999).ToString();   
+                user.Cell = Cell;
+                user.PhoneOTP = phoneOTP;
+                user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);   
 
                 await _context.SaveChangesAsync();
 
-                // Send OTP to the user's phone number
-                bool phoneSent = await _phoneOtpService.SendPhoneOTP(phoneNumber, phoneOTP);
+                bool phoneSent = await _phoneOtpService.SendPhoneOTP(Cell, phoneOTP);
 
                 if (phoneSent)
                 {
@@ -172,6 +161,7 @@ namespace AuthService.Services
                 {
                     return new Status { Code = "1005", Message = "Failed to send OTP", Data = null };
                 }
+
 
             }
             catch (Exception ex)
@@ -189,14 +179,12 @@ namespace AuthService.Services
                 return new Status { Code = "1004", Message = "User not found", Data = null };
             }
 
-            // Generate new OTP
-            string newOTP = new Random().Next(100000, 999999).ToString();  // Generate new OTP
-            user.PhoneOTP = newOTP;  // Save the new OTP
-            user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);  // Set expiry time to 200 seconds
+            string newOTP = new Random().Next(100000, 999999).ToString();  
+            user.PhoneOTP = newOTP;   
+            user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);   
 
             await _context.SaveChangesAsync();
 
-            // Send the OTP to the user's phone
             bool phoneSent = await _phoneOtpService.SendPhoneOTP(user.Cell, newOTP);
 
             if (phoneSent)
@@ -221,7 +209,6 @@ namespace AuthService.Services
                 return new Status { Code = "1003", Message = "Invalid OTP or phone number", Data = null };
             }
 
-            // Check if OTP has expired
             if (user.PhoneOTPExpiry.HasValue && user.PhoneOTPExpiry.Value < DateTime.UtcNow)
             {
                 return new Status { Code = "1006", Message = "OTP has expired", Data = null };
@@ -257,14 +244,12 @@ namespace AuthService.Services
                 return new Status { Code = "1004", Message = "User not found", Data = null };
             }
 
-            // Generate new OTP
-            string newOTP = new Random().Next(100000, 999999).ToString();  // Generate a new OTP
-            user.EmailOTP = newOTP;  // Save the new OTP
-            user.EmailOTPExpiry = DateTime.UtcNow.AddSeconds(200);  // Set expiry time to 60 seconds
+            string newOTP = new Random().Next(100000, 999999).ToString();  
+            user.EmailOTP = newOTP;   
+            user.EmailOTPExpiry = DateTime.UtcNow.AddSeconds(200);  
 
             await _context.SaveChangesAsync();
 
-            // Send the OTP to the user's email
             string messageBody = $"Your OTP for email verification is: {newOTP}";
             bool emailSent = _emailService.SendEmail(user.Email, "Email Verification", messageBody);
 
@@ -293,7 +278,7 @@ namespace AuthService.Services
         }
         private bool IsValidEmail(string email)
         {
-            var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$"; // Basic email regex
+            var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$"; 
             return Regex.IsMatch(email, emailPattern);
         }
     }

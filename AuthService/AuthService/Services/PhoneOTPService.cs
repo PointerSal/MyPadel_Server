@@ -7,9 +7,9 @@ namespace AuthService.Services
 {
     public class PhoneOTPService
     {
-        private readonly string _smsApiUrl = "https://sms.capcom.me/api/3rdparty/v1/message";  // SMS API endpoint
-        private readonly string _apiUser = "RK0O0O";  // Your API username
-        private readonly string _apiPassword = "droa_6fmy6o7fi";  // Your API password
+        private readonly string _smsApiUrl = "https://sms.capcom.me/api/3rdparty/v1/message";
+        private readonly string _apiUser = "RK0O0O";
+        private readonly string _apiPassword = "droa_6fmy6o7fi";
         private readonly HttpClient _httpClient;
 
         public PhoneOTPService(HttpClient httpClient)
@@ -17,7 +17,7 @@ namespace AuthService.Services
             _httpClient = httpClient;
         }
 
-        // Sends OTP via SMS API
+        
         public async Task<bool> SendPhoneOTP(string phoneNumber, string otp)
         {
             var payload = new
@@ -35,19 +35,22 @@ namespace AuthService.Services
                 Content = content
             };
 
-            // Add Basic Auth header for authorization
             var authValue = Convert.ToBase64String(Encoding.ASCII.GetBytes($"{_apiUser}:{_apiPassword}"));
             request.Headers.Add("Authorization", $"Basic {authValue}");
 
-            // Send the request
             var response = await _httpClient.SendAsync(request);
 
             if (response.IsSuccessStatusCode)
             {
-                return true; // OTP sent successfully
-            }
+                
+                var responseBody = await response.Content.ReadAsStringAsync();
+                var responseJson = JsonConvert.DeserializeObject<dynamic>(responseBody);
 
-            return false; // Failed to send OTP
+                 
+
+                return true; 
+            }
+            return false; 
         }
     }
 }

@@ -35,7 +35,7 @@ namespace AuthService.Services
 
         public async Task<Status> UpdateUserProfileAsync(UpdateProfileRequest request)
         {
-            // Validate email format
+            
             if (!IsValidEmail(request.Email))
             {
                 return new Status { Code = "1002", Message = "Invalid email format", Data = null };
@@ -47,7 +47,7 @@ namespace AuthService.Services
                 return new Status { Code = "1001", Message = "User not found", Data = null };
             }
 
-            // Update user profile
+            
             user.Name = request.Name;
             user.Surname = request.Surname;
             user.Cell = request.Cell;
@@ -59,10 +59,10 @@ namespace AuthService.Services
             return new Status { Code = "0000", Message = "User profile updated successfully", Data = null };
         }
 
-        // Email validation method
+        
         private bool IsValidEmail(string email)
         {
-            var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";  // Basic email regex
+            var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";  
             return Regex.IsMatch(email, emailPattern);
         }
     }

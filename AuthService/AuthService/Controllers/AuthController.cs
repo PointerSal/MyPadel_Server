@@ -36,9 +36,9 @@ namespace AuthService.Controllers
             var result = await _authService.LoginUser(request);
             if (result.Code == "0000")
             {
-                return Ok(result);  // Success: Return token in response
+                return Ok(result);  
             }
-            return Unauthorized(result);  // Unauthorized if login fails
+            return Unauthorized(result);  
         }
 
         /// <summary>
@@ -62,11 +62,11 @@ namespace AuthService.Controllers
             }
             return BadRequest(result);
         }
-        // Add Phone Number
+        
         [HttpPost("add-phone-number")]
         public async Task<IActionResult> AddPhoneNumber([FromBody] AddPhoneNumberRequest request)
         {
-            var result = await _authService.AddPhoneNumber(request.Email, request.PhoneNumber);
+            var result = await _authService.AddPhoneNumber(request.Email, request.Cell);
             return Ok(result);
         }
         [HttpPost("resendPhone-otp")]

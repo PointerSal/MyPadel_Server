@@ -11,7 +11,7 @@
     public class AddPhoneNumberRequest
     {
         public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Cell { get; set; }
     }
     public class LoginRequest
     {
