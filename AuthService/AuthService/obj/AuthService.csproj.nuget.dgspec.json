@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\AuthService.csproj": {}
+    "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\AuthService.csproj": {}
   },
   "projects": {
-    "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\AuthService.csproj": {
+    "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\AuthService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\AuthService.csproj",
+        "projectUniqueName": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\AuthService.csproj",
         "projectName": "AuthService",
-        "projectPath": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\AuthService.csproj",
+        "projectPath": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\AuthService.csproj",
         "packagesPath": "C:\\Users\\Shahzaib\\.nuget\\packages\\",
-        "outputPath": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\obj\\",
+        "outputPath": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

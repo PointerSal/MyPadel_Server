@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "NVO7cgqQgTGQDk9iVc6MoKqmUABgF0xZWR4n2uX1+fQ=",
+  "Hash": "z7/ukpS8NUBp/KHVM6IGQkcfjQwGHhUKiHhbZyGMXNc=",
   "Source": "AuthService",
   "BasePath": "_content/AuthService",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AuthService\\wwwroot",
+      "Source": "AuthService",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }

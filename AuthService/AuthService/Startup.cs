@@ -48,7 +48,8 @@ namespace AuthService
             services.AddScoped<EmailService>();
             services.AddScoped<PhoneOTPService>();
             services.AddHttpClient<PhoneOTPService>();
-
+            services.AddScoped<IMembershipUserService, MembershipUserService>();
+            services.AddScoped<IBookingService, BookingService>();  
 
             services.AddControllers();
 

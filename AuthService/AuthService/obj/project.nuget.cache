@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x2mdB5LIvFU=",
+  "dgSpecHash": "8FgmE5ejxoA=",
   "success": true,
-  "projectFilePath": "E:\\MyPedalApp\\AuthService\\AuthService\\AuthService\\AuthService.csproj",
+  "projectFilePath": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\AuthService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shahzaib\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Shahzaib\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

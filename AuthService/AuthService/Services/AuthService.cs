@@ -44,7 +44,7 @@ namespace AuthService.Services
                 string emailOTP = new Random().Next(100000, 999999).ToString();
                 var newUser = new User
                 {
-                    Guid = Guid.NewGuid(),
+                    Id = Guid.NewGuid(),
                     Name = request.Name,
                     Surname = request.Surname,
                     Email = request.Email,
@@ -60,7 +60,7 @@ namespace AuthService.Services
                 await _context.Users.AddAsync(newUser);
                 await _context.SaveChangesAsync();
 
-                var token = _tokenService.GenerateToken(newUser.Guid.ToString(), newUser.Email);
+                var token = _tokenService.GenerateToken(newUser.Id.ToString(), newUser.Email);
 
 
                 string messageBody = $"Your OTP for email verification is: {emailOTP}";
@@ -70,7 +70,7 @@ namespace AuthService.Services
                 {
                     var responseData = new
                     {
-                        newUser.Guid,
+                        newUser.Id,
                         newUser.Name,
                         newUser.Surname,
                         newUser.Email,
@@ -129,11 +129,11 @@ namespace AuthService.Services
                 return new Status { Code = "1002", Message = "Invalid email or password", Data = null };
             }
 
-            var token = _tokenService.GenerateToken(user.Guid.ToString(), user.Email);
+            var token = _tokenService.GenerateToken(user.Id.ToString(), user.Email);
 
             var responseData = new
             {
-                user.Guid,
+                user.Id,
                 user.Name,
                 user.Surname,
                 user.Email,
