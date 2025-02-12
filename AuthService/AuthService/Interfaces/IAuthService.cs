@@ -13,6 +13,8 @@ namespace AuthService.Interfaces
         Task<Status> AddPhoneNumber(string email, string phoneNumber);  
         Task<Status> ResetPassword(ResetPasswordRequest request);
         Task<Status> DeleteAccount(DeleteAccountRequest request);
-        Task<Status> ResendEmailOTP(string email);  
+        Task<Status> ResendEmailOTP(string email);
+        Task<Status> UpdatePassword(UpdatePasswordRequest request);
+
     }
 }

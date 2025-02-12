@@ -1,12 +1,14 @@
 ﻿using AuthService.Bridge;
 using AuthService.Interfaces;
 using AuthService.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.Controllers
 {
     [Route("api/user")]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;

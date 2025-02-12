@@ -97,6 +97,22 @@
   },
   {
     "ContainingType": "AuthService.Controllers.AuthController",
+    "Method": "UpdatePassword",
+    "RelativePath": "api/auth/update-password",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AuthService.Models.UpdatePasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.AuthController",
     "Method": "VerifyEmail",
     "RelativePath": "api/auth/verify-email",
     "HttpMethod": "POST",

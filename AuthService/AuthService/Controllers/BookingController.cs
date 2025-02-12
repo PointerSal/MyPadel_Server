@@ -1,5 +1,6 @@
 ﻿using AuthService.Interfaces;
 using AuthService.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@ namespace AuthService.Controllers
 {
     [Route("api/booking")]
     [ApiController]
+    [Authorize]
     public class BookingController : ControllerBase
     {
         private readonly IBookingService _bookingService;

@@ -3,11 +3,13 @@ using AuthService.Models;
 using AuthService.Bridge;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AuthService.Controllers
 {
     [Route("api/auth")]
     [ApiController]
+    [Authorize]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -21,6 +23,7 @@ namespace AuthService.Controllers
         /// Registers a new user
         /// </summary>
         [HttpPost("register")]
+        [AllowAnonymous]
         public async Task<IActionResult> RegisterUser([FromBody] RegisterRequest request)
         {
             var result = await _authService.RegisterUser(request);
@@ -31,6 +34,8 @@ namespace AuthService.Controllers
         /// Logs in a user
         /// </summary>
         [HttpPost("login")]
+        [AllowAnonymous]
+
         public async Task<IActionResult> LoginUser([FromBody] LoginRequest request)
         {
             var result = await _authService.LoginUser(request);
@@ -85,6 +90,14 @@ namespace AuthService.Controllers
         {
             var result = await _authService.ResetPassword(request);
             return Ok(result);
+        }
+
+        [HttpPut("update-password")]
+        public async Task<IActionResult> UpdatePassword([FromBody] UpdatePasswordRequest request)
+        {
+            var result = await _authService.UpdatePassword(request);            
+                return Ok(result);
+            
         }
 
         /// <summary>

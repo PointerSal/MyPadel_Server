@@ -1,11 +1,13 @@
 ﻿using AuthService.Interfaces;
 using AuthService.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.Controllers
 {
     [Route("api/membershipuser")]
     [ApiController]
+    [Authorize]
     public class MembershipUserController : ControllerBase
     {
         private readonly IMembershipUserService _membershipUserService;

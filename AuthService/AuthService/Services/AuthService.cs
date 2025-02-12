@@ -271,7 +271,43 @@ namespace AuthService.Services
         }
 
 
+        public async Task<Status> UpdatePassword(UpdatePasswordRequest request)
+        {
+            try
+            {
+                // Retrieve user by email
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+                if (user == null)
+                {
+                    return new Status { Code = "1004", Message = "User not found", Data = null };
+                }
 
+                // Verify current password
+                var isPasswordValid = BCrypt.Net.BCrypt.Verify(request.CurrentPassword, user.Password);
+                if (!isPasswordValid)
+                {
+                    return new Status { Code = "1002", Message = "Invalid current password", Data = null };
+                }
+
+                // Update password
+                var hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
+                user.Password = hashedPassword;
+                await _context.SaveChangesAsync();
+
+                // Optionally, send an email notification for password change (can be customized)
+                var emailSent = _emailService.SendEmail(user.Email, "Password Updated", "Your password has been successfully updated.");
+                if (!emailSent)
+                {
+                    return new Status { Code = "1005", Message = "Failed to send password update notification", Data = null };
+                }
+
+                return new Status { Code = "0000", Message = "Password updated successfully", Data = null };
+            }
+            catch (Exception ex)
+            {
+                return new Status { Code = "1111", Message = "Internal Server Error", Data = ex.Message };
+            }
+        }
         public async Task<Status> DeleteAccount(DeleteAccountRequest request)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
