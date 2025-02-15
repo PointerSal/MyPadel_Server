@@ -262,6 +262,38 @@
   },
   {
     "ContainingType": "AuthService.Controllers.MembershipUserController",
+    "Method": "GetCardDetailsByEmail",
+    "RelativePath": "api/membershipuser/carddetails/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.MembershipUserController",
+    "Method": "GetExpiryDateByEmail",
+    "RelativePath": "api/membershipuser/expirydate/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.MembershipUserController",
     "Method": "RegisterMembershipUser",
     "RelativePath": "api/membershipuser/register",
     "HttpMethod": "POST",
@@ -327,15 +359,20 @@
         "Name": "PaymentMethod",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "AuthService.Controllers.MembershipUserController",
-    "Method": "AlreadyFitMember",
-    "RelativePath": "api/membershipuser/register/fit",
-    "HttpMethod": "POST",
+    "Method": "UpdateFitMember",
+    "RelativePath": "api/membershipuser/update/fit",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -357,6 +394,11 @@
       {
         "Name": "MedicalCertificate",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],

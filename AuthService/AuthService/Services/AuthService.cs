@@ -77,6 +77,7 @@ namespace AuthService.Services
                         newUser.Cell,
                         newUser.IsEmailVerified,
                         newUser.IsPhoneVerified,
+                        newUser.IsFitMember,
                         Token = token
                     };
 
@@ -140,6 +141,7 @@ namespace AuthService.Services
                 user.Cell,
                 user.IsEmailVerified,
                 user.IsPhoneVerified,
+                user.IsFitMember,
                 Token = token
             };
 
@@ -316,11 +318,20 @@ namespace AuthService.Services
                 return new Status { Code = "1004", Message = "User not found", Data = null };
             }
 
+            // Verify the password
+            var isPasswordValid = BCrypt.Net.BCrypt.Verify(request.Password, user.Password);
+            if (!isPasswordValid)
+            {
+                return new Status { Code = "1002", Message = "Invalid password", Data = null };
+            }
+
+            // Proceed with account deletion
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
 
             return new Status { Code = "0000", Message = "Account deleted successfully", Data = null };
         }
+
         private bool IsValidEmail(string email)
         {
             var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$"; 

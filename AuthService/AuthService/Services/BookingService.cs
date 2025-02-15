@@ -1,10 +1,10 @@
-﻿using AuthService.Model;
+﻿using AuthService.Bridge;
 using AuthService.Interfaces;
+using AuthService.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using AuthService.Bridge;
 
 namespace AuthService.Services
 {
@@ -17,25 +17,27 @@ namespace AuthService.Services
             _context = context;
         }
 
-        // Fetch available slots
-        public async Task<Status> GetAvailableSlotsAsync(AvailableSlotsRequest request)
+        public async Task<Status> GetBookedSlotsAsync(AvailableSlotsRequest request)
         {
-            var availableSlots = await _context.Bookings
-                .Where(b => b.Date == request.Date && b.FieldId == request.FieldId && !b.FlagBooked)
-                .Select(b => b.TimeSlot)
-                .ToListAsync();
+            // Get all bookings for the current day and field where the slot is booked (FlagBooked = true)
+            var bookedSlots = await _context.Bookings
+                .Where(b => b.Date.Date == request.Date.Date && b.FieldId == request.FieldId && b.FlagBooked == true)  // Only booked slots
+                .Select(b => b.TimeSlot)  // Select the time slot
+                .ToListAsync();  // Execute the query asynchronously
 
             return new Status
             {
                 Code = "0000",
-                Message = "Available slots fetched successfully.",
-                Data = availableSlots
+                Message = "Booked slots fetched successfully.",
+                Data = bookedSlots
             };
         }
+
 
         // Reserve a booking
         public async Task<Status> ReserveBookingAsync(ReserveBookingRequest request)
         {
+            // Step 1: Check if the user exists by their email in the Users table.
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
             if (user == null)
             {
@@ -47,7 +49,8 @@ namespace AuthService.Services
                 };
             }
 
-            var fitMember = await _context.MembershipUsers.FirstOrDefaultAsync(m => m.CardNumber == request.PaymentMethod);
+            // Step 2: Check if the user has a valid FIT membership using the email.
+            var fitMember = await _context.MembershipUsers.FirstOrDefaultAsync(m => m.Email == request.Email);
             if (fitMember == null)
             {
                 return new Status
@@ -58,7 +61,7 @@ namespace AuthService.Services
                 };
             }
 
-            // Check if the slot is available
+            // Step 3: Check if the slot is already booked.
             var existingBooking = await _context.Bookings
                 .Where(b => b.Date == request.Date && b.TimeSlot == request.TimeSlot && b.FieldId == request.FieldId && !b.FlagCanceled)
                 .FirstOrDefaultAsync();
@@ -73,19 +76,25 @@ namespace AuthService.Services
                 };
             }
 
+            // Step 4: Calculate the end time based on the duration provided in the request.
+            var endTime = request.Date.AddMinutes(request.Duration);
+
+            // Step 5: Create the booking.
             var booking = new Booking
             {
                 SportType = request.SportType,
                 Date = request.Date,
                 TimeSlot = request.TimeSlot,
                 FieldId = request.FieldId,
-                PaymentMethod = request.PaymentMethod,
-                Amount = request.Amount,
+                PaymentMethod = request.PaymentMethod, // Store the payment method type (Cash, PayPal)
+                Amount = request.Amount,               // Store the booking amount
                 FlagBooked = true,
                 FlagCanceled = false,
-                Email = request.Email // Save the user's email with the booking
+                Email = request.Email,                 // Store the user's email with the booking
+                EndTime = endTime                      // Store the calculated end time
             };
 
+            // Step 6: Save the booking to the database.
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
 

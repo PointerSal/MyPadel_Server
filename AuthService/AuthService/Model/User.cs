@@ -22,5 +22,6 @@ namespace AuthService.Models
         public bool IsEmailVerified { get; set; }
         public bool IsPhoneVerified { get; set; }
         public bool IsActive { get; set; }
+        public bool IsFitMember { get; set; }
     }
 }

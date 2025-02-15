@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "z7/ukpS8NUBp/KHVM6IGQkcfjQwGHhUKiHhbZyGMXNc=",
+  "Hash": "QET/6ny93etCzBGaj892CYbPfRbCTW31L52rsEJEGPA=",
   "Source": "AuthService",
   "BasePath": "_content/AuthService",
   "Mode": "Default",
@@ -15,6 +15,2068 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": [
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\04e7482e-98fd-461d-a6f6-f05af5c93de9.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/04e7482e-98fd-461d-a6f6-f05af5c93de9#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yvsad99x1r",
+      "Integrity": "Qo4A6hR+neHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z+U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\04e7482e-98fd-461d-a6f6-f05af5c93de9.png"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\075b5c75-70df-4815-aaa9-f18cffc7d77a.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/075b5c75-70df-4815-aaa9-f18cffc7d77a#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tta4rvutz0",
+      "Integrity": "0QYlDUZLcBdsX3/B4xHOAk/ceqhPlOyZBMOOrQAp2ck=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\075b5c75-70df-4815-aaa9-f18cffc7d77a.png"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\0c5ac8b1-4024-4fd5-8243-2a42e3c3960d.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/0c5ac8b1-4024-4fd5-8243-2a42e3c3960d#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "h4a7dx9dhf",
+      "Integrity": "/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\0c5ac8b1-4024-4fd5-8243-2a42e3c3960d.png"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\1cbfe5c0-fbf8-4e48-b18b-72d2cef6619e.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/1cbfe5c0-fbf8-4e48-b18b-72d2cef6619e#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yvsad99x1r",
+      "Integrity": "Qo4A6hR+neHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z+U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\1cbfe5c0-fbf8-4e48-b18b-72d2cef6619e.png"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\2a0ba114-cf98-4e38-96c0-3cf614c1446f.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/2a0ba114-cf98-4e38-96c0-3cf614c1446f#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "h4a7dx9dhf",
+      "Integrity": "/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\2a0ba114-cf98-4e38-96c0-3cf614c1446f.png"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\2f31c181-d5e1-4a61-a27e-04a8909495b4.jpg",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/2f31c181-d5e1-4a61-a27e-04a8909495b4#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kewdt3r7e8",
+      "Integrity": "TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\2f31c181-d5e1-4a61-a27e-04a8909495b4.jpg"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\33f892bf-7857-41c7-b890-cd894c5cf1a2.jpg",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/33f892bf-7857-41c7-b890-cd894c5cf1a2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kewdt3r7e8",
+      "Integrity": "TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\33f892bf-7857-41c7-b890-cd894c5cf1a2.jpg"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\3c7c05cb-7788-4000-876f-ddf6971f1b74.jpg",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/3c7c05cb-7788-4000-876f-ddf6971f1b74#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kewdt3r7e8",
+      "Integrity": "TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\3c7c05cb-7788-4000-876f-ddf6971f1b74.jpg"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\50355e35-c897-4e3e-8504-4146d536b1cb.jpg",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/50355e35-c897-4e3e-8504-4146d536b1cb#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kewdt3r7e8",
+      "Integrity": "TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\50355e35-c897-4e3e-8504-4146d536b1cb.jpg"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\65870cdd-0927-4b0c-9860-86c6066d62bc.jpg",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/65870cdd-0927-4b0c-9860-86c6066d62bc#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kewdt3r7e8",
+      "Integrity": "TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\65870cdd-0927-4b0c-9860-86c6066d62bc.jpg"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\7e82d301-f351-4466-ae3d-dfbfde2a332b.jpg",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/7e82d301-f351-4466-ae3d-dfbfde2a332b#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7zmkt76sz2",
+      "Integrity": "rTVb6GTY0ITigZtNRphgB8eq2LfP+9hByXLqOuCxqLU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\7e82d301-f351-4466-ae3d-dfbfde2a332b.jpg"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\85928b86-1f39-4cb5-9534-d458d27660df.jpg",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/85928b86-1f39-4cb5-9534-d458d27660df#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "idydxhou6f",
+      "Integrity": "RpTTV1/5rag7bPkwLPA35kL4AeXSEQC+IjpKZsU2V5w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\85928b86-1f39-4cb5-9534-d458d27660df.jpg"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\88690692-a5bb-4ec9-bea7-a35350c11a68.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/88690692-a5bb-4ec9-bea7-a35350c11a68#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "08vwt6wt03",
+      "Integrity": "ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\88690692-a5bb-4ec9-bea7-a35350c11a68.png"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\8f262fc3-0810-4aba-a121-d975843d7d9d.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/8f262fc3-0810-4aba-a121-d975843d7d9d#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "08vwt6wt03",
+      "Integrity": "ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\8f262fc3-0810-4aba-a121-d975843d7d9d.png"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\a819f57c-80a9-4ff9-8881-553e55115696.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/a819f57c-80a9-4ff9-8881-553e55115696#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "08vwt6wt03",
+      "Integrity": "ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\a819f57c-80a9-4ff9-8881-553e55115696.png"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\b1f8c932-3d55-4a9c-8df5-e94f4c14c9bb.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/b1f8c932-3d55-4a9c-8df5-e94f4c14c9bb#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tta4rvutz0",
+      "Integrity": "0QYlDUZLcBdsX3/B4xHOAk/ceqhPlOyZBMOOrQAp2ck=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\b1f8c932-3d55-4a9c-8df5-e94f4c14c9bb.png"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\b25cb273-a133-47ec-bec2-0e9ae9dfd0bf.jpg",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/b25cb273-a133-47ec-bec2-0e9ae9dfd0bf#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kewdt3r7e8",
+      "Integrity": "TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\b25cb273-a133-47ec-bec2-0e9ae9dfd0bf.jpg"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\d9a6b8cc-de5e-42a9-a86d-e1600f799570.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/d9a6b8cc-de5e-42a9-a86d-e1600f799570#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "08vwt6wt03",
+      "Integrity": "ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\d9a6b8cc-de5e-42a9-a86d-e1600f799570.png"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\e28b53e2-827c-45cd-b3ee-a35500a0c05c.jpg",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/e28b53e2-827c-45cd-b3ee-a35500a0c05c#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "idydxhou6f",
+      "Integrity": "RpTTV1/5rag7bPkwLPA35kL4AeXSEQC+IjpKZsU2V5w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\e28b53e2-827c-45cd-b3ee-a35500a0c05c.jpg"
+    },
+    {
+      "Identity": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\eca17852-a101-4528-808d-512db9afc2f8.png",
+      "SourceId": "AuthService",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\",
+      "BasePath": "_content/AuthService",
+      "RelativePath": "medical_certificates/eca17852-a101-4528-808d-512db9afc2f8#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2onomtkf2d",
+      "Integrity": "0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical_certificates\\eca17852-a101-4528-808d-512db9afc2f8.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "medical_certificates/04e7482e-98fd-461d-a6f6-f05af5c93de9.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\04e7482e-98fd-461d-a6f6-f05af5c93de9.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "121828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Qo4A6hR+neHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z+U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:18:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Qo4A6hR+neHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z+U="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/04e7482e-98fd-461d-a6f6-f05af5c93de9.yvsad99x1r.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\04e7482e-98fd-461d-a6f6-f05af5c93de9.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "121828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Qo4A6hR+neHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z+U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:18:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yvsad99x1r"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/04e7482e-98fd-461d-a6f6-f05af5c93de9.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Qo4A6hR+neHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z+U="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/075b5c75-70df-4815-aaa9-f18cffc7d77a.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\075b5c75-70df-4815-aaa9-f18cffc7d77a.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "413670"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0QYlDUZLcBdsX3/B4xHOAk/ceqhPlOyZBMOOrQAp2ck=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:09:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0QYlDUZLcBdsX3/B4xHOAk/ceqhPlOyZBMOOrQAp2ck="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/075b5c75-70df-4815-aaa9-f18cffc7d77a.tta4rvutz0.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\075b5c75-70df-4815-aaa9-f18cffc7d77a.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "413670"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0QYlDUZLcBdsX3/B4xHOAk/ceqhPlOyZBMOOrQAp2ck=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:09:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tta4rvutz0"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/075b5c75-70df-4815-aaa9-f18cffc7d77a.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0QYlDUZLcBdsX3/B4xHOAk/ceqhPlOyZBMOOrQAp2ck="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/0c5ac8b1-4024-4fd5-8243-2a42e3c3960d.h4a7dx9dhf.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\0c5ac8b1-4024-4fd5-8243-2a42e3c3960d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 17:58:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h4a7dx9dhf"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/0c5ac8b1-4024-4fd5-8243-2a42e3c3960d.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/0c5ac8b1-4024-4fd5-8243-2a42e3c3960d.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\0c5ac8b1-4024-4fd5-8243-2a42e3c3960d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 17:58:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/1cbfe5c0-fbf8-4e48-b18b-72d2cef6619e.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\1cbfe5c0-fbf8-4e48-b18b-72d2cef6619e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "121828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Qo4A6hR+neHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z+U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:25:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Qo4A6hR+neHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z+U="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/1cbfe5c0-fbf8-4e48-b18b-72d2cef6619e.yvsad99x1r.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\1cbfe5c0-fbf8-4e48-b18b-72d2cef6619e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "121828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Qo4A6hR+neHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z+U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:25:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yvsad99x1r"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/1cbfe5c0-fbf8-4e48-b18b-72d2cef6619e.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Qo4A6hR+neHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z+U="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/2a0ba114-cf98-4e38-96c0-3cf614c1446f.h4a7dx9dhf.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\2a0ba114-cf98-4e38-96c0-3cf614c1446f.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:34:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h4a7dx9dhf"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/2a0ba114-cf98-4e38-96c0-3cf614c1446f.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/2a0ba114-cf98-4e38-96c0-3cf614c1446f.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\2a0ba114-cf98-4e38-96c0-3cf614c1446f.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:34:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/2f31c181-d5e1-4a61-a27e-04a8909495b4.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\2f31c181-d5e1-4a61-a27e-04a8909495b4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 10:58:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/2f31c181-d5e1-4a61-a27e-04a8909495b4.kewdt3r7e8.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\2f31c181-d5e1-4a61-a27e-04a8909495b4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 10:58:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kewdt3r7e8"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/2f31c181-d5e1-4a61-a27e-04a8909495b4.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/33f892bf-7857-41c7-b890-cd894c5cf1a2.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\33f892bf-7857-41c7-b890-cd894c5cf1a2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 19:04:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/33f892bf-7857-41c7-b890-cd894c5cf1a2.kewdt3r7e8.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\33f892bf-7857-41c7-b890-cd894c5cf1a2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 19:04:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kewdt3r7e8"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/33f892bf-7857-41c7-b890-cd894c5cf1a2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/3c7c05cb-7788-4000-876f-ddf6971f1b74.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\3c7c05cb-7788-4000-876f-ddf6971f1b74.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 09:52:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/3c7c05cb-7788-4000-876f-ddf6971f1b74.kewdt3r7e8.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\3c7c05cb-7788-4000-876f-ddf6971f1b74.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 09:52:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kewdt3r7e8"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/3c7c05cb-7788-4000-876f-ddf6971f1b74.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/50355e35-c897-4e3e-8504-4146d536b1cb.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\50355e35-c897-4e3e-8504-4146d536b1cb.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 19:05:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/50355e35-c897-4e3e-8504-4146d536b1cb.kewdt3r7e8.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\50355e35-c897-4e3e-8504-4146d536b1cb.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 19:05:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kewdt3r7e8"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/50355e35-c897-4e3e-8504-4146d536b1cb.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/65870cdd-0927-4b0c-9860-86c6066d62bc.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\65870cdd-0927-4b0c-9860-86c6066d62bc.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 19:04:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/65870cdd-0927-4b0c-9860-86c6066d62bc.kewdt3r7e8.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\65870cdd-0927-4b0c-9860-86c6066d62bc.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 19:04:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kewdt3r7e8"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/65870cdd-0927-4b0c-9860-86c6066d62bc.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/7e82d301-f351-4466-ae3d-dfbfde2a332b.7zmkt76sz2.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\7e82d301-f351-4466-ae3d-dfbfde2a332b.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1779213"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rTVb6GTY0ITigZtNRphgB8eq2LfP+9hByXLqOuCxqLU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 14:48:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7zmkt76sz2"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/7e82d301-f351-4466-ae3d-dfbfde2a332b.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rTVb6GTY0ITigZtNRphgB8eq2LfP+9hByXLqOuCxqLU="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/7e82d301-f351-4466-ae3d-dfbfde2a332b.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\7e82d301-f351-4466-ae3d-dfbfde2a332b.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1779213"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rTVb6GTY0ITigZtNRphgB8eq2LfP+9hByXLqOuCxqLU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 14:48:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rTVb6GTY0ITigZtNRphgB8eq2LfP+9hByXLqOuCxqLU="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/85928b86-1f39-4cb5-9534-d458d27660df.idydxhou6f.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\85928b86-1f39-4cb5-9534-d458d27660df.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1925033"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RpTTV1/5rag7bPkwLPA35kL4AeXSEQC+IjpKZsU2V5w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 10:56:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "idydxhou6f"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/85928b86-1f39-4cb5-9534-d458d27660df.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RpTTV1/5rag7bPkwLPA35kL4AeXSEQC+IjpKZsU2V5w="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/85928b86-1f39-4cb5-9534-d458d27660df.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\85928b86-1f39-4cb5-9534-d458d27660df.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1925033"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RpTTV1/5rag7bPkwLPA35kL4AeXSEQC+IjpKZsU2V5w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 10:56:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RpTTV1/5rag7bPkwLPA35kL4AeXSEQC+IjpKZsU2V5w="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/88690692-a5bb-4ec9-bea7-a35350c11a68.08vwt6wt03.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\88690692-a5bb-4ec9-bea7-a35350c11a68.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "229469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 11:32:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "08vwt6wt03"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/88690692-a5bb-4ec9-bea7-a35350c11a68.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/88690692-a5bb-4ec9-bea7-a35350c11a68.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\88690692-a5bb-4ec9-bea7-a35350c11a68.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "229469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 11:32:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/8f262fc3-0810-4aba-a121-d975843d7d9d.08vwt6wt03.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\8f262fc3-0810-4aba-a121-d975843d7d9d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "229469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 11:34:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "08vwt6wt03"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/8f262fc3-0810-4aba-a121-d975843d7d9d.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/8f262fc3-0810-4aba-a121-d975843d7d9d.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\8f262fc3-0810-4aba-a121-d975843d7d9d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "229469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 11:34:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/a819f57c-80a9-4ff9-8881-553e55115696.08vwt6wt03.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\a819f57c-80a9-4ff9-8881-553e55115696.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "229469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 11:34:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "08vwt6wt03"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/a819f57c-80a9-4ff9-8881-553e55115696.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/a819f57c-80a9-4ff9-8881-553e55115696.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\a819f57c-80a9-4ff9-8881-553e55115696.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "229469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 11:34:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/b1f8c932-3d55-4a9c-8df5-e94f4c14c9bb.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\b1f8c932-3d55-4a9c-8df5-e94f4c14c9bb.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "413670"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0QYlDUZLcBdsX3/B4xHOAk/ceqhPlOyZBMOOrQAp2ck=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:10:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0QYlDUZLcBdsX3/B4xHOAk/ceqhPlOyZBMOOrQAp2ck="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/b1f8c932-3d55-4a9c-8df5-e94f4c14c9bb.tta4rvutz0.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\b1f8c932-3d55-4a9c-8df5-e94f4c14c9bb.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "413670"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0QYlDUZLcBdsX3/B4xHOAk/ceqhPlOyZBMOOrQAp2ck=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:10:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tta4rvutz0"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/b1f8c932-3d55-4a9c-8df5-e94f4c14c9bb.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0QYlDUZLcBdsX3/B4xHOAk/ceqhPlOyZBMOOrQAp2ck="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/b25cb273-a133-47ec-bec2-0e9ae9dfd0bf.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\b25cb273-a133-47ec-bec2-0e9ae9dfd0bf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 19:04:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/b25cb273-a133-47ec-bec2-0e9ae9dfd0bf.kewdt3r7e8.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\b25cb273-a133-47ec-bec2-0e9ae9dfd0bf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 19:04:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kewdt3r7e8"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/b25cb273-a133-47ec-bec2-0e9ae9dfd0bf.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/d9a6b8cc-de5e-42a9-a86d-e1600f799570.08vwt6wt03.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\d9a6b8cc-de5e-42a9-a86d-e1600f799570.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "229469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 11:33:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "08vwt6wt03"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/d9a6b8cc-de5e-42a9-a86d-e1600f799570.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/d9a6b8cc-de5e-42a9-a86d-e1600f799570.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\d9a6b8cc-de5e-42a9-a86d-e1600f799570.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "229469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 11:33:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u+A="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/e28b53e2-827c-45cd-b3ee-a35500a0c05c.idydxhou6f.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\e28b53e2-827c-45cd-b3ee-a35500a0c05c.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1925033"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RpTTV1/5rag7bPkwLPA35kL4AeXSEQC+IjpKZsU2V5w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 10:55:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "idydxhou6f"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/e28b53e2-827c-45cd-b3ee-a35500a0c05c.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RpTTV1/5rag7bPkwLPA35kL4AeXSEQC+IjpKZsU2V5w="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/e28b53e2-827c-45cd-b3ee-a35500a0c05c.jpg",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\e28b53e2-827c-45cd-b3ee-a35500a0c05c.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1925033"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RpTTV1/5rag7bPkwLPA35kL4AeXSEQC+IjpKZsU2V5w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 10:55:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RpTTV1/5rag7bPkwLPA35kL4AeXSEQC+IjpKZsU2V5w="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/eca17852-a101-4528-808d-512db9afc2f8.2onomtkf2d.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\eca17852-a101-4528-808d-512db9afc2f8.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "296883"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:17:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2onomtkf2d"
+        },
+        {
+          "Name": "label",
+          "Value": "medical_certificates/eca17852-a101-4528-808d-512db9afc2f8.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4="
+        }
+      ]
+    },
+    {
+      "Route": "medical_certificates/eca17852-a101-4528-808d-512db9afc2f8.png",
+      "AssetFile": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\wwwroot\\medical_certificates\\eca17852-a101-4528-808d-512db9afc2f8.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "296883"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 18:17:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4="
+        }
+      ]
+    }
+  ]
 }

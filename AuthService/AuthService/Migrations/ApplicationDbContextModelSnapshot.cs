@@ -40,6 +40,9 @@ namespace AuthService.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("FieldId")
                         .HasColumnType("int");
 
@@ -82,6 +85,10 @@ namespace AuthService.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CardNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -147,6 +154,9 @@ namespace AuthService.Migrations
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsEmailVerified")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsFitMember")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsPhoneVerified")

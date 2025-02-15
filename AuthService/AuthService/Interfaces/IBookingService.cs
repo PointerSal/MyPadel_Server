@@ -1,13 +1,13 @@
-﻿using AuthService.Bridge;
+﻿using System.Threading.Tasks;
+using AuthService.Bridge;
 using AuthService.Model;
-using System;
-using System.Threading.Tasks;
 
 namespace AuthService.Interfaces
 {
     public interface IBookingService
     {
-        Task<Status> GetAvailableSlotsAsync(AvailableSlotsRequest request);  // Fetch available slots for a given date and field
+        Task<Status> GetBookedSlotsAsync(AvailableSlotsRequest request);
+
         Task<Status> ReserveBookingAsync(ReserveBookingRequest request);     // Reserve a booking
         Task<Status> GetUserBookingsAsync(GetUserBookingsRequest request);   // Fetch a user's bookings by email
         Task<Status> CancelBookingAsync(CancelBookingRequest request);       // Cancel a booking

@@ -22,7 +22,7 @@ namespace AuthService.Controllers
         [HttpGet("available-slots")]
         public async Task<IActionResult> GetAvailableSlots([FromQuery] AvailableSlotsRequest request)
         {
-            var result = await _bookingService.GetAvailableSlotsAsync(request);
+            var result = await _bookingService.GetBookedSlotsAsync(request);
             return Ok(result);
         }
 

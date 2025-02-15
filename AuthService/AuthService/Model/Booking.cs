@@ -4,7 +4,8 @@
     {
         public int Id { get; set; }                  // Unique identifier for the booking
         public string SportType { get; set; }        // Type of sport (Padel, Tennis, etc.)
-        public DateTime Date { get; set; }           // Date of the booking
+        public DateTime Date { get; set; }           // Date of the booking (start time)
+        public DateTime EndTime { get; set; }        // Calculated end time based on duration
         public string TimeSlot { get; set; }         // Time slot for the booking
         public int FieldId { get; set; }             // The field selected for the booking (foreign key to Field table)
         public string PaymentMethod { get; set; }    // Payment method (Cash, PayPal, Credit Card)
@@ -56,13 +57,15 @@
     }
     public class ReserveBookingRequest
     {
-        public string SportType { get; set; }  // Type of sport (Padel, Tennis, etc.)
-        public DateTime Date { get; set; }     // Booking date
-        public string TimeSlot { get; set; }   // Selected time slot
-        public int FieldId { get; set; }       // Selected field ID
-        public string PaymentMethod { get; set; } // Payment method (e.g., Cash, PayPal)
-        public decimal Amount { get; set; }    // Booking amount
-        public string Email { get; set; }      // Email of the user making the booking
+        public string SportType { get; set; }        // Type of sport
+        public DateTime Date { get; set; }           // Booking date (start time)
+        public int Duration { get; set; }            // Duration in minutes (e.g., 90 minutes)
+        public string TimeSlot { get; set; }         // Selected time slot
+        public int FieldId { get; set; }             // Selected field ID
+        public string PaymentMethod { get; set; }    // Payment method (e.g., Cash, PayPal)
+        public decimal Amount { get; set; }          // Booking amount
+        public string Email { get; set; }            // Email of the user making the booking
     }
+
 
 }

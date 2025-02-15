@@ -522,6 +522,9 @@
                   },
                   "PaymentMethod": {
                     "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
                   }
                 }
               },
@@ -561,6 +564,9 @@
                 },
                 "PaymentMethod": {
                   "style": "form"
+                },
+                "Email": {
+                  "style": "form"
                 }
               }
             }
@@ -573,8 +579,8 @@
         }
       }
     },
-    "/api/membershipuser/register/fit": {
-      "post": {
+    "/api/membershipuser/update/fit": {
+      "patch": {
         "tags": [
           "MembershipUser"
         ],
@@ -598,6 +604,9 @@
                   "MedicalCertificate": {
                     "type": "string",
                     "format": "binary"
+                  },
+                  "Email": {
+                    "type": "string"
                   }
                 }
               },
@@ -613,11 +622,58 @@
                 },
                 "MedicalCertificate": {
                   "style": "form"
+                },
+                "Email": {
+                  "style": "form"
                 }
               }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/membershipuser/carddetails/{email}": {
+      "get": {
+        "tags": [
+          "MembershipUser"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/membershipuser/expirydate/{email}": {
+      "get": {
+        "tags": [
+          "MembershipUser"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -714,6 +770,10 @@
           "email": {
             "type": "string",
             "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -796,6 +856,10 @@
           "date": {
             "type": "string",
             "format": "date-time"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
           },
           "timeSlot": {
             "type": "string",
