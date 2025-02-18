@@ -1,5 +1,17 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/021f544d-e47a-47cf-b766-b3c8398f6bc3.2onomtkf2d.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\021f544d-e47a-47cf-b766-b3c8398f6bc3.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2onomtkf2d"},{"Name":"integrity","Value":"sha256-0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4="},{"Name":"label","Value":"_content/AuthService/medical_certificates/021f544d-e47a-47cf-b766-b3c8398f6bc3.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"296883"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00220vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:24:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/021f544d-e47a-47cf-b766-b3c8398f6bc3.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\021f544d-e47a-47cf-b766-b3c8398f6bc3.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"296883"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00220vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:24:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/04e7482e-98fd-461d-a6f6-f05af5c93de9.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\04e7482e-98fd-461d-a6f6-f05af5c93de9.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -11,6 +23,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yvsad99x1r"},{"Name":"integrity","Value":"sha256-Qo4A6hR\u002BneHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z\u002BU="},{"Name":"label","Value":"_content/AuthService/medical_certificates/04e7482e-98fd-461d-a6f6-f05af5c93de9.png"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"121828"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022Qo4A6hR\u002BneHjM1wHhlE2g35A6i9WLhq9SoOEWJl5z\u002BU=\u0022"},{"Name":"Last-Modified","Value":"Sat, 15 Feb 2025 18:18:52 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/05db268a-2bed-454f-aa2b-b9cfe06906a3.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\05db268a-2bed-454f-aa2b-b9cfe06906a3.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-6tqAat7/lnKqxNXDOis0lywaMkKmP2pODA7xmEhe48o="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"123413"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00226tqAat7/lnKqxNXDOis0lywaMkKmP2pODA7xmEhe48o=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:36:32 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/05db268a-2bed-454f-aa2b-b9cfe06906a3.uukif3t324.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\05db268a-2bed-454f-aa2b-b9cfe06906a3.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"uukif3t324"},{"Name":"integrity","Value":"sha256-6tqAat7/lnKqxNXDOis0lywaMkKmP2pODA7xmEhe48o="},{"Name":"label","Value":"_content/AuthService/medical_certificates/05db268a-2bed-454f-aa2b-b9cfe06906a3.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"123413"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00226tqAat7/lnKqxNXDOis0lywaMkKmP2pODA7xmEhe48o=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:36:32 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/075b5c75-70df-4815-aaa9-f18cffc7d77a.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\075b5c75-70df-4815-aaa9-f18cffc7d77a.png'))</AssetFile>
@@ -35,6 +59,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"107501"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q=\u0022"},{"Name":"Last-Modified","Value":"Sat, 15 Feb 2025 17:58:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/176fc1b3-5e62-4c5e-9fdd-31ba513ba742.2onomtkf2d.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\176fc1b3-5e62-4c5e-9fdd-31ba513ba742.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2onomtkf2d"},{"Name":"integrity","Value":"sha256-0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4="},{"Name":"label","Value":"_content/AuthService/medical_certificates/176fc1b3-5e62-4c5e-9fdd-31ba513ba742.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"296883"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00220vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:24:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/176fc1b3-5e62-4c5e-9fdd-31ba513ba742.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\176fc1b3-5e62-4c5e-9fdd-31ba513ba742.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"296883"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00220vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:24:12 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/1cbfe5c0-fbf8-4e48-b18b-72d2cef6619e.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\1cbfe5c0-fbf8-4e48-b18b-72d2cef6619e.png'))</AssetFile>
@@ -144,6 +180,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-RpTTV1/5rag7bPkwLPA35kL4AeXSEQC\u002BIjpKZsU2V5w="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"1925033"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022RpTTV1/5rag7bPkwLPA35kL4AeXSEQC\u002BIjpKZsU2V5w=\u0022"},{"Name":"Last-Modified","Value":"Sat, 15 Feb 2025 10:56:26 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/87050ead-bc91-41f7-bf5b-c04580fc22e5.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\87050ead-bc91-41f7-bf5b-c04580fc22e5.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-lS9c1SN/9/d8MpZ\u002B4R3Vu20DuWtKqOTn8SpAhYaMnOQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"103545"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022lS9c1SN/9/d8MpZ\u002B4R3Vu20DuWtKqOTn8SpAhYaMnOQ=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:32:17 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/87050ead-bc91-41f7-bf5b-c04580fc22e5.xta3eqazxd.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\87050ead-bc91-41f7-bf5b-c04580fc22e5.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xta3eqazxd"},{"Name":"integrity","Value":"sha256-lS9c1SN/9/d8MpZ\u002B4R3Vu20DuWtKqOTn8SpAhYaMnOQ="},{"Name":"label","Value":"_content/AuthService/medical_certificates/87050ead-bc91-41f7-bf5b-c04580fc22e5.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"103545"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022lS9c1SN/9/d8MpZ\u002B4R3Vu20DuWtKqOTn8SpAhYaMnOQ=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:32:17 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/88690692-a5bb-4ec9-bea7-a35350c11a68.08vwt6wt03.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\88690692-a5bb-4ec9-bea7-a35350c11a68.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -167,6 +215,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u\u002BA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"229469"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022ELupThwZWLR4p2D1sjmNQqcxeb8dlGfL0dYiBw33u\u002BA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 15 Feb 2025 11:34:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/91036ad4-23ab-45d7-8d3c-38a19bf92e8f.2onomtkf2d.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\91036ad4-23ab-45d7-8d3c-38a19bf92e8f.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2onomtkf2d"},{"Name":"integrity","Value":"sha256-0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4="},{"Name":"label","Value":"_content/AuthService/medical_certificates/91036ad4-23ab-45d7-8d3c-38a19bf92e8f.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"296883"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00220vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:38:55 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/91036ad4-23ab-45d7-8d3c-38a19bf92e8f.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\91036ad4-23ab-45d7-8d3c-38a19bf92e8f.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"296883"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00220vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:38:55 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/a819f57c-80a9-4ff9-8881-553e55115696.08vwt6wt03.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\a819f57c-80a9-4ff9-8881-553e55115696.png'))</AssetFile>
@@ -204,6 +264,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"kewdt3r7e8"},{"Name":"integrity","Value":"sha256-TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0="},{"Name":"label","Value":"_content/AuthService/medical_certificates/b25cb273-a133-47ec-bec2-0e9ae9dfd0bf.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"24203"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022TH55G4sh3MRgVP6ievrxyy00LxrwPozDPhIVvBpS3y0=\u0022"},{"Name":"Last-Modified","Value":"Sat, 15 Feb 2025 19:04:40 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/c1cfc879-2e0e-4851-a48a-423cf7c39477.2onomtkf2d.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\c1cfc879-2e0e-4851-a48a-423cf7c39477.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2onomtkf2d"},{"Name":"integrity","Value":"sha256-0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4="},{"Name":"label","Value":"_content/AuthService/medical_certificates/c1cfc879-2e0e-4851-a48a-423cf7c39477.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"296883"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00220vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:23:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/c1cfc879-2e0e-4851-a48a-423cf7c39477.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\c1cfc879-2e0e-4851-a48a-423cf7c39477.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"296883"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00220vfigbqnivo/URKDywJ33GWq/dFePadbiZNmWMWH1X4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 19:23:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/d9a6b8cc-de5e-42a9-a86d-e1600f799570.08vwt6wt03.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\d9a6b8cc-de5e-42a9-a86d-e1600f799570.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -227,6 +299,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-RpTTV1/5rag7bPkwLPA35kL4AeXSEQC\u002BIjpKZsU2V5w="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"1925033"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022RpTTV1/5rag7bPkwLPA35kL4AeXSEQC\u002BIjpKZsU2V5w=\u0022"},{"Name":"Last-Modified","Value":"Sat, 15 Feb 2025 10:55:57 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/eac41001-a78b-4e30-878a-4c3f37f7b779.h4a7dx9dhf.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\eac41001-a78b-4e30-878a-4c3f37f7b779.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"h4a7dx9dhf"},{"Name":"integrity","Value":"sha256-/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q="},{"Name":"label","Value":"_content/AuthService/medical_certificates/eac41001-a78b-4e30-878a-4c3f37f7b779.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"107501"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q=\u0022"},{"Name":"Last-Modified","Value":"Tue, 18 Feb 2025 18:14:58 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/eac41001-a78b-4e30-878a-4c3f37f7b779.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\eac41001-a78b-4e30-878a-4c3f37f7b779.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"107501"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022/68wEYt3qvHRl8sZrPfA07zqJiEC5OhRIu56ebfkN8Q=\u0022"},{"Name":"Last-Modified","Value":"Tue, 18 Feb 2025 18:14:58 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AuthService/medical_certificates/eca17852-a101-4528-808d-512db9afc2f8.2onomtkf2d.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\medical_certificates\eca17852-a101-4528-808d-512db9afc2f8.png'))</AssetFile>

@@ -24,7 +24,7 @@
         public string CardNumber { get; set; }
         public DateTime ExpiryDate { get; set; }
         public DateTime MedicalCertificateDate { get; set; }
-        public IFormFile MedicalCertificate { get; set; } 
+        public string MedicalCertificate { get; set; } 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Gender { get; set; }
@@ -42,7 +42,7 @@
         public string MembershipNumber { get; set; }
         public DateTime ExpiryDate { get; set; }
         public DateTime MedicalCertificateDate { get; set; }
-        public IFormFile MedicalCertificate { get; set; }
+        public string MedicalCertificate { get; set; }
         public string Email { get; set; }
 
     }

@@ -294,6 +294,22 @@
   },
   {
     "ContainingType": "AuthService.Controllers.MembershipUserController",
+    "Method": "AlreadyFitMember",
+    "RelativePath": "api/membershipuser/fit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AuthService.Model.FitMembershipRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.MembershipUserController",
     "Method": "RegisterMembershipUser",
     "RelativePath": "api/membershipuser/register",
     "HttpMethod": "POST",
@@ -301,105 +317,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "CardNumber",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ExpiryDate",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "MedicalCertificateDate",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "MedicalCertificate",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Gender",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "BirthDate",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "PostalCode",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Municipality",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "PaymentMethod",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AuthService.Controllers.MembershipUserController",
-    "Method": "UpdateFitMember",
-    "RelativePath": "api/membershipuser/update/fit",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "MembershipNumber",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ExpiryDate",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "MedicalCertificateDate",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "MedicalCertificate",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "AuthService.Model.MembershipUserRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

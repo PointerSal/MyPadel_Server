@@ -479,95 +479,19 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "CardNumber": {
-                    "type": "string"
-                  },
-                  "ExpiryDate": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "MedicalCertificateDate": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "MedicalCertificate": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "FirstName": {
-                    "type": "string"
-                  },
-                  "LastName": {
-                    "type": "string"
-                  },
-                  "Gender": {
-                    "type": "string"
-                  },
-                  "BirthDate": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "Address": {
-                    "type": "string"
-                  },
-                  "PostalCode": {
-                    "type": "string"
-                  },
-                  "Municipality": {
-                    "type": "string"
-                  },
-                  "PaymentMethod": {
-                    "type": "string"
-                  },
-                  "Email": {
-                    "type": "string"
-                  }
-                }
-              },
-              "encoding": {
-                "CardNumber": {
-                  "style": "form"
-                },
-                "ExpiryDate": {
-                  "style": "form"
-                },
-                "MedicalCertificateDate": {
-                  "style": "form"
-                },
-                "MedicalCertificate": {
-                  "style": "form"
-                },
-                "FirstName": {
-                  "style": "form"
-                },
-                "LastName": {
-                  "style": "form"
-                },
-                "Gender": {
-                  "style": "form"
-                },
-                "BirthDate": {
-                  "style": "form"
-                },
-                "Address": {
-                  "style": "form"
-                },
-                "PostalCode": {
-                  "style": "form"
-                },
-                "Municipality": {
-                  "style": "form"
-                },
-                "PaymentMethod": {
-                  "style": "form"
-                },
-                "Email": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/MembershipUserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MembershipUserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MembershipUserRequest"
               }
             }
           }
@@ -579,53 +503,26 @@
         }
       }
     },
-    "/api/membershipuser/update/fit": {
-      "patch": {
+    "/api/membershipuser/fit": {
+      "post": {
         "tags": [
           "MembershipUser"
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "MembershipNumber": {
-                    "type": "string"
-                  },
-                  "ExpiryDate": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "MedicalCertificateDate": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "MedicalCertificate": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "Email": {
-                    "type": "string"
-                  }
-                }
-              },
-              "encoding": {
-                "MembershipNumber": {
-                  "style": "form"
-                },
-                "ExpiryDate": {
-                  "style": "form"
-                },
-                "MedicalCertificateDate": {
-                  "style": "form"
-                },
-                "MedicalCertificate": {
-                  "style": "form"
-                },
-                "Email": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/FitMembershipRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FitMembershipRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FitMembershipRequest"
               }
             }
           }
@@ -778,6 +675,32 @@
         },
         "additionalProperties": false
       },
+      "FitMembershipRequest": {
+        "type": "object",
+        "properties": {
+          "membershipNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "medicalCertificateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "medicalCertificate": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "LoginRequest": {
         "type": "object",
         "properties": {
@@ -786,6 +709,64 @@
             "nullable": true
           },
           "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MembershipUserRequest": {
+        "type": "object",
+        "properties": {
+          "cardNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "medicalCertificateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "medicalCertificate": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "municipality": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
             "type": "string",
             "nullable": true
           }

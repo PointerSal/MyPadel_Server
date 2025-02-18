@@ -19,110 +19,100 @@ namespace AuthService.Services
 
         public async Task<Status> GetBookedSlotsAsync(AvailableSlotsRequest request)
         {
-            // Get all bookings for the current day and field where the slot is booked (FlagBooked = true)
+            // Get all bookings for the requested field where the slot is booked (FlagBooked = true)
             var bookedSlots = await _context.Bookings
-                .Where(b => b.Date.Date == request.Date.Date && b.FieldId == request.FieldId && b.FlagBooked == true)  // Only booked slots
-                .Select(b => b.TimeSlot)  // Select the time slot
-                .ToListAsync();  // Execute the query asynchronously
+                .Where(b => b.FieldId == request.FieldId && b.FlagBooked && b.Date.Date >= request.Date.Date) // Ensure we're checking from today's date onward
+                .OrderBy(b => b.Date) // Sort by booking date/time
+                .Select(b => new
+                {
+                    StartTime = b.Date.ToString("yyyy-MM-dd HH:mm:ss"),  // Start time in the format of 'yyyy-MM-dd HH:mm:ss'
+                    EndTime = b.EndTime.ToString("yyyy-MM-dd HH:mm:ss"), // End time in the same format
+                    Date = b.Date.Date.ToString("yyyy-MM-dd") // Just to group by date (if needed)
+                })
+                .ToListAsync();
+
+            // Group the bookings by date
+            var groupedSlots = bookedSlots
+                .GroupBy(b => b.Date)
+                .Select(g => new
+                {
+                    Date = g.Key,
+                    Slots = g.Select(slot => new
+                    {
+                        slot.StartTime,
+                        slot.EndTime
+                    }).ToList()
+                })
+                .ToList();
 
             return new Status
             {
                 Code = "0000",
                 Message = "Booked slots fetched successfully.",
-                Data = bookedSlots
+                Data = groupedSlots
             };
         }
 
 
-        // Reserve a booking
         public async Task<Status> ReserveBookingAsync(ReserveBookingRequest request)
         {
-            // Step 1: Check if the user exists by their email in the Users table.
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
             if (user == null)
-            {
-                return new Status
-                {
-                    Code = "1001",
-                    Message = "User does not exist.",
-                    Data = null
-                };
-            }
+                return new Status { Code = "1001", Message = "User does not exist." };
 
-            // Step 2: Check if the user has a valid FIT membership using the email.
             var fitMember = await _context.MembershipUsers.FirstOrDefaultAsync(m => m.Email == request.Email);
             if (fitMember == null)
-            {
-                return new Status
-                {
-                    Code = "1002",
-                    Message = "User does not have a valid FIT membership.",
-                    Data = null
-                };
-            }
+                return new Status { Code = "1002", Message = "User does not have a valid FIT membership." };
 
-            // Step 3: Check if the slot is already booked.
-            var existingBooking = await _context.Bookings
-                .Where(b => b.Date == request.Date && b.TimeSlot == request.TimeSlot && b.FieldId == request.FieldId && !b.FlagCanceled)
+             var startTime = request.Date;
+            var endTime = startTime.AddMinutes(request.Duration);
+
+            var conflictingBooking = await _context.Bookings
+                .Where(b => b.FieldId == request.FieldId && !b.FlagCanceled
+                            && ((b.Date < endTime && b.EndTime > startTime) || (b.Date < startTime && b.EndTime > startTime)))
                 .FirstOrDefaultAsync();
 
-            if (existingBooking != null)
-            {
-                return new Status
-                {
-                    Code = "1003",
-                    Message = "The selected time slot is already booked.",
-                    Data = null
-                };
-            }
+            if (conflictingBooking != null)
+                return new Status { Code = "1003", Message = "The selected time slot is already booked." };
 
-            // Step 4: Calculate the end time based on the duration provided in the request.
-            var endTime = request.Date.AddMinutes(request.Duration);
+             bool isArchived = startTime < DateTime.Now;
 
-            // Step 5: Create the booking.
-            var booking = new Booking
+             var booking = new Booking
             {
                 SportType = request.SportType,
-                Date = request.Date,
+                Date = startTime,
                 TimeSlot = request.TimeSlot,
                 FieldId = request.FieldId,
-                PaymentMethod = request.PaymentMethod, // Store the payment method type (Cash, PayPal)
-                Amount = request.Amount,               // Store the booking amount
+                PaymentMethod = request.PaymentMethod,
+                Amount = request.Amount,
                 FlagBooked = true,
                 FlagCanceled = false,
-                Email = request.Email,                 // Store the user's email with the booking
-                EndTime = endTime                      // Store the calculated end time
+                FlagArchived = isArchived,
+                Email = request.Email,
+                EndTime = endTime
             };
 
-            // Step 6: Save the booking to the database.
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
 
-            return new Status
-            {
-                Code = "0000",
-                Message = "Booking successful.",
-                Data = booking
-            };
+            return new Status { Code = "0000", Message = "Booking successful.", Data = booking };
         }
 
-        // Fetch user's bookings
-        public async Task<Status> GetUserBookingsAsync(GetUserBookingsRequest request)
+         public async Task<Status> GetUserBookingsAsync(GetUserBookingsRequest request)
         {
-            var userBookings = await _context.Bookings
-                .Where(b => b.Email == request.Email && !b.FlagCanceled)
+            var activeBookings = await _context.Bookings
+                .Where(b => b.Email == request.Email && !b.FlagCanceled && b.Date >= DateTime.Now)
                 .ToListAsync();
 
             return new Status
             {
                 Code = "0000",
-                Message = "User bookings fetched successfully.",
-                Data = userBookings
+                Message = "User active bookings fetched successfully.",
+                Data = activeBookings
             };
         }
 
-        // Cancel a booking
-        public async Task<Status> CancelBookingAsync(CancelBookingRequest request)
+         public async Task<Status> CancelBookingAsync(CancelBookingRequest request)
         {
             var booking = await _context.Bookings.FirstOrDefaultAsync(b => b.Id == request.BookingId && b.Email == request.Email);
 
@@ -147,8 +137,7 @@ namespace AuthService.Services
             };
         }
 
-        // Reschedule a booking
-        public async Task<Status> RescheduleBookingAsync(RescheduleBookingRequest request)
+         public async Task<Status> RescheduleBookingAsync(RescheduleBookingRequest request)
         {
             var booking = await _context.Bookings.FirstOrDefaultAsync(b => b.Id == request.BookingId && b.Email == request.Email);
 
@@ -174,12 +163,26 @@ namespace AuthService.Services
             };
         }
 
-        // Fetch booking history
-        public async Task<Status> GetBookingHistoryAsync(BookingHistoryRequest request)
+         public async Task<Status> GetBookingHistoryAsync(BookingHistoryRequest request)
         {
-            var bookingHistory = await _context.Bookings
-                .Where(b => b.Email == request.Email)
+            var activeBookings = await _context.Bookings
+                .Where(b => b.Email == request.Email && !b.FlagCanceled && b.Date >= DateTime.Now)
                 .ToListAsync();
+
+            var archivedBookings = await _context.Bookings
+                .Where(b => b.Email == request.Email && !b.FlagCanceled && b.Date < DateTime.Now && b.FlagArchived)
+                .ToListAsync();
+
+            var canceledBookings = await _context.Bookings
+                .Where(b => b.Email == request.Email && b.FlagCanceled)
+                .ToListAsync();
+
+            var bookingHistory = new
+            {
+                Active = activeBookings,
+                Archived = archivedBookings,
+                Canceled = canceledBookings
+            };
 
             return new Status
             {
@@ -189,8 +192,7 @@ namespace AuthService.Services
             };
         }
 
-        // Fetch details of a specific booking
-        public async Task<Status> GetBookingDetailsAsync(BookingDetailsRequest request)
+         public async Task<Status> GetBookingDetailsAsync(BookingDetailsRequest request)
         {
             var booking = await _context.Bookings.FindAsync(request.BookingId);
 

@@ -12,6 +12,7 @@
         public decimal Amount { get; set; }          // The amount for the booking
         public bool FlagBooked { get; set; }         // Flag to indicate if the booking is confirmed
         public bool FlagCanceled { get; set; }       // Flag to indicate if the booking was canceled
+        public bool FlagArchived { get; set; }
         public string Email { get; set; }            // Email of the user making the booking (used for validation)
     }
 

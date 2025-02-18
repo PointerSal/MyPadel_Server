@@ -147,15 +147,6 @@ E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\refint\AuthSe
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.pdb
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\AuthService.genruntimeconfig.cache
 E:\MyPedalApp\AuthService\AuthService\AuthService\obj\Debug\net8.0\ref\AuthService.dll
-E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.CodeDom.dll
-E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\appsettings.Development.json
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\appsettings.json
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\AuthService.staticwebassets.runtime.json
@@ -178,6 +169,7 @@ E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Microsoft.C
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
@@ -200,6 +192,7 @@ E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Newtonsoft.
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.CodeDom.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.Composition.Convention.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.Composition.Hosting.dll
@@ -207,6 +200,7 @@ E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.Comp
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.Composition.TypedParts.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.Drawing.Common.dll
+E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.Memory.Data.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.Runtime.Caching.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
@@ -227,10 +221,15 @@ E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\tr\Microsof
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
@@ -265,6 +264,7 @@ E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\runtimes\wi
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 E:\paddleApp\MyPadel_Server\AuthService\AuthService\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
