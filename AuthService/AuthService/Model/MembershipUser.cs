@@ -6,7 +6,7 @@
         public string CardNumber { get; set; }
         public DateTime ExpiryDate { get; set; }
         public DateTime MedicalCertificateDate { get; set; }
-        public string MedicalCertificatePath { get; set; } // Path in the database
+        public string MedicalCertificatePath { get; set; } 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Gender { get; set; }
@@ -15,7 +15,7 @@
         public string PostalCode { get; set; }
         public string Municipality { get; set; }
         public string PaymentMethod { get; set; }
-        public string Email { get; set; } // New email field to align with Users table
+        public string Email { get; set; } 
 
     }
 

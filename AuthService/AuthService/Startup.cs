@@ -82,6 +82,8 @@ namespace AuthService
             services.AddHttpClient<PhoneOTPService>();
             services.AddScoped<IMembershipUserService, MembershipUserService>();
             services.AddScoped<IBookingService, BookingService>();
+            services.AddScoped<IStripeService, StripeService>();
+
 
             // Add Controllers for API endpoints
             services.AddControllers();

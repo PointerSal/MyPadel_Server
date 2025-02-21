@@ -2,18 +2,20 @@
 {
     public class Booking
     {
-        public int Id { get; set; }                  // Unique identifier for the booking
-        public string SportType { get; set; }        // Type of sport (Padel, Tennis, etc.)
-        public DateTime Date { get; set; }           // Date of the booking (start time)
-        public DateTime EndTime { get; set; }        // Calculated end time based on duration
-        public string TimeSlot { get; set; }         // Time slot for the booking
-        public int FieldId { get; set; }             // The field selected for the booking (foreign key to Field table)
+        public int Id { get; set; }                     
+        public string SportType { get; set; }        
+        public DateTime Date { get; set; }            
+        public DateTime EndTime { get; set; }         
+        public string TimeSlot { get; set; }         
+        public int FieldId { get; set; }             
         public string PaymentMethod { get; set; }    // Payment method (Cash, PayPal, Credit Card)
         public decimal Amount { get; set; }          // The amount for the booking
         public bool FlagBooked { get; set; }         // Flag to indicate if the booking is confirmed
         public bool FlagCanceled { get; set; }       // Flag to indicate if the booking was canceled
         public bool FlagArchived { get; set; }
-        public string Email { get; set; }            // Email of the user making the booking (used for validation)
+        public string Email { get; set; }            
+        public string PaymentStatus { get; set; }
+        public string PaymentId { get; set; }
     }
 
     public class BookingRequest
