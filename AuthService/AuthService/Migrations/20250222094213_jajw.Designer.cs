@@ -4,6 +4,7 @@ using AuthService.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250222094213_jajw")]
+    partial class jajw
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,22 +76,6 @@ namespace AuthService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Bookings");
-                });
-
-            modelBuilder.Entity("AuthService.Model.FitMembershipTbl", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<decimal>("FitMembershipFee")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FitMembershipTbls");
                 });
 
             modelBuilder.Entity("AuthService.Model.MembershipUser", b =>
@@ -163,6 +150,9 @@ namespace AuthService.Migrations
 
                     b.Property<int>("Duration")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("FitMembershipFee")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");

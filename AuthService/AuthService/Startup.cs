@@ -83,7 +83,7 @@ namespace AuthService
             services.AddScoped<IMembershipUserService, MembershipUserService>();
             services.AddScoped<IBookingService, BookingService>();
             services.AddScoped<IStripeService, StripeService>();
-
+            services.AddScoped<IPriceService, PriceService>();
 
             // Add Controllers for API endpoints
             services.AddControllers();

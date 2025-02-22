@@ -89,8 +89,10 @@ namespace AuthService.Services
                 FlagCanceled = false,
                 FlagArchived = isArchived,
                 Email = request.Email,
-                EndTime = endTime
-            };
+                EndTime = endTime,
+                PaymentStatus = null,  
+                PaymentId = ""
+             };
 
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();

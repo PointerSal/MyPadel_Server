@@ -1,4 +1,5 @@
-﻿using AuthService.Interfaces;
+﻿using AuthService.Bridge;
+using AuthService.Interfaces;
 using AuthService.Model;
 using AuthService.Model.Stripe;
 using Microsoft.EntityFrameworkCore;
@@ -30,7 +31,7 @@ namespace AuthService.Services
         }
 
         // Step 1: Create Checkout Session
-        public async Task<string> CreateCheckoutSession(PaymentRequest request)
+        public async Task<Status> CreateCheckoutSession(PaymentRequest request)
         {
             var options = new SessionCreateOptions
             {
@@ -75,7 +76,12 @@ namespace AuthService.Services
                 await _context.SaveChangesAsync();
             }
 
-            return session.Url; // Return Stripe Payment Page URL
+            return new Status
+            {
+                Code = "0000",
+                Message = "Checkout session created successfully.",
+                Data = new { sessionUrl = session.Url }
+            };
         }
 
         // Step 3: Complete Payment and Update Booking Status

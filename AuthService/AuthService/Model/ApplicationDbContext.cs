@@ -9,6 +9,8 @@ namespace AuthService.Model
 
         public DbSet<User> Users { get; set; }
         public DbSet<MembershipUser> MembershipUsers { get; set; }
-        public DbSet<Booking> Bookings { get; set; }  // Added DbSet for Booking
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<PriceTbl> PriceTbls { get; set; }
+        public DbSet<FitMembershipTbl> FitMembershipTbls { get; set; }
     }
 }

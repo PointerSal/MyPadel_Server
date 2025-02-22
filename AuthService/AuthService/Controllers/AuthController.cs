@@ -50,6 +50,7 @@ namespace AuthService.Controllers
         /// Verifies email with OTP
         /// </summary>
         [HttpPost("verify-email")]
+        
         public async Task<IActionResult> VerifyEmail([FromBody] VerifyEmailRequest request)
         {
             var result = await _authService.VerifyEmail(request);

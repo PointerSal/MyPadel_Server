@@ -325,7 +325,59 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AuthService.Controllers.StripeController",
+    "ContainingType": "AuthService.Controllers.PriceController",
+    "Method": "GetPrices",
+    "RelativePath": "api/price",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.PriceController",
+    "Method": "AddPrice",
+    "RelativePath": "api/price",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "price",
+        "Type": "AuthService.Model.PriceTbl",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.PriceController",
+    "Method": "GetFitMembershipFee",
+    "RelativePath": "api/price/fitmembership",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.PriceController",
+    "Method": "AddFitMembershipFee",
+    "RelativePath": "api/price/fitmembership",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fitMembership",
+        "Type": "AuthService.Model.FitMembershipTbl",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StripeController",
     "Method": "PaymentCancel",
     "RelativePath": "api/stripe/cancel",
     "HttpMethod": "GET",
@@ -335,7 +387,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AuthService.Controllers.StripeController",
+    "ContainingType": "StripeController",
     "Method": "CheckoutSession",
     "RelativePath": "api/stripe/checkout-session",
     "HttpMethod": "POST",
@@ -351,7 +403,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AuthService.Controllers.StripeController",
+    "ContainingType": "StripeController",
     "Method": "PaymentSuccess",
     "RelativePath": "api/stripe/success",
     "HttpMethod": "GET",
@@ -367,7 +419,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AuthService.Controllers.StripeController",
+    "ContainingType": "StripeController",
     "Method": "StripeWebhook",
     "RelativePath": "api/stripe/webhook",
     "HttpMethod": "POST",

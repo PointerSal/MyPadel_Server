@@ -6,16 +6,16 @@
         public string SportType { get; set; }        
         public DateTime Date { get; set; }            
         public DateTime EndTime { get; set; }         
-        public string TimeSlot { get; set; }         
+        public string? TimeSlot { get; set; }         
         public int FieldId { get; set; }             
-        public string PaymentMethod { get; set; }    // Payment method (Cash, PayPal, Credit Card)
-        public decimal Amount { get; set; }          // The amount for the booking
-        public bool FlagBooked { get; set; }         // Flag to indicate if the booking is confirmed
-        public bool FlagCanceled { get; set; }       // Flag to indicate if the booking was canceled
+        public string? PaymentMethod { get; set; }    
+        public decimal Amount { get; set; }          
+        public bool FlagBooked { get; set; }         
+        public bool FlagCanceled { get; set; }       
         public bool FlagArchived { get; set; }
-        public string Email { get; set; }            
-        public string PaymentStatus { get; set; }
-        public string PaymentId { get; set; }
+        public string? Email { get; set; }            
+        public string? PaymentStatus { get; set; }
+        public string? PaymentId { get; set; }
     }
 
     public class BookingRequest
