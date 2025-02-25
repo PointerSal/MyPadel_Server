@@ -261,6 +261,42 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AuthService.Controllers.Desktopcontroller.DesktopCourtSportsController",
+    "Method": "AddCourtSports",
+    "RelativePath": "api/courtsports/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AuthService.Model.desktopmodel.CourtSportsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.Desktopcontroller.DesktopCourtSportsController",
+    "Method": "GetAllCourtSports",
+    "RelativePath": "api/courtsports/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.Desktopcontroller.DesktopBookingController",
+    "Method": "GetAllBookings",
+    "RelativePath": "api/desktop-booking/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthService.Controllers.MembershipUserController",
     "Method": "GetCardDetailsByEmail",
     "RelativePath": "api/membershipuser/carddetails/{email}",

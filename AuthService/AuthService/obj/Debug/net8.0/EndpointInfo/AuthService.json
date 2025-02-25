@@ -472,6 +472,61 @@
         }
       }
     },
+    "/api/desktop-booking/all": {
+      "get": {
+        "tags": [
+          "DesktopBooking"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/courtsports/add": {
+      "post": {
+        "tags": [
+          "DesktopCourtSports"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourtSportsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourtSportsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourtSportsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/courtsports/all": {
+      "get": {
+        "tags": [
+          "DesktopCourtSports"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/membershipuser/register": {
       "post": {
         "tags": [
@@ -815,6 +870,20 @@
           "email": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CourtSportsRequest": {
+        "type": "object",
+        "properties": {
+          "sportsName": {
+            "type": "string",
+            "nullable": true
+          },
+          "courtFields": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
