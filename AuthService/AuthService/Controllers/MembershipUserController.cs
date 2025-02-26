@@ -30,27 +30,12 @@ namespace AuthService.Controllers
 
 
         [HttpGet("carddetails/{email}")]
-        public async Task<IActionResult> GetCardDetailsByEmail(string email)
-        {
-            var result = await _membershipUserService.GetCardDetailsByEmail(email);
-            if (result.Code == "0000")
-            {
-                return Ok(result);
-            }
-            return NotFound(result);
-        }
-
+        public async Task<IActionResult> GetCardDetailsByEmail(string email) =>
+      Ok(await _membershipUserService.GetCardDetailsByEmail(email));
 
         [HttpGet("expirydate/{email}")]
-        public async Task<IActionResult> GetExpiryDateByEmail(string email)
-        {
-            var result = await _membershipUserService.GetExpiryDateByEmail(email);
-            if (result.Code == "0000")
-            {
-                return Ok(result);
-            }
-            return NotFound(result);
-        }
+        public async Task<IActionResult> GetExpiryDateByEmail(string email) =>
+            Ok(await _membershipUserService.GetExpiryDateByEmail(email));
 
     }
 }

@@ -122,85 +122,24 @@ namespace AuthService.Services
             return "/medical_certificates/" + fileName;
         }
 
-        public async Task<Status> GetExpiryDateByEmail(string email)
-        {
-            try
-            {
-                // Find the user by email
-                var user = await _context.MembershipUsers
-                                          .Where(u => u.Email == email)
-                                          .FirstOrDefaultAsync();
+        public async Task<Status> GetCardDetailsByEmail(string email) =>
+             (await _context.MembershipUsers
+                     .Where(m => m.Email == email)
+                     .Select(m => new { m.CardNumber, m.ExpiryDate })
+                     .FirstOrDefaultAsync()) is { CardNumber: var cardNumber, ExpiryDate: var expiryDate }
+         ? new Status { Code = "0000", Message = "Card details fetched successfully", Data = new { cardNumber, expiryDate } }
+         : new Status { Code = "1001", Message = "Membership not found", Data = null };
 
-                if (user != null)
-                {
-                    return new Status
-                    {
-                        Code = "0000",
-                        Message = "Expiry date fetched successfully",
-                        Data = new
-                        {
-                            ExpiryDate = user.ExpiryDate
-                        }
-                    };
-                }
+        public async Task<Status> GetExpiryDateByEmail(string email) =>
+            (await _context.MembershipUsers
+                            .Where(m => m.Email == email)
+                            .Select(m => new { m.ExpiryDate })
+                            .FirstOrDefaultAsync()) is { ExpiryDate: var expiryDate }
+                ? new Status { Code = "0000", Message = "Expiry date fetched successfully", Data = new { expiryDate } }
+                : new Status { Code = "1001", Message = "Membership not found", Data = null };
 
-                return new Status
-                {
-                    Code = "1001",
-                    Message = "User not found",
-                    Data = null
-                };
-            }
-            catch (Exception ex)
-            {
-                return new Status
-                {
-                    Code = "1002",
-                    Message = "Error retrieving expiry date",
-                    Data = ex.Message
-                };
-            }
-        }
 
-        public async Task<Status> GetCardDetailsByEmail(string email)
-        {
-            try
-            {
-                // Get membership details using email from the MembershipUsers table
-                var membershipUser = await _context.MembershipUsers
-                                                    .Where(m => m.Email == email)
-                                                    .FirstOrDefaultAsync();
 
-                if (membershipUser != null)
-                {
-                    return new Status
-                    {
-                        Code = "0000",
-                        Message = "Card details fetched successfully",
-                        Data = new
-                        {
-                            CardNumber = membershipUser.CardNumber,
-                            ExpiryDate = membershipUser.ExpiryDate
-                        }
-                    };
-                }
 
-                return new Status
-                {
-                    Code = "1001",
-                    Message = "Membership not found",
-                    Data = null
-                };
-            }
-            catch (Exception ex)
-            {
-                return new Status
-                {
-                    Code = "1003",
-                    Message = "Error retrieving card details",
-                    Data = ex.Message
-                };
-            }
-        }
     }
 }
