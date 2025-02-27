@@ -1,4 +1,6 @@
-﻿namespace AuthService.Model
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AuthService.Model
 {
     public class Booking
     {
@@ -8,7 +10,8 @@
         public DateTime EndTime { get; set; }         
         public string? TimeSlot { get; set; }         
         public int FieldId { get; set; }             
-        public string? PaymentMethod { get; set; }    
+        public string? PaymentMethod { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Amount { get; set; }          
         public bool FlagBooked { get; set; }         
         public bool FlagCanceled { get; set; }       
@@ -30,8 +33,9 @@
     public class AvailableSlotsRequest
     {
         public DateTime Date { get; set; }    // Date to fetch available slots
-        public int FieldId { get; set; }      // Field ID to fetch available slots for that field
+        public string SportsName { get; set; } // Fetch slots based on SportsName instead of FieldId
     }
+
     public class BookingDetailsRequest
     {
         public int BookingId { get; set; }  // ID of the booking whose details we want to fetch

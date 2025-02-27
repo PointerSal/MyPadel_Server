@@ -4,6 +4,7 @@ using AuthService.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250226164656_jsjwlm")]
+    partial class jsjwlm
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -214,6 +217,12 @@ namespace AuthService.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Slot3Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Slot4Duration")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Slot4Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("SportsName")

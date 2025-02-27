@@ -11,19 +11,12 @@ namespace AuthService.Controllers.Desktopcontroller
     {
         private readonly IDesktopCourtSportsService _desktopCourtSportsService;
 
-        public DesktopCourtSportsController(IDesktopCourtSportsService desktopCourtSportsService)
-        {
-            _desktopCourtSportsService = desktopCourtSportsService;
-        }
+        public DesktopCourtSportsController(IDesktopCourtSportsService desktopCourtSportsService) => _desktopCourtSportsService = desktopCourtSportsService;
 
         [HttpPost("add")]
         public async Task<IActionResult> AddCourtSports([FromBody] CourtSportsRequest request) => Ok(await _desktopCourtSportsService.AddCourtSportsAsync(request));
 
         [HttpGet("all")]
         public async Task<IActionResult> GetAllCourtSports() => Ok(await _desktopCourtSportsService.GetAllCourtSportsAsync());
-
-
-
-
     }
 }

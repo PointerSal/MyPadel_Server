@@ -8,7 +8,7 @@ namespace AuthService.Controllers
 {
     [Route("api/booking")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class BookingController : ControllerBase
     {
         private readonly IBookingService _bookingService;
@@ -18,7 +18,6 @@ namespace AuthService.Controllers
             _bookingService = bookingService;
         }
 
-        // Fetch available slots for a given date and field
         [HttpGet("available-slots")]
         public async Task<IActionResult> GetAvailableSlots([FromQuery] AvailableSlotsRequest request)
         {

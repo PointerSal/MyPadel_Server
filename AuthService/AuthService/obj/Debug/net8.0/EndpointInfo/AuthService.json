@@ -299,11 +299,10 @@
             }
           },
           {
-            "name": "FieldId",
+            "name": "SportsName",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -477,6 +476,58 @@
         "tags": [
           "DesktopBooking"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/desktop-client/search": {
+      "get": {
+        "tags": [
+          "DesktopClient"
+        ],
+        "parameters": [
+          {
+            "name": "Email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/desktop-client/update": {
+      "put": {
+        "tags": [
+          "DesktopClient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DesktopClientUpdateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DesktopClientUpdateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DesktopClientUpdateRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -881,9 +932,52 @@
             "type": "string",
             "nullable": true
           },
-          "courtFields": {
+          "fieldName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fieldType": {
+            "type": "string",
+            "nullable": true
+          },
+          "terrainType": {
+            "type": "string",
+            "nullable": true
+          },
+          "fieldCapacity": {
             "type": "integer",
             "format": "int32"
+          },
+          "slot1Duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "slot1Price": {
+            "type": "number",
+            "format": "double"
+          },
+          "slot2Duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "slot2Price": {
+            "type": "number",
+            "format": "double"
+          },
+          "slot3Duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "slot3Price": {
+            "type": "number",
+            "format": "double"
+          },
+          "canBeBooked": {
+            "type": "boolean"
+          },
+          "openingHours": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -896,6 +990,40 @@
             "nullable": true
           },
           "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DesktopClientUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "surname": {
+            "type": "string",
+            "nullable": true
+          },
+          "telephone": {
+            "type": "string",
+            "nullable": true
+          },
+          "playerType": {
+            "type": "string",
+            "nullable": true
+          },
+          "fitCardExpiryDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cardNumber": {
             "type": "string",
             "nullable": true
           }

@@ -7,7 +7,6 @@ namespace AuthService.Interfaces.desktopinterface
     public interface IDesktopCourtSportsService
     {
         Task<Status> AddCourtSportsAsync(CourtSportsRequest request);
-        Task<Status> GetAllCourtSportsAsync();  // New method to get all CourtSports
+        Task<Status> GetAllCourtSportsAsync();   
     }
-
 }

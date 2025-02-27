@@ -19,29 +19,53 @@ namespace AuthService.Services
 
         public async Task<Status> GetBookedSlotsAsync(AvailableSlotsRequest request)
         {
-            // Get all bookings for the requested field where the slot is booked (FlagBooked = true)
+            // Fetch all court fields where the SportsName matches
+            var courts = await _context.CourtSports
+                .Where(c => c.SportsName == request.SportsName)
+                .Select(c =>new
+                {
+                    c.FieldName,
+                    c.FieldType
+                }) // Get the field names
+                .ToListAsync();
+
+            if (!courts.Any())
+            {
+                return new Status
+                {
+                    Code = "1001",
+                    Message = "No courts found for the given sport name.",
+                    Data = null
+                };
+            }
+
+            // Fetch bookings for the retrieved court fields
             var bookedSlots = await _context.Bookings
-                .Where(b => b.FieldId == request.FieldId && b.FlagBooked && b.Date.Date >= request.Date.Date) // Ensure we're checking from today's date onward
-                .OrderBy(b => b.Date) // Sort by booking date/time
+                .Where(b => request.SportsName.Contains(b.SportType) && b.FlagBooked && b.Date.Date >= request.Date.Date)
+                .OrderBy(b => b.Date)
                 .Select(b => new
                 {
-                    StartTime = b.Date.ToString("yyyy-MM-dd HH:mm:ss"),  // Start time in the format of 'yyyy-MM-dd HH:mm:ss'
-                    EndTime = b.EndTime.ToString("yyyy-MM-dd HH:mm:ss"), // End time in the same format
-                    Date = b.Date.Date.ToString("yyyy-MM-dd") // Just to group by date (if needed)
+                    FieldName = b.SportType, // Here, FieldName is stored in SportType
+                    StartTime = b.Date.ToString("yyyy-MM-dd HH:mm:ss"),
+                    EndTime = b.EndTime.ToString("yyyy-MM-dd HH:mm:ss"),
+                    Date = b.Date.ToString("yyyy-MM-dd"),
+                    FieldId = b.FieldId
                 })
                 .ToListAsync();
 
-            // Group the bookings by date
-            var groupedSlots = bookedSlots
-                .GroupBy(b => b.Date)
-                .Select(g => new
+            // Group bookings by FieldName
+            var groupedSlots = courts
+                .Select(field => new
                 {
-                    Date = g.Key,
-                    Slots = g.Select(slot => new
-                    {
-                        slot.StartTime,
-                        slot.EndTime
-                    }).ToList()
+                    FieldName = field.FieldName,
+                    Slots = bookedSlots
+                        .Where(slot => slot.FieldId.ToString() == field.FieldType) // Filter bookings for this field
+                        .Select(slot => new
+                        {
+                            slot.StartTime,
+                            slot.EndTime
+                        })
+                        .ToList()
                 })
                 .ToList();
 

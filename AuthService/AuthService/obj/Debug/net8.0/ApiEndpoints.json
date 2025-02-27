@@ -157,8 +157,8 @@
         "IsRequired": false
       },
       {
-        "Name": "FieldId",
-        "Type": "System.Int32",
+        "Name": "SportsName",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -294,6 +294,38 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
+    "Method": "SearchDesktopClient",
+    "RelativePath": "api/desktop-client/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
+    "Method": "UpdateDesktopClient",
+    "RelativePath": "api/desktop-client/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AuthService.Models.DesktopModel.DesktopClientUpdateRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

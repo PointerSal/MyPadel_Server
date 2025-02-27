@@ -1,9 +1,9 @@
-﻿using AuthService.Bridge;
+﻿using System.Threading.Tasks;
+using AuthService.Model.desktopmodel;
+using AuthService.Interfaces.desktopinterface;
+using AuthService.Bridge;
 using AuthService.Model;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-using AuthService.Interfaces.desktopinterface;
-using AuthService.Model.desktopmodel;
 
 namespace AuthService.Services.desktopservice
 {
@@ -16,6 +16,7 @@ namespace AuthService.Services.desktopservice
             _context = context;
         }
 
+        // Add Court Sports Reservation
         public async Task<Status> AddCourtSportsAsync(CourtSportsRequest request)
         {
             try
@@ -23,7 +24,18 @@ namespace AuthService.Services.desktopservice
                 var courtSports = new CourtSports
                 {
                     SportsName = request.SportsName,
-                    CourtFields = request.CourtFields
+                    FieldName = request.FieldName,
+                    FieldType = request.FieldType,
+                    TerrainType = request.TerrainType,
+                    FieldCapacity = request.FieldCapacity,
+                    Slot1Duration = request.Slot1Duration,
+                    Slot1Price = request.Slot1Price,
+                    Slot2Duration = request.Slot2Duration,
+                    Slot2Price = request.Slot2Price,
+                    Slot3Duration = request.Slot3Duration,
+                    Slot3Price = request.Slot3Price,
+                    CanBeBooked = request.CanBeBooked,
+                    OpeningHours = request.OpeningHours
                 };
 
                 _context.CourtSports.Add(courtSports);
@@ -47,8 +59,7 @@ namespace AuthService.Services.desktopservice
             }
         }
 
-
-        // New method to fetch all CourtSports
+        // Get All Court Sports Reservations
         public async Task<Status> GetAllCourtSportsAsync()
         {
             try
@@ -72,7 +83,5 @@ namespace AuthService.Services.desktopservice
                 };
             }
         }
-
-
     }
 }
