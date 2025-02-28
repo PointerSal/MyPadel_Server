@@ -1,4 +1,5 @@
 ﻿using AuthService.Model.desktopmodel;
+using AuthService.Model.Stripe;
 using AuthService.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,7 @@ namespace AuthService.Model
         public DbSet<FitMembershipTbl> FitMembershipTbls { get; set; }
 
         public DbSet<CourtSports> CourtSports { get; set; }
+        public DbSet<Refund> Refunds { get; set; }
 
 
     }

@@ -53,7 +53,8 @@ namespace AuthService.Services
                     EmailOTPExpiry = DateTime.UtcNow.AddSeconds(200),                   
                     IsEmailVerified = false,
                     IsPhoneVerified = false,
-                    IsActive = true
+                    IsActive = true,
+                    IsMarketing = request.IsMarketing
                 };
 
 
@@ -78,6 +79,7 @@ namespace AuthService.Services
                         newUser.IsEmailVerified,
                         newUser.IsPhoneVerified,
                         newUser.IsFitMember,
+                        newUser.IsMarketing,
                         Token = token
                     };
 

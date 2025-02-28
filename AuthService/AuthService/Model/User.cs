@@ -23,5 +23,6 @@ namespace AuthService.Models
         public bool IsPhoneVerified { get; set; }
         public bool IsActive { get; set; }
         public bool IsFitMember { get; set; }
+        public bool IsMarketing { get; set; }
     }
 }

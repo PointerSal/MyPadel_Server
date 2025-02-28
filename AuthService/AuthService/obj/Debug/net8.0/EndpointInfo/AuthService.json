@@ -483,6 +483,39 @@
         }
       }
     },
+    "/api/desktop-client/get-all-users": {
+      "get": {
+        "tags": [
+          "DesktopClient"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/desktop-client/booking-history": {
+      "get": {
+        "tags": [
+          "DesktopClient"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/desktop-client/search": {
       "get": {
         "tags": [
@@ -811,6 +844,37 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/stripe/refund": {
+      "post": {
+        "tags": [
+          "Stripe"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefundRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefundRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefundRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1182,6 +1246,20 @@
         },
         "additionalProperties": false
       },
+      "RefundRequest": {
+        "type": "object",
+        "properties": {
+          "paymentIntentId": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "RegisterRequest": {
         "type": "object",
         "properties": {
@@ -1200,6 +1278,9 @@
           "password": {
             "type": "string",
             "nullable": true
+          },
+          "isMarketing": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

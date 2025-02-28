@@ -13,6 +13,17 @@ namespace AuthService.Controllers.DesktopController
 
         public DesktopClientController(IDesktopClientService desktopClientService) => _desktopClientService = desktopClientService;
 
+        // Get all users
+        [HttpGet("get-all-users")]
+        public async Task<IActionResult> GetAllUsers() =>
+            Ok(await _desktopClientService.GetAllUsersAsync());
+
+
+        // Get customer booking history
+        [HttpGet("booking-history")]
+        public async Task<IActionResult> GetCustomerBookingHistory([FromQuery] string email) =>
+            Ok(await _desktopClientService.GetCustomerBookingHistoryAsync(email));
+
         // Search desktop client by email
         [HttpGet("search")]
         public async Task<IActionResult> SearchDesktopClient([FromQuery] DesktopClientSearchRequest request) =>

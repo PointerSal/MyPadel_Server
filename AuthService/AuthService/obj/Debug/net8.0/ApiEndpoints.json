@@ -298,6 +298,32 @@
   },
   {
     "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
+    "Method": "GetCustomerBookingHistory",
+    "RelativePath": "api/desktop-client/booking-history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/desktop-client/get-all-users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
     "Method": "SearchDesktopClient",
     "RelativePath": "api/desktop-client/search",
     "HttpMethod": "GET",
@@ -465,6 +491,22 @@
       {
         "Name": "request",
         "Type": "AuthService.Model.Stripe.PaymentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StripeController",
+    "Method": "RefundPayment",
+    "RelativePath": "api/stripe/refund",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AuthService.Model.Stripe.RefundRequest",
         "IsRequired": true
       }
     ],

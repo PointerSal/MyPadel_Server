@@ -29,6 +29,15 @@ public class StripeController : ControllerBase
             : BadRequest(new Status { Code = "1001", Message = "Payment Failed" });
     }
 
+    [HttpPost("refund")]
+    public async Task<IActionResult> RefundPayment([FromBody] RefundRequest request)
+    {
+        var result = await _stripeService.ProcessRefund(request.PaymentIntentId, request.Email);
+        return result.Code == "0000" ? Ok(result) : BadRequest(result);
+    }
+
+
+
     // Step 3: Handle Payment Cancel
     [HttpGet("cancel")]
     public IActionResult PaymentCancel() => Ok(new Status { Code = "1001", Message = "Payment Canceled" });

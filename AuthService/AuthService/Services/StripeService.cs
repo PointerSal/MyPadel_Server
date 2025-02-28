@@ -147,5 +147,74 @@ namespace AuthService.Services
                 Console.WriteLine($"Webhook Error: {ex.Message}");
             }
         }
+
+
+        public async Task<Status> ProcessRefund(string paymentIntentId, string refundRequestedBy)
+        {
+            try
+            {
+                // Step 1: Check if this PaymentIntentId already has a refund
+                var existingRefund = await _context.Refunds
+                    .FirstOrDefaultAsync(r => r.PaymentIntentId == paymentIntentId);
+
+                if (existingRefund != null)
+                {
+                    return new Status { Code = "1004", Message = "Refund already processed for this transaction." };
+                }
+
+                // Step 2: Find the booking details
+                var booking = await _context.Bookings
+                    .FirstOrDefaultAsync(b => b.PaymentId == paymentIntentId);
+
+                if (booking == null)
+                {
+                    return new Status { Code = "1005", Message = "Booking not found for the given Payment ID." };
+                }
+
+                // Step 3: Call Stripe Refund API
+                var refundService = new RefundService();
+                var refundOptions = new RefundCreateOptions
+                {
+                    PaymentIntent = paymentIntentId,
+                    Reason = RefundReasons.RequestedByCustomer
+                };
+
+                var refund = await refundService.CreateAsync(refundOptions);
+
+                if (refund.Status == "succeeded")
+                {
+                    // Step 4: Save refund details in Refund table
+                    var newRefund = new Model.Stripe.Refund
+                    {
+                        PaymentIntentId = paymentIntentId,
+                        OriginalEmail = booking.Email, // Store booking email
+                        RefundRequestedBy = refundRequestedBy, // Store the email from which refund request came
+                        RefundAmount = booking.Amount,
+                        RefundStatus = "Processed",
+                        CreatedAt = DateTime.UtcNow
+                    };
+
+                    _context.Refunds.Add(newRefund);
+                    await _context.SaveChangesAsync();
+
+                    // Step 5: Update booking status
+                    booking.PaymentStatus = "Refunded";
+                    await _context.SaveChangesAsync();
+
+                    return new Status { Code = "0000", Message = "Refund successful." };
+                }
+
+                return new Status { Code = "1002", Message = "Refund failed." };
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Refund Error: {ex.Message}");
+                return new Status { Code = "1003", Message = "Refund process error." };
+            }
+        }
+
+
+
+
     }
 }

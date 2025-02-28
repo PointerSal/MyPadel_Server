@@ -16,6 +16,93 @@ namespace AuthService.Services.DesktopService
             _context = context;
         }
 
+
+        public async Task<Status> GetAllUsersAsync()
+        {
+            var users = await _context.Users
+                                      .Select(u => new
+                                      {
+                                          ClientName = u.Name,
+                                          CustomerSurname = u.Surname,
+                                          Email = u.Email,
+                                          Telephone = u.Cell,
+
+                                          Membership = _context.MembershipUsers
+                                                               .Where(m => m.Email == u.Email)
+                                                               .Select(m => new
+                                                               {
+                                                                   FITCardExpiryDate = m.ExpiryDate,
+                                                                   MedicalCertificateExpiryDate = m.MedicalCertificateDate
+                                                               })
+                                                               .FirstOrDefault(),
+
+                                          PlayerType = _context.Bookings
+                                                              .Where(b => b.Email == u.Email && b.FlagBooked)
+                                                              .Select(b => b.SportType)
+                                                              .FirstOrDefault() // Get the first sport type if multiple exist
+                                      })
+                                      .ToListAsync();
+
+            if (users == null || !users.Any())
+            {
+                return new Status { Code = "1001", Message = "No users found", Data = null };
+            }
+
+            var formattedUsers = users.Select(user => new
+            {
+                user.ClientName,
+                user.CustomerSurname,
+                user.Email,
+                user.Telephone,
+                FITCardExpiryDate = user.Membership?.FITCardExpiryDate, // Nullable if membership doesn't exist
+                MedicalCertificateExpiryDate = user.Membership?.MedicalCertificateExpiryDate, // Nullable
+                PlayerType = user?.PlayerType // Nullable if no bookings exist
+            }).ToList();
+
+            return new Status
+            {
+                Code = "0000",
+                Message = "Users fetched successfully",
+                Data = formattedUsers
+            };
+        }
+
+        // Fetch customer booking history based on email
+        public async Task<Status> GetCustomerBookingHistoryAsync(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return new Status { Code = "1002", Message = "Invalid email provided", Data = null };
+            }
+
+            var bookings = await _context.Bookings
+                                         .Where(b => b.Email == email && b.FlagBooked) // Fetch only booked records
+                                         .Select(b => new
+                                         {
+                                             Date = b.Date,                  // Booking Date
+                                             Field = b.SportType,            // Sport Type
+                                             StartingHour = b.Date,          // Start Time from Date field
+                                             Duration = b.TimeSlot, // Calculate duration in minutes
+                                             Amount = b.Amount,              // Payment amount
+                                             PaymentMethod = b.PaymentMethod // Payment method used
+                                         })
+                                         .OrderByDescending(b => b.Date) // Show latest bookings first
+                                         .ToListAsync();
+
+            if (!bookings.Any())
+            {
+                return new Status { Code = "1001", Message = "No booking history found", Data = null };
+            }
+
+            return new Status
+            {
+                Code = "0000",
+                Message = "Customer booking history fetched successfully",
+                Data = bookings
+            };
+        }
+
+
         // Search client by email and fetch relevant data
         public async Task<Status> SearchDesktopClientByEmailAsync(string email)
         {

@@ -11,10 +11,12 @@ namespace AuthService.Services
     public class BookingService : IBookingService
     {
         private readonly ApplicationDbContext _context;
+        private readonly EmailService _emailService;
 
-        public BookingService(ApplicationDbContext context)
+        public BookingService(ApplicationDbContext context, EmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         public async Task<Status> GetBookedSlotsAsync(AvailableSlotsRequest request)
@@ -120,11 +122,35 @@ namespace AuthService.Services
 
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
+            // Send confirmation email to the user
+            string messageBody = $@"
+        Dear {user.Name} {user.Surname},
+        
+        Your booking for {request.SportType} has been successfully made!
+        
+        Booking Details:
+        Date: {startTime.ToString("MMMM dd, yyyy")}
+        Time: {startTime.ToString("hh:mm tt")}
+        Duration: {request.Duration} minutes
+        Field: {request.FieldId}
+        Payment Method: {request.PaymentMethod}
+        Amount: {request.Amount}
+        
+        Thank you for booking with us!
+    ";
 
-            return new Status { Code = "0000", Message = "Booking successful.", Data = booking };
+            bool emailSent = _emailService.SendEmail(user.Email, "Booking Confirmation", messageBody);
+
+            if (!emailSent)
+            {
+                return new Status { Code = "1005", Message = "Failed to send booking confirmation email.", Data = null };
+            }
+
+            return new Status { Code = "0000", Message = "Booking successful. A confirmation email has been sent.", Data = booking };
+
         }
 
-         public async Task<Status> GetUserBookingsAsync(GetUserBookingsRequest request)
+        public async Task<Status> GetUserBookingsAsync(GetUserBookingsRequest request)
         {
             var activeBookings = await _context.Bookings
                 .Where(b => b.Email == request.Email && !b.FlagCanceled && b.Date >= DateTime.Now)
