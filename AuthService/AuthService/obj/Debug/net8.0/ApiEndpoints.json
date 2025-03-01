@@ -287,6 +287,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AuthService.Controllers.Desktopcontroller.DesktopCourtSportsController",
+    "Method": "DeleteField",
+    "RelativePath": "api/courtsports/deletefield",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestDelete",
+        "Type": "AuthService.Model.desktopmodel.CourtSportsRequestDelete",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthService.Controllers.Desktopcontroller.DesktopBookingController",
     "Method": "GetAllBookings",
     "RelativePath": "api/desktop-booking/all",
@@ -301,6 +317,38 @@
     "Method": "GetCustomerBookingHistory",
     "RelativePath": "api/desktop-client/booking-history",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
+    "Method": "GetCustomerStatistics",
+    "RelativePath": "api/desktop-client/customer-statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/desktop-client/delete-user",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [

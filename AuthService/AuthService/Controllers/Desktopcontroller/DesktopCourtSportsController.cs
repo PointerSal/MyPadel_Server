@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AuthService.Interfaces.desktopinterface;
 using AuthService.Model.desktopmodel;
+using Microsoft.AspNetCore.Http;
 
 namespace AuthService.Controllers.Desktopcontroller
 {
@@ -18,5 +19,11 @@ namespace AuthService.Controllers.Desktopcontroller
 
         [HttpGet("all")]
         public async Task<IActionResult> GetAllCourtSports() => Ok(await _desktopCourtSportsService.GetAllCourtSportsAsync());
+
+        [HttpDelete("deletefield")]
+        public async Task<IActionResult> DeleteField([FromBody] CourtSportsRequestDelete requestDelete) => Ok(await _desktopCourtSportsService.DeleteFieldAsync(requestDelete));
+
+
+
     }
 }

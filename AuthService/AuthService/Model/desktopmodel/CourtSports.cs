@@ -29,6 +29,13 @@ namespace AuthService.Model.desktopmodel
         public string OpeningHours { get; set; }  // Added Opening Hours
     }
 
+    public class CourtSportsRequestDelete
+    { 
+        public string SportsName { get; set; } 
+        public string FieldName { get; set; } 
+    }
+
+
     public class CourtSportsRequest
     {
         public string SportsName { get; set; }

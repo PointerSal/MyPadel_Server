@@ -83,5 +83,30 @@ namespace AuthService.Services.desktopservice
                 };
             }
         }
+
+        public async Task<Status> DeleteFieldAsync(CourtSportsRequestDelete requestDelete)
+        {
+            try
+            {
+                var courtSport = await _context.CourtSports
+                    .FirstOrDefaultAsync(c => c.SportsName == requestDelete.SportsName && c.FieldName == requestDelete.FieldName);
+
+                if (courtSport == null) return new Status { Code = "1003", Message = "Field not found", Data = null };
+
+                _context.CourtSports.Remove(courtSport);
+                await _context.SaveChangesAsync();
+                return new Status { Code = "0000", Message = "Field deleted successfully", Data = null };
+            }
+            catch (Exception ex)
+            {
+                return new Status { Code = "1004", Message = "Error deleting field", Data = ex.Message };
+            }
+        }
+
+
+
+
     }
+
+
 }

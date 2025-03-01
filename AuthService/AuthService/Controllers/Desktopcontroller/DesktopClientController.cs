@@ -33,5 +33,18 @@ namespace AuthService.Controllers.DesktopController
         [HttpPut("update")]
         public async Task<IActionResult> UpdateDesktopClient([FromBody] DesktopClientUpdateRequest request) =>
             Ok(await _desktopClientService.UpdateDesktopClientInformationAsync(request));
+
+        [HttpGet("customer-statistics")]
+        public async Task<IActionResult> GetCustomerStatistics([FromQuery] string email) => Ok(await _desktopClientService.GetCustomerStatisticsAsync(email));
+
+
+
+        // Delete user by email
+        [HttpDelete("delete-user")]
+        public async Task<IActionResult> DeleteUser([FromQuery] string email) =>
+            Ok(await _desktopClientService.DeleteUserAsync(email));
+
+
+
     }
 }

@@ -208,6 +208,102 @@ namespace AuthService.Services.DesktopService
             return new Status { Code = "0000", Message = "Client information updated successfully", Data = null };
         }
 
+        public async Task<Status> GetCustomerStatisticsAsync(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return new Status { Code = "1002", Message = "Invalid email provided", Data = null };
+            }
+
+            // Fetch all relevant bookings for the user
+            var bookings = await _context.Bookings
+                                          .Where(b => b.Email == email && b.FlagBooked) // Ensure the booking is confirmed
+                                          .ToListAsync();
+
+            if (!bookings.Any())
+            {
+                return new Status { Code = "1001", Message = "No bookings found for the user", Data = null };
+            }
+
+            var totalBookings = bookings.Count;
+            var cancelledBookings = bookings.Count(b => b.FlagCanceled); // Check using FlagCanceled for cancellations
+            var favoriteField = bookings
+                .GroupBy(b => b.SportType)
+                .OrderByDescending(g => g.Count())
+                .FirstOrDefault()?.Key;
+
+            var totalAmount = bookings.Sum(b => b.Amount); // Assuming Amount is stored in the booking
+
+            var uniqueMonths = bookings.Select(b => b.Date.Month).Distinct().Count();
+            var averageMonthlyBookings = uniqueMonths > 0 ? totalBookings / uniqueMonths : 0;
+
+            var lifetimeValueInEuros = totalAmount; // Assuming Amount is in local currency and converting to Euros as needed
+
+            return new Status
+            {
+                Code = "0000",
+                Message = "Customer statistics fetched successfully",
+                Data = new
+                {
+                    TotalBookings = totalBookings,
+                    AverageMonthlyBookings = averageMonthlyBookings,
+                    FavoriteField = favoriteField,
+                    CancelledBookings = cancelledBookings,
+                    LifetimeValueInEuros = lifetimeValueInEuros
+                }
+            };
+        }
+
+        public async Task<Status> DeleteUserAsync(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return new Status { Code = "1002", Message = "Invalid email provided", Data = null };
+            }
+
+            // Start a transaction to ensure all related data is deleted
+            using (var transaction = await _context.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    // Delete user from User table
+                    var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+                    if (user == null)
+                    {
+                        return new Status { Code = "1001", Message = "User not found", Data = null };
+                    }
+
+                    // Delete related records from MembershipUsers table
+                    var membership = await _context.MembershipUsers.FirstOrDefaultAsync(m => m.Email == email);
+                    if (membership != null)
+                    {
+                        _context.MembershipUsers.Remove(membership);
+                    }
+
+                    // Delete related records from Bookings table
+                    var bookings = await _context.Bookings.Where(b => b.Email == email).ToListAsync();
+                    if (bookings.Any())
+                    {
+                        _context.Bookings.RemoveRange(bookings);
+                    }
+
+                    // Now delete the user
+                    _context.Users.Remove(user);
+
+                    // Commit all deletions
+                    await _context.SaveChangesAsync();
+                    await transaction.CommitAsync();
+
+                    return new Status { Code = "0000", Message = "User deleted successfully", Data = null };
+                }
+                catch (Exception ex)
+                {
+                    // Rollback if any error occurs
+                    await transaction.RollbackAsync();
+                    return new Status { Code = "1003", Message = $"Error deleting user: {ex.Message}", Data = null };
+                }
+            }
+        }
 
 
     }

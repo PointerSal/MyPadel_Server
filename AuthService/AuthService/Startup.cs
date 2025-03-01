@@ -1,8 +1,10 @@
 ﻿using AuthService.Interfaces;
 using AuthService.Interfaces.desktopinterface;
+using AuthService.Interfaces.DesktopInterface;
 using AuthService.Model;
 using AuthService.Services;
 using AuthService.Services.desktopservice;
+using AuthService.Services.DesktopService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -88,6 +90,8 @@ namespace AuthService
             services.AddScoped<IPriceService, PriceService>();
             services.AddScoped<IDesktopCourtSportsService, DesktopCourtSportsService>();
             services.AddScoped<IDesktopBookingService, DesktopBookingService>();
+            services.AddScoped<IDesktopClientService, DesktopClientService>();
+
 
 
             // Add Controllers for API endpoints

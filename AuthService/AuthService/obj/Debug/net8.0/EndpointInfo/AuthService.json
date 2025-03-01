@@ -568,6 +568,48 @@
         }
       }
     },
+    "/api/desktop-client/customer-statistics": {
+      "get": {
+        "tags": [
+          "DesktopClient"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/desktop-client/delete-user": {
+      "delete": {
+        "tags": [
+          "DesktopClient"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/courtsports/add": {
       "post": {
         "tags": [
@@ -604,6 +646,37 @@
         "tags": [
           "DesktopCourtSports"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/courtsports/deletefield": {
+      "delete": {
+        "tags": [
+          "DesktopCourtSports"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourtSportsRequestDelete"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourtSportsRequestDelete"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourtSportsRequestDelete"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1040,6 +1113,20 @@
             "type": "boolean"
           },
           "openingHours": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CourtSportsRequestDelete": {
+        "type": "object",
+        "properties": {
+          "sportsName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fieldName": {
             "type": "string",
             "nullable": true
           }
