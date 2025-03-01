@@ -684,6 +684,37 @@
         }
       }
     },
+    "/api/courtsports/update": {
+      "put": {
+        "tags": [
+          "DesktopCourtSports"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourtSportsRequestEdit"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourtSportsRequestEdit"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourtSportsRequestEdit"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/membershipuser/register": {
       "post": {
         "tags": [
@@ -1122,11 +1153,76 @@
       "CourtSportsRequestDelete": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CourtSportsRequestEdit": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "sportsName": {
             "type": "string",
             "nullable": true
           },
           "fieldName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fieldType": {
+            "type": "string",
+            "nullable": true
+          },
+          "terrainType": {
+            "type": "string",
+            "nullable": true
+          },
+          "fieldCapacity": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "slot1Duration": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "slot1Price": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "slot2Duration": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "slot2Price": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "slot3Duration": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "slot3Price": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "canBeBooked": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "openingHours": {
             "type": "string",
             "nullable": true
           }

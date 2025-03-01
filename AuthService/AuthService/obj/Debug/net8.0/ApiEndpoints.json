@@ -303,6 +303,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AuthService.Controllers.Desktopcontroller.DesktopCourtSportsController",
+    "Method": "UpdateCourtSports",
+    "RelativePath": "api/courtsports/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestEdit",
+        "Type": "AuthService.Model.desktopmodel.CourtSportsRequestEdit",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthService.Controllers.Desktopcontroller.DesktopBookingController",
     "Method": "GetAllBookings",
     "RelativePath": "api/desktop-booking/all",

@@ -21,8 +21,12 @@ namespace AuthService.Controllers.Desktopcontroller
         public async Task<IActionResult> GetAllCourtSports() => Ok(await _desktopCourtSportsService.GetAllCourtSportsAsync());
 
         [HttpDelete("deletefield")]
-        public async Task<IActionResult> DeleteField([FromBody] CourtSportsRequestDelete requestDelete) => Ok(await _desktopCourtSportsService.DeleteFieldAsync(requestDelete));
+        public async Task<IActionResult> DeleteField([FromBody] CourtSportsRequestDelete requestDelete) =>
+            Ok(await _desktopCourtSportsService.DeleteFieldAsync(requestDelete));
 
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateCourtSports([FromBody] CourtSportsRequestEdit requestEdit) =>
+            Ok(await _desktopCourtSportsService.UpdateCourtSportsAsync(requestEdit));
 
 
     }

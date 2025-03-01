@@ -8,7 +8,8 @@ namespace AuthService.Interfaces.desktopinterface
     {
         Task<Status> AddCourtSportsAsync(CourtSportsRequest request);
         Task<Status> GetAllCourtSportsAsync();
-        Task<Status> DeleteFieldAsync(CourtSportsRequestDelete requestDelete); 
+        Task<Status> DeleteFieldAsync(CourtSportsRequestDelete requestDelete);
+        Task<Status> UpdateCourtSportsAsync(CourtSportsRequestEdit requestEdit);
 
     }
 }

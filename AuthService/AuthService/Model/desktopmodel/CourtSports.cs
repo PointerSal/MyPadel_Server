@@ -24,17 +24,35 @@ namespace AuthService.Model.desktopmodel
         [Column(TypeName = "decimal(18,2)")]
         public decimal Slot3Price { get; set; }  // Slot 3 Price with Precision and Scale
 
-       
+
         public bool CanBeBooked { get; set; }  // Can the court be booked?
         public string OpeningHours { get; set; }  // Added Opening Hours
     }
 
     public class CourtSportsRequestDelete
-    { 
-        public string SportsName { get; set; } 
-        public string FieldName { get; set; } 
+    {
+        public int Id { get; set; }   
     }
 
+
+    public class CourtSportsRequestEdit
+    {
+
+        public int Id { get; set; }   
+        public string? SportsName { get; set; }
+        public string? FieldName { get; set; }  // Unique constraint
+        public string? FieldType { get; set; }
+        public string? TerrainType { get; set; }
+        public int? FieldCapacity { get; set; }  // Nullable if user wants to leave it unchanged
+        public int? Slot1Duration { get; set; }
+        public decimal? Slot1Price { get; set; }
+        public int? Slot2Duration { get; set; }
+        public decimal? Slot2Price { get; set; }
+        public int? Slot3Duration { get; set; }
+        public decimal? Slot3Price { get; set; }
+        public bool? CanBeBooked { get; set; }
+        public string? OpeningHours { get; set; }
+    }
 
     public class CourtSportsRequest
     {

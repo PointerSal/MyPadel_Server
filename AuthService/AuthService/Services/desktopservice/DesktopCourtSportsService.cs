@@ -89,12 +89,14 @@ namespace AuthService.Services.desktopservice
             try
             {
                 var courtSport = await _context.CourtSports
-                    .FirstOrDefaultAsync(c => c.SportsName == requestDelete.SportsName && c.FieldName == requestDelete.FieldName);
+             .FirstOrDefaultAsync(c => c.Id == requestDelete.Id);  
 
-                if (courtSport == null) return new Status { Code = "1003", Message = "Field not found", Data = null };
+                if (courtSport == null)
+                    return new Status { Code = "1003", Message = "Field not found", Data = null };
 
                 _context.CourtSports.Remove(courtSport);
                 await _context.SaveChangesAsync();
+
                 return new Status { Code = "0000", Message = "Field deleted successfully", Data = null };
             }
             catch (Exception ex)
@@ -103,6 +105,52 @@ namespace AuthService.Services.desktopservice
             }
         }
 
+        public async Task<Status> UpdateCourtSportsAsync(CourtSportsRequestEdit requestEdit)
+        {
+            try
+            {
+                // Verify that the record with the provided Id exists
+                var courtSport = await _context.CourtSports
+                    .FirstOrDefaultAsync(c => c.Id == requestEdit.Id);  // Find by Id
+
+                if (courtSport == null)
+                    return new Status { Code = "1003", Message = "Field not found", Data = null };
+
+                // Proceed with updating other fields if they are provided
+                if (!string.IsNullOrEmpty(requestEdit.SportsName)) courtSport.SportsName = requestEdit.SportsName;
+                if (!string.IsNullOrEmpty(requestEdit.FieldName)) courtSport.FieldName = requestEdit.FieldName;
+                if (!string.IsNullOrEmpty(requestEdit.FieldType)) courtSport.FieldType = requestEdit.FieldType;
+                if (!string.IsNullOrEmpty(requestEdit.TerrainType)) courtSport.TerrainType = requestEdit.TerrainType;
+                if (requestEdit.FieldCapacity.HasValue) courtSport.FieldCapacity = requestEdit.FieldCapacity.Value;
+                if (requestEdit.Slot1Duration.HasValue) courtSport.Slot1Duration = requestEdit.Slot1Duration.Value;
+                if (requestEdit.Slot1Price.HasValue) courtSport.Slot1Price = requestEdit.Slot1Price.Value;
+                if (requestEdit.Slot2Duration.HasValue) courtSport.Slot2Duration = requestEdit.Slot2Duration.Value;
+                if (requestEdit.Slot2Price.HasValue) courtSport.Slot2Price = requestEdit.Slot2Price.Value;
+                if (requestEdit.Slot3Duration.HasValue) courtSport.Slot3Duration = requestEdit.Slot3Duration.Value;
+                if (requestEdit.Slot3Price.HasValue) courtSport.Slot3Price = requestEdit.Slot3Price.Value;
+                if (requestEdit.CanBeBooked.HasValue) courtSport.CanBeBooked = requestEdit.CanBeBooked.Value;
+                if (!string.IsNullOrEmpty(requestEdit.OpeningHours)) courtSport.OpeningHours = requestEdit.OpeningHours;
+
+                // Save the changes to the database
+                await _context.SaveChangesAsync();
+
+                return new Status
+                {
+                    Code = "0000",
+                    Message = "Court sports updated successfully",
+                    Data = courtSport
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Status
+                {
+                    Code = "1006",
+                    Message = "Error updating court sports",
+                    Data = ex.Message
+                };
+            }
+        }
 
 
 

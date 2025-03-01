@@ -222,7 +222,19 @@ namespace AuthService.Services.DesktopService
 
             if (!bookings.Any())
             {
-                return new Status { Code = "1001", Message = "No bookings found for the user", Data = null };
+                return new Status
+                {
+                    Code = "0000",
+                    Message = "Customer statistics fetched successfully",
+                    Data = new
+                    {
+                        TotalBookings = 0,
+                        AverageMonthlyBookings = 0,
+                        FavoriteField = "",
+                        CancelledBookings = 0,
+                        LifetimeValueInEuros = 0
+                    }
+                };
             }
 
             var totalBookings = bookings.Count;
