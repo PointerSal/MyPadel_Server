@@ -14,13 +14,14 @@ namespace AuthService.Services.desktopservice
             _context = context;
         }
 
-        public async Task<Status> GetAllBookingsAsync()
+        public async Task<Status> GetBookingsByDateAsync(DateTime date)
         {
             try
             {
-                // Join Booking with User Table based on Email to fetch details
+                // Fetch bookings based on the date
                 var bookings = await (from b in _context.Bookings
                                       join u in _context.Users on b.Email equals u.Email
+                                      where b.Date.Date == date.Date
                                       select new
                                       {
                                           b.Id,
@@ -32,7 +33,8 @@ namespace AuthService.Services.desktopservice
                                           b.Amount,
                                           FirstName = u.Name,
                                           LastName = u.Surname,
-                                          Duration = b.EndTime.Subtract(b.Date).TotalMinutes
+                                          Duration = b.EndTime.Subtract(b.Date).TotalMinutes,
+                                          Status = b.FlagArchived ? "Archived" : b.FlagCanceled ? "Canceled" : b.FlagBooked ? "Booked" : "Unknown"
                                       })
                                       .ToListAsync();
 
@@ -43,7 +45,7 @@ namespace AuthService.Services.desktopservice
                     Data = bookings
                 };
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 return new Status
                 {
@@ -53,5 +55,7 @@ namespace AuthService.Services.desktopservice
                 };
             }
         }
+
+
     }
 }

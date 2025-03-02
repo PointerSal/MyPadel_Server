@@ -4,6 +4,7 @@ namespace AuthService.Interfaces.desktopinterface
 {
     public interface IDesktopBookingService
     {
-        Task<Status> GetAllBookingsAsync();
+        Task<Status> GetBookingsByDateAsync(DateTime date);
+
     }
 }

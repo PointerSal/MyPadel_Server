@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250225034620_jajaq")]
-    partial class jajaq
+    [Migration("20250302093808_kdei")]
+    partial class kdei
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -175,6 +175,41 @@ namespace AuthService.Migrations
                     b.ToTable("PriceTbls");
                 });
 
+            modelBuilder.Entity("AuthService.Model.Stripe.Refund", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OriginalEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentIntentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("RefundAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("RefundRequestedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RefundStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Refunds");
+                });
+
             modelBuilder.Entity("AuthService.Model.desktopmodel.CourtSports", b =>
                 {
                     b.Property<int>("Id")
@@ -183,10 +218,47 @@ namespace AuthService.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CourtFields")
+                    b.Property<bool>("CanBeBooked")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("FieldCapacity")
                         .HasColumnType("int");
 
+                    b.Property<string>("FieldName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FieldType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OpeningHours")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Slot1Duration")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Slot1Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Slot2Duration")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Slot2Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Slot3Duration")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Slot3Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("SportsName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TerrainType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -221,6 +293,9 @@ namespace AuthService.Migrations
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsFitMember")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsMarketing")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsPhoneVerified")

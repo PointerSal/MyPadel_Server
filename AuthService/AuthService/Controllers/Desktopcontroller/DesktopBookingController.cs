@@ -15,6 +15,10 @@ namespace AuthService.Controllers.Desktopcontroller
         }
 
         [HttpGet("all")]
-        public async Task<IActionResult> GetAllBookings() => Ok(await _desktopBookingService.GetAllBookingsAsync());
+        public async Task<IActionResult> GetAllBookings([FromQuery] DateTime date) =>
+            Ok(await _desktopBookingService.GetBookingsByDateAsync(date));
+
+
+
     }
 }
