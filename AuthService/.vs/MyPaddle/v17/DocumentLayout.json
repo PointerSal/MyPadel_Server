@@ -100,7 +100,7 @@
               "RelativeDocumentMoniker": "AuthService\\Services\\desktopservice\\DesktopCourtSportsService.cs",
               "ToolTip": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Services\\desktopservice\\DesktopCourtSportsService.cs",
               "RelativeToolTip": "AuthService\\Services\\desktopservice\\DesktopCourtSportsService.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAiwIEAAABqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T16:48:32.978Z",
               "EditorCaption": ""
@@ -115,8 +115,7 @@
               "RelativeToolTip": "AuthService\\Model\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAWwA0AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:58:51.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T11:58:51.472Z"
             },
             {
               "$type": "Document",
@@ -140,8 +139,7 @@
               "RelativeToolTip": "AuthService\\Controllers\\Desktopcontroller\\DesktopCourtSportsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAACZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T16:46:57.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T16:46:57.234Z"
             },
             {
               "$type": "Document",
@@ -153,8 +151,7 @@
               "RelativeToolTip": "AuthService\\Interfaces\\desktopinterface\\IDesktopCourtSportsService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T16:54:12.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T16:54:12.752Z"
             },
             {
               "$type": "Document",
@@ -166,8 +163,7 @@
               "RelativeToolTip": "AuthService\\Model\\desktopmodel\\CourtSports.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAmwEgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T17:10:54.235Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T17:10:54.235Z"
             },
             {
               "$type": "Document",
@@ -179,8 +175,7 @@
               "RelativeToolTip": "AuthService\\Services\\desktopservice\\DesktopClientService.cs",
               "ViewState": "AgIAANUAAAAAAAAAAAAcwOgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T17:13:17.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T17:13:17.263Z"
             },
             {
               "$type": "Document",
@@ -216,8 +211,7 @@
               "RelativeToolTip": "AuthService\\Services\\AuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T17:20:48.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T17:20:48.632Z"
             },
             {
               "$type": "Document",
@@ -277,8 +271,7 @@
               "RelativeToolTip": "AuthService\\Services\\StripeService.cs",
               "ViewState": "AgIAAA8AAAAAZmZmZmYkwCEAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T17:23:39.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T17:23:39.1Z"
             },
             {
               "$type": "Document",
@@ -314,8 +307,7 @@
               "RelativeToolTip": "AuthService\\Controllers\\StripeController.cs",
               "ViewState": "AgIAABUAAAAAAAAAAADwvyIAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T17:10:33.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T17:10:33.193Z"
             },
             {
               "$type": "Document",

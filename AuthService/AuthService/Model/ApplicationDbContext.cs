@@ -7,6 +7,7 @@ namespace AuthService.Model
 {
     public class ApplicationDbContext : DbContext
     {
+        //checkpush
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
