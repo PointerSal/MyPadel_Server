@@ -1,4 +1,5 @@
 ﻿using AuthService.Bridge;
+using AuthService.Interfaces;
 using AuthService.Interfaces.desktopinterface;
 using AuthService.Model;
 using Microsoft.EntityFrameworkCore;
@@ -8,10 +9,12 @@ namespace AuthService.Services.desktopservice
     public class DesktopBookingService : IDesktopBookingService
     {
         private readonly ApplicationDbContext _context;
+        private readonly IStripeService _stripeService;
 
-        public DesktopBookingService(ApplicationDbContext context)
+        public DesktopBookingService(ApplicationDbContext context, IStripeService stripeService)
         {
             _context = context;
+            _stripeService = stripeService;
         }
 
         public async Task<Status> GetBookingsByDateAsync(DateTime date)
@@ -55,6 +58,42 @@ namespace AuthService.Services.desktopservice
                 };
             }
         }
+
+
+        public async Task<Status> CancelBookingAsync(int bookingId)
+        {
+            try
+            {
+                // Fetch the booking based on the ID
+                var booking = await _context.Bookings.FirstOrDefaultAsync(b => b.Id == bookingId);
+
+                if (booking == null)
+                {
+                    return new Status { Code = "1002", Message = "Booking not found" };
+                }
+
+                // Cancel the booking
+                booking.FlagCanceled = true;
+                await _context.SaveChangesAsync();
+
+                // Process refund if payment exists
+                if (!string.IsNullOrEmpty(booking.PaymentId))
+                {
+                    var refundResult = await _stripeService.ProcessRefund(booking.PaymentId, "Booking canceled");
+                    if (refundResult.Code != "0000")
+                    {
+                        return new Status { Code = "1003", Message = "Refund failed" };
+                    }
+                }
+
+                return new Status { Code = "0000", Message = "Booking canceled successfully" };
+            }
+            catch (Exception ex)
+            {
+                return new Status { Code = "1001", Message = "Error canceling booking", Data = ex.Message };
+            }
+        }
+
 
 
     }

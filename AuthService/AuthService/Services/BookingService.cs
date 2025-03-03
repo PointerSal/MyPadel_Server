@@ -12,11 +12,13 @@ namespace AuthService.Services
     {
         private readonly ApplicationDbContext _context;
         private readonly EmailService _emailService;
+        private readonly IStripeService _stripeService;
 
-        public BookingService(ApplicationDbContext context, EmailService emailService)
-        {
+        public BookingService(ApplicationDbContext context, EmailService emailService, IStripeService stripeService)
+        {   
             _context = context;
             _emailService = emailService;
+            _stripeService = stripeService;
         }
 
         public async Task<Status> GetBookedSlotsAsync(AvailableSlotsRequest request)
@@ -180,6 +182,21 @@ namespace AuthService.Services
 
             booking.FlagCanceled = true;
             await _context.SaveChangesAsync();
+
+            // Check for a payment ID and process the refund
+            if (!string.IsNullOrEmpty(booking.PaymentId))
+            {
+                var refundResult = await _stripeService.ProcessRefund(booking.PaymentId, "Booking canceled");
+                if (refundResult.Code != "0000")
+                {
+                    return new Status
+                    {
+                        Code = "1006",
+                        Message = "Refund failed during cancellation.",
+                        Data = refundResult.Message
+                    };
+                }
+            }
 
             return new Status
             {

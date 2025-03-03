@@ -493,6 +493,28 @@
         }
       }
     },
+    "/api/desktop-booking/cancel": {
+      "post": {
+        "tags": [
+          "DesktopBooking"
+        ],
+        "parameters": [
+          {
+            "name": "bookingId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/desktop-client/get-all-users": {
       "get": {
         "tags": [

@@ -335,6 +335,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AuthService.Controllers.Desktopcontroller.DesktopBookingController",
+    "Method": "CancelBooking",
+    "RelativePath": "api/desktop-booking/cancel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
     "Method": "GetCustomerBookingHistory",
     "RelativePath": "api/desktop-client/booking-history",

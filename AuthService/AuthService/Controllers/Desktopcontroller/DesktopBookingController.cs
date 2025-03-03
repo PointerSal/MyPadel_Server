@@ -19,6 +19,10 @@ namespace AuthService.Controllers.Desktopcontroller
             Ok(await _desktopBookingService.GetBookingsByDateAsync(date));
 
 
+        [HttpPost("cancel")]
+        public async Task<IActionResult> CancelBooking([FromQuery] int bookingId) =>
+           Ok(await _desktopBookingService.CancelBookingAsync(bookingId));
+
 
     }
 }
