@@ -351,6 +351,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AuthService.Controllers.Desktopcontroller.DesktopBookingController",
+    "Method": "ReserveBooking",
+    "RelativePath": "api/desktop-booking/reserve",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AuthService.Model.ReserveBookingRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
     "Method": "GetCustomerBookingHistory",
     "RelativePath": "api/desktop-client/booking-history",

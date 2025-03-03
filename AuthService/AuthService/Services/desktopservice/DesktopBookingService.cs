@@ -76,6 +76,8 @@ namespace AuthService.Services.desktopservice
                 }
 
                 // Cancel the booking
+                booking.FlagBooked = false;       
+                booking.FlagArchived = false;
                 booking.FlagCanceled = true;
                 await _context.SaveChangesAsync();
 

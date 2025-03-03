@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\services\\desktopservice\\desktopbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\paddleapp\\mypadel_server\\authservice\\authservice\\interfaces\\desktopinterface\\idesktopbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\interfaces\\desktopinterface\\idesktopbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\paddleapp\\mypadel_server\\authservice\\authservice\\controllers\\desktopcontroller\\desktopbookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\controllers\\desktopcontroller\\desktopbookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\paddleapp\\mypadel_server\\authservice\\authservice\\services\\stripeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\services\\stripeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\paddleapp\\mypadel_server\\authservice\\authservice\\interfaces\\desktopinterface\\idesktopbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\interfaces\\desktopinterface\\idesktopbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StripeService.cs",
+              "DocumentMoniker": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Services\\StripeService.cs",
+              "RelativeDocumentMoniker": "AuthService\\Services\\StripeService.cs",
+              "ToolTip": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Services\\StripeService.cs",
+              "RelativeToolTip": "AuthService\\Services\\StripeService.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAgwI4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T17:24:36.996Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -32,14 +49,14 @@
               "RelativeDocumentMoniker": "AuthService\\Services\\desktopservice\\DesktopBookingService.cs",
               "ToolTip": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Services\\desktopservice\\DesktopBookingService.cs",
               "RelativeToolTip": "AuthService\\Services\\desktopservice\\DesktopBookingService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAADwv5IAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-02T09:33:21.471Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "IDesktopBookingService.cs",
               "DocumentMoniker": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Interfaces\\desktopinterface\\IDesktopBookingService.cs",
               "RelativeDocumentMoniker": "AuthService\\Interfaces\\desktopinterface\\IDesktopBookingService.cs",
@@ -47,18 +64,17 @@
               "RelativeToolTip": "AuthService\\Interfaces\\desktopinterface\\IDesktopBookingService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T09:32:46.416Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T09:32:46.416Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "DesktopBookingController.cs",
               "DocumentMoniker": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Controllers\\Desktopcontroller\\DesktopBookingController.cs",
               "RelativeDocumentMoniker": "AuthService\\Controllers\\Desktopcontroller\\DesktopBookingController.cs",
               "ToolTip": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Controllers\\Desktopcontroller\\DesktopBookingController.cs",
               "RelativeToolTip": "AuthService\\Controllers\\Desktopcontroller\\DesktopBookingController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAkwBgAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-02T09:31:11.789Z",
               "EditorCaption": ""
