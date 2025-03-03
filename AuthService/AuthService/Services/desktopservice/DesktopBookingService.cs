@@ -24,6 +24,7 @@ namespace AuthService.Services.desktopservice
                 // Fetch bookings based on the date
                 var bookings = await (from b in _context.Bookings
                                       join u in _context.Users on b.Email equals u.Email
+                                      join c in _context.CourtSports on b.FieldId equals c.Id // Join with CourtSports to get FieldName
                                       where b.Date.Date == date.Date
                                       select new
                                       {
@@ -32,6 +33,7 @@ namespace AuthService.Services.desktopservice
                                           b.EndTime,
                                           b.SportType,
                                           b.FieldId,
+                                          c.FieldName, 
                                           b.PaymentMethod,
                                           b.Amount,
                                           FirstName = u.Name,
@@ -39,7 +41,8 @@ namespace AuthService.Services.desktopservice
                                           Duration = b.EndTime.Subtract(b.Date).TotalMinutes,
                                           Status = b.FlagArchived ? "Archived" : b.FlagCanceled ? "Canceled" : b.FlagBooked ? "Booked" : "Unknown"
                                       })
-                                      .ToListAsync();
+                       .ToListAsync();
+
 
                 return new Status
                 {
@@ -94,6 +97,47 @@ namespace AuthService.Services.desktopservice
             }
         }
 
+
+        public async Task<Status> ReserveBookingAsync(ReserveBookingRequest request)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+            if (user == null)
+                return new Status { Code = "1001", Message = "User does not exist." };
+
+            var startTime = request.Date;
+            var endTime = startTime.AddMinutes(request.Duration);
+
+            var conflictingBooking = await _context.Bookings
+                .Where(b => b.FieldId == request.FieldId && !b.FlagCanceled
+                            && ((b.Date < endTime && b.EndTime > startTime) || (b.Date < startTime && b.EndTime > startTime)))
+                .FirstOrDefaultAsync();
+
+            if (conflictingBooking != null)
+                return new Status { Code = "1003", Message = "The selected time slot is already booked." };
+
+            bool isArchived = startTime < DateTime.Now;
+
+            var booking = new Booking
+            {
+                SportType = request.SportType,
+                Date = startTime,
+                FieldId = request.FieldId,
+                PaymentMethod = request.PaymentMethod,
+                Amount = request.Amount,
+                FlagBooked = true,
+                FlagCanceled = false,
+                FlagArchived = isArchived,
+                Email = request.Email,
+                EndTime = endTime,
+                PaymentStatus = null,
+                PaymentId = ""
+            };
+
+            _context.Bookings.Add(booking);
+            await _context.SaveChangesAsync();
+
+            return new Status { Code = "0000", Message = "Booking successful.", Data = booking };
+        }
 
 
     }

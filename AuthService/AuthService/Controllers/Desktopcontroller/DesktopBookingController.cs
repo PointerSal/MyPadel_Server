@@ -1,4 +1,5 @@
 ﻿using AuthService.Interfaces.desktopinterface;
+using AuthService.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.Controllers.Desktopcontroller
@@ -22,6 +23,12 @@ namespace AuthService.Controllers.Desktopcontroller
         [HttpPost("cancel")]
         public async Task<IActionResult> CancelBooking([FromQuery] int bookingId) =>
            Ok(await _desktopBookingService.CancelBookingAsync(bookingId));
+
+        [HttpPost("reserve")]
+        public async Task<IActionResult> ReserveBooking([FromBody] ReserveBookingRequest request) =>
+            Ok(await _desktopBookingService.ReserveBookingAsync(request));
+
+
 
 
     }
