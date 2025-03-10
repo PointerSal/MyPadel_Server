@@ -100,9 +100,10 @@ namespace AuthService.Services.desktopservice
         }
 
 
-        public async Task<Status> ReserveBookingAsync(ReserveBookingRequest request)
+        public async Task<Status> ReserveBookingAsync(DesktopReserveBookingRequest request)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Cell == request.PhoneNumber);
+
             if (user == null)
                 return new Status { Code = "1001", Message = "User does not exist." };
 
@@ -129,7 +130,8 @@ namespace AuthService.Services.desktopservice
                 FlagBooked = true,
                 FlagCanceled = false,
                 FlagArchived = isArchived,
-                Email = request.Email,
+                PhoneNumber = request.PhoneNumber,
+                Notes = request.Notes,
                 EndTime = endTime,
                 PaymentStatus = null,
                 PaymentId = ""

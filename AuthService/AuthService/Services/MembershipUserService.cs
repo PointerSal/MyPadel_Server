@@ -28,16 +28,22 @@ namespace AuthService.Services
                     CardNumber = request.CardNumber,
                     ExpiryDate = request.ExpiryDate,
                     MedicalCertificateDate = request.MedicalCertificateDate,
+                    MedicalCertificatePath = request.MedicalCertificate,
                     FirstName = request.FirstName,
                     LastName = request.LastName,
                     Gender = request.Gender,
                     BirthDate = request.BirthDate,
-                    Address = request.Address,
+                    ProvinceOfBirth = request.ProvinceOfBirth,
+                    MunicipalityOfBirth = request.MunicipalityOfBirth,
+                    TaxCode = request.TaxCode,
+                    Citizenship = request.Citizenship,
+                    ProvinceOfResidence = request.ProvinceOfResidence,
+                    MunicipalityOfResidence = request.MunicipalityOfResidence,
                     PostalCode = request.PostalCode,
-                    Municipality = request.Municipality,
+                    ResidentialAddress = request.ResidentialAddress,
+                    PhoneNumber = request.PhoneNumber,
                     PaymentMethod = request.PaymentMethod,
-                    Email = request.Email,
-                    MedicalCertificatePath = request.MedicalCertificate
+                    Email = request.Email
                 };
 
                 _context.MembershipUsers.Add(membershipUser);
@@ -79,14 +85,20 @@ namespace AuthService.Services
                         CardNumber = request.MembershipNumber,
                         ExpiryDate = request.ExpiryDate,
                         MedicalCertificateDate = request.MedicalCertificateDate,
-                        MedicalCertificatePath = request.MedicalCertificate, // Directly use the Base64 string
+                        MedicalCertificatePath = request.MedicalCertificate,
                         FirstName = "Null",
                         LastName = "Null",
                         Gender = "Null",
                         BirthDate = default(DateTime),
-                        Address = "Null",
+                        ProvinceOfBirth = "Null",
+                        MunicipalityOfBirth = "Null",
+                        TaxCode = "Null",
+                        Citizenship = "Null",
+                        ProvinceOfResidence = "Null",
+                        MunicipalityOfResidence = "Null",
                         PostalCode = "Null",
-                        Municipality = "Null",
+                        ResidentialAddress = "Null",
+                        PhoneNumber = "Null",
                         PaymentMethod = "Null"
                     };
 

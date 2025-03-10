@@ -524,17 +524,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReserveBookingRequest"
+                "$ref": "#/components/schemas/DesktopReserveBookingRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReserveBookingRequest"
+                "$ref": "#/components/schemas/DesktopReserveBookingRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ReserveBookingRequest"
+                "$ref": "#/components/schemas/DesktopReserveBookingRequest"
               }
             }
           }
@@ -1340,6 +1340,48 @@
         },
         "additionalProperties": false
       },
+      "DesktopReserveBookingRequest": {
+        "type": "object",
+        "properties": {
+          "sportType": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeSlot": {
+            "type": "string",
+            "nullable": true
+          },
+          "fieldId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "FitMembershipRequest": {
         "type": "object",
         "properties": {
@@ -1429,7 +1471,27 @@
             "type": "string",
             "format": "date-time"
           },
-          "address": {
+          "provinceOfBirth": {
+            "type": "string",
+            "nullable": true
+          },
+          "municipalityOfBirth": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "citizenship": {
+            "type": "string",
+            "nullable": true
+          },
+          "provinceOfResidence": {
+            "type": "string",
+            "nullable": true
+          },
+          "municipalityOfResidence": {
             "type": "string",
             "nullable": true
           },
@@ -1437,7 +1499,11 @@
             "type": "string",
             "nullable": true
           },
-          "municipality": {
+          "residentialAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           },

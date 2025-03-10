@@ -92,8 +92,21 @@ namespace AuthService.Services
             if (fitMember == null)
                 return new Status { Code = "1002", Message = "User does not have a valid FIT membership." };
 
-             var startTime = request.Date;
+            var startTime = request.Date;
             var endTime = startTime.AddMinutes(request.Duration);
+
+            // Check if the booking date is in the past
+            if (startTime.Date == DateTime.Now.Date) // Same day, check time
+            {
+                if (startTime < DateTime.Now) // If the time is in the past, reject
+                {
+                    return new Status { Code = "1007", Message = "You cannot book a slot for a past time today." };
+                }
+            }
+            else if (startTime < DateTime.Now) // Future date, but in the past
+            {
+                return new Status { Code = "1007", Message = "You cannot book a slot for a past date." };
+            }
 
             var conflictingBooking = await _context.Bookings
                 .Where(b => b.FieldId == request.FieldId && !b.FlagCanceled
@@ -177,6 +190,32 @@ namespace AuthService.Services
                     Code = "1004",
                     Message = "Booking not found or the user is not authorized to cancel this booking.",
                     Data = null
+                };
+            }
+
+            // Check if the booking is archived
+            if (booking.FlagArchived)
+            {
+                return new Status
+                {
+                    Code = "1005",
+                    Message = "This booking is archived and cannot be canceled.",
+                    Data = null
+                };
+            }
+
+            // Check if the booking is within 24 hours from the current time
+            if (booking.Date <= DateTime.Now.AddHours(24))
+            {
+                // If within 24 hours, cancel the booking but don't process the refund
+                booking.FlagCanceled = true;
+                await _context.SaveChangesAsync();
+
+                return new Status
+                {
+                    Code = "0000",
+                    Message = "Booking canceled successfully. No refund will be issued for cancellations within 24 hours.",
+                    Data = booking
                 };
             }
 

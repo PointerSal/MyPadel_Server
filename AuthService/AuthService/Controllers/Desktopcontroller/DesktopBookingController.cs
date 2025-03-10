@@ -25,7 +25,7 @@ namespace AuthService.Controllers.Desktopcontroller
            Ok(await _desktopBookingService.CancelBookingAsync(bookingId));
 
         [HttpPost("reserve")]
-        public async Task<IActionResult> ReserveBooking([FromBody] ReserveBookingRequest request) =>
+        public async Task<IActionResult> ReserveBooking([FromBody] DesktopReserveBookingRequest request) =>
             Ok(await _desktopBookingService.ReserveBookingAsync(request));
 
 

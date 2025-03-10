@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AuthService.Model
 {
@@ -16,9 +17,14 @@ namespace AuthService.Model
         public bool FlagBooked { get; set; }         
         public bool FlagCanceled { get; set; }       
         public bool FlagArchived { get; set; }
-        public string? Email { get; set; }            
+        public string? Email { get; set; }
+        public string? PhoneNumber { get; set; } 
         public string? PaymentStatus { get; set; }
         public string? PaymentId { get; set; }
+
+        [MaxLength(500)] 
+        public string? Notes { get; set; }
+
     }
 
     public class BookingRequest
@@ -73,6 +79,19 @@ namespace AuthService.Model
         public decimal Amount { get; set; }          // Booking amount
         public string Email { get; set; }            // Email of the user making the booking
     }
+    public class DesktopReserveBookingRequest
+    {
+        public string SportType { get; set; }
+        public DateTime Date { get; set; }
+        public int Duration { get; set; }
+        public string TimeSlot { get; set; }
+        public int FieldId { get; set; }
+        public string PaymentMethod { get; set; }
+        public decimal Amount { get; set; }
+        public string PhoneNumber { get; set; }
+        public string? Notes { get; set; }
+    }
+
 
 
 }

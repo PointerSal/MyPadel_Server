@@ -360,7 +360,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "AuthService.Model.ReserveBookingRequest",
+        "Type": "AuthService.Model.DesktopReserveBookingRequest",
         "IsRequired": true
       }
     ],

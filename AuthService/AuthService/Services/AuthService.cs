@@ -50,7 +50,7 @@ namespace AuthService.Services
                     Email = request.Email,
                     Password = hashedPassword,
                     EmailOTP = emailOTP,                   
-                    EmailOTPExpiry = DateTime.UtcNow.AddSeconds(200),                   
+                    EmailOTPExpiry = DateTime.UtcNow.AddSeconds(60),                   
                     IsEmailVerified = false,
                     IsPhoneVerified = false,
                     IsActive = true,
@@ -165,7 +165,7 @@ namespace AuthService.Services
                 {
                     string newOTP = new Random().Next(100000, 999999).ToString();
                     user.PhoneOTP = newOTP;
-                    user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);
+                    user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(60);
 
                     await _context.SaveChangesAsync();
 
@@ -185,7 +185,7 @@ namespace AuthService.Services
                     string phoneOTP = new Random().Next(100000, 999999).ToString();
                     user.Cell = cell;
                     user.PhoneOTP = phoneOTP;
-                    user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(200);
+                    user.PhoneOTPExpiry = DateTime.UtcNow.AddSeconds(60);
 
                     await _context.SaveChangesAsync();
 
@@ -259,7 +259,7 @@ namespace AuthService.Services
 
             string newOTP = new Random().Next(100000, 999999).ToString();  
             user.EmailOTP = newOTP;   
-            user.EmailOTPExpiry = DateTime.UtcNow.AddSeconds(200);  
+            user.EmailOTPExpiry = DateTime.UtcNow.AddSeconds(60);  
 
             await _context.SaveChangesAsync();
 

@@ -7,7 +7,7 @@ namespace AuthService.Interfaces.desktopinterface
     {
         Task<Status> GetBookingsByDateAsync(DateTime date);
         Task<Status> CancelBookingAsync(int bookingId);
-        Task<Status> ReserveBookingAsync(ReserveBookingRequest request); 
+        Task<Status> ReserveBookingAsync(DesktopReserveBookingRequest request); 
 
 
     }
