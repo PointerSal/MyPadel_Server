@@ -601,7 +601,7 @@
       }
     },
     "/api/desktop-client/update": {
-      "put": {
+      "patch": {
         "tags": [
           "DesktopClient"
         ],
@@ -1331,10 +1331,15 @@
           },
           "fitCardExpiryDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "cardNumber": {
             "type": "string",
+            "nullable": true
+          },
+          "isVerified": {
+            "type": "boolean",
             "nullable": true
           }
         },
@@ -1391,11 +1396,13 @@
           },
           "expiryDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "medicalCertificateDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "medicalCertificate": {
             "type": "string",
@@ -1445,11 +1452,13 @@
           },
           "expiryDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "medicalCertificateDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "medicalCertificate": {
             "type": "string",
@@ -1469,7 +1478,8 @@
           },
           "birthDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "provinceOfBirth": {
             "type": "string",

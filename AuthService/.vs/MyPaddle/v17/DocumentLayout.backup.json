@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\paddleApp\\MyPadel_Server\\AuthService\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Migrations\\20250312195838_kwkds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AuthService\\Migrations\\20250312195838_kwkds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\paddleapp\\mypadel_server\\authservice\\authservice\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\paddleapp\\mypadel_server\\authservice\\authservice\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\paddleapp\\mypadel_server\\authservice\\authservice\\model\\authrequestmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\model\\authrequestmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|e:\\paddleapp\\mypadel_server\\authservice\\authservice\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC7D92A-9DA5-4E73-B40D-B494ACAE6E1D}|AuthService\\AuthService.csproj|solutionrelative:authservice\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250312195838_kwkds.cs",
+              "DocumentMoniker": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Migrations\\20250312195838_kwkds.cs",
+              "RelativeDocumentMoniker": "AuthService\\Migrations\\20250312195838_kwkds.cs",
+              "ToolTip": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Migrations\\20250312195838_kwkds.cs",
+              "RelativeToolTip": "AuthService\\Migrations\\20250312195838_kwkds.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T19:58:38.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "AuthService\\Services\\UserService.cs",
+              "ToolTip": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Services\\UserService.cs",
+              "RelativeToolTip": "AuthService\\Services\\UserService.cs",
+              "ViewState": "AgIAAA4AAACAZmZmZmYowCsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T19:56:28.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthRequestModels.cs",
+              "DocumentMoniker": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Model\\AuthRequestModels.cs",
+              "RelativeDocumentMoniker": "AuthService\\Model\\AuthRequestModels.cs",
+              "ToolTip": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Model\\AuthRequestModels.cs",
+              "RelativeToolTip": "AuthService\\Model\\AuthRequestModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T19:53:33.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "AuthService\\Services\\AuthService.cs",
+              "ToolTip": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Services\\AuthService.cs",
+              "RelativeToolTip": "AuthService\\Services\\AuthService.cs",
+              "ViewState": "AgIAACwAAAAAm5mZmZkRwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T18:16:01.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "AuthService\\Controllers\\AuthController.cs",
+              "ToolTip": "E:\\paddleApp\\MyPadel_Server\\AuthService\\AuthService\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "AuthService\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABAAAACAZmZmZmYswBwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T19:44:57.398Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

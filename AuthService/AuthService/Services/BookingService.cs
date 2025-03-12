@@ -89,8 +89,11 @@ namespace AuthService.Services
                 return new Status { Code = "1001", Message = "User does not exist." };
 
             var fitMember = await _context.MembershipUsers.FirstOrDefaultAsync(m => m.Email == request.Email);
-            if (fitMember == null)
-                return new Status { Code = "1002", Message = "User does not have a valid FIT membership." };
+            if (fitMember == null || !fitMember.IsVerified || fitMember.ExpiryDate < DateTime.Now)
+            {
+                return new Status { Code = "1002", Message = "User does not have a valid, verified FIT membership or the membership has expired." };
+            }
+
 
             var startTime = request.Date;
             var endTime = startTime.AddMinutes(request.Duration);

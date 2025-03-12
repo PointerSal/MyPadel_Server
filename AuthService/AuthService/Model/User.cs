@@ -11,6 +11,8 @@ namespace AuthService.Models
 
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
+        public string? ProfilePicture { get; set; }
+
         public string Password { get; set; }
         public string? Cell { get; set; }
         public string? PhoneOTP { get; set; }

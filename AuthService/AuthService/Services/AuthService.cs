@@ -54,7 +54,8 @@ namespace AuthService.Services
                     IsEmailVerified = false,
                     IsPhoneVerified = false,
                     IsActive = true,
-                    IsMarketing = request.IsMarketing
+                    IsMarketing = request.IsMarketing,
+                    ProfilePicture = request.ProfilePicture
                 };
 
 
@@ -80,6 +81,7 @@ namespace AuthService.Services
                         newUser.IsPhoneVerified,
                         newUser.IsFitMember,
                         newUser.IsMarketing,
+                        newUser.ProfilePicture,
                         Token = token
                     };
 

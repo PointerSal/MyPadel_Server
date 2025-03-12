@@ -106,12 +106,16 @@ namespace AuthService.Services
                 }
                 else
                 {
-                    // Update the fields if the user exists
-                    fitMembership.CardNumber = request.MembershipNumber ?? fitMembership.CardNumber;
-                    fitMembership.ExpiryDate = request.ExpiryDate != default(DateTime) ? request.ExpiryDate : fitMembership.ExpiryDate;
-                    fitMembership.MedicalCertificateDate = request.MedicalCertificateDate != default(DateTime) ? request.MedicalCertificateDate : fitMembership.MedicalCertificateDate;
-                    fitMembership.MedicalCertificatePath = request.MedicalCertificate ?? fitMembership.MedicalCertificatePath; // Update certificate if provided
+                     fitMembership.CardNumber = request.MembershipNumber ?? fitMembership.CardNumber;
+
+                     fitMembership.ExpiryDate = request.ExpiryDate != null ? request.ExpiryDate : fitMembership.ExpiryDate;
+
+                     fitMembership.MedicalCertificateDate = request.MedicalCertificateDate != null ? request.MedicalCertificateDate : fitMembership.MedicalCertificateDate;
+
+                     fitMembership.MedicalCertificatePath = request.MedicalCertificate ?? fitMembership.MedicalCertificatePath;
                 }
+
+
 
                 await _context.SaveChangesAsync();
 

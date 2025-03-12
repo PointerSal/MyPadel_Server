@@ -444,7 +444,7 @@
     "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
     "Method": "UpdateDesktopClient",
     "RelativePath": "api/desktop-client/update",
-    "HttpMethod": "PUT",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [

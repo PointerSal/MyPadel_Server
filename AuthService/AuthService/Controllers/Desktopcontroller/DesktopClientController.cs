@@ -30,7 +30,7 @@ namespace AuthService.Controllers.DesktopController
             Ok(await _desktopClientService.SearchDesktopClientByEmailAsync(request.Email));
 
         // Update desktop client information
-        [HttpPut("update")]
+        [HttpPatch("update")]
         public async Task<IActionResult> UpdateDesktopClient([FromBody] DesktopClientUpdateRequest request) =>
             Ok(await _desktopClientService.UpdateDesktopClientInformationAsync(request));
 

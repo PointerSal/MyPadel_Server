@@ -20,28 +20,47 @@ namespace AuthService.Services.DesktopService
         public async Task<Status> GetAllUsersAsync()
         {
             var users = await _context.Users
-                                      .Select(u => new
-                                      {
-                                          ClientName = u.Name,
-                                          CustomerSurname = u.Surname,
-                                          Email = u.Email,
-                                          Telephone = u.Cell,
+                                       .Select(u => new
+                                       {
+                                           ClientName = u.Name,
+                                           CustomerSurname = u.Surname,
+                                           Email = u.Email,
+                                           Telephone = u.Cell,
 
-                                          Membership = _context.MembershipUsers
-                                                               .Where(m => m.Email == u.Email)
-                                                               .Select(m => new
-                                                               {
-                                                                   FITCardExpiryDate = m.ExpiryDate,
-                                                                   MedicalCertificateExpiryDate = m.MedicalCertificateDate
-                                                               })
-                                                               .FirstOrDefault(),
+                                           Membership = _context.MembershipUsers
+                                                                .Where(m => m.Email == u.Email)
+                                                                .Select(m => new
+                                                                {
+                                                                    m.Id,
+                                                                    m.CardNumber,
+                                                                    FITCardExpiryDate = m.ExpiryDate,
+                                                                    MedicalCertificateExpiryDate = m.MedicalCertificateDate,
+                                                                    m.MedicalCertificatePath,
+                                                                    m.FirstName,
+                                                                    m.LastName,
+                                                                    m.Gender,
+                                                                    m.BirthDate,
+                                                                    m.ProvinceOfBirth,
+                                                                    m.MunicipalityOfBirth,
+                                                                    m.TaxCode,
+                                                                    m.Citizenship,
+                                                                    m.ProvinceOfResidence,
+                                                                    m.MunicipalityOfResidence,
+                                                                    m.PostalCode,
+                                                                    m.ResidentialAddress,
+                                                                    m.PhoneNumber,
+                                                                    m.PaymentMethod,
+                                                                    m.Email,
+                                                                    m.IsVerified
+                                                                })
+                                                                .FirstOrDefault(),
 
-                                          PlayerType = _context.Bookings
-                                                              .Where(b => b.Email == u.Email && b.FlagBooked)
-                                                              .Select(b => b.SportType)
-                                                              .FirstOrDefault() // Get the first sport type if multiple exist
-                                      })
-                                      .ToListAsync();
+                                           PlayerType = _context.Bookings
+                                                               .Where(b => b.Email == u.Email && b.FlagBooked)
+                                                               .Select(b => b.SportType)
+                                                               .FirstOrDefault() // Get the first sport type if multiple exist
+                                       })
+                                       .ToListAsync();
 
             if (users == null || !users.Any())
             {
@@ -56,6 +75,22 @@ namespace AuthService.Services.DesktopService
                 user.Telephone,
                 FITCardExpiryDate = user.Membership?.FITCardExpiryDate, // Nullable if membership doesn't exist
                 MedicalCertificateExpiryDate = user.Membership?.MedicalCertificateExpiryDate, // Nullable
+                MedicalCertificatePath = user.Membership?.MedicalCertificatePath,
+                FirstName = user.Membership?.FirstName,
+                LastName = user.Membership?.LastName,
+                Gender = user.Membership?.Gender,
+                BirthDate = user.Membership?.BirthDate,
+                ProvinceOfBirth = user.Membership?.ProvinceOfBirth,
+                MunicipalityOfBirth = user.Membership?.MunicipalityOfBirth,
+                TaxCode = user.Membership?.TaxCode,
+                Citizenship = user.Membership?.Citizenship,
+                ProvinceOfResidence = user.Membership?.ProvinceOfResidence,
+                MunicipalityOfResidence = user.Membership?.MunicipalityOfResidence,
+                PostalCode = user.Membership?.PostalCode,
+                ResidentialAddress = user.Membership?.ResidentialAddress,
+                PhoneNumber = user.Membership?.PhoneNumber,
+                PaymentMethod = user.Membership?.PaymentMethod,
+                IsVerified = user.Membership?.IsVerified,
                 PlayerType = user?.PlayerType // Nullable if no bookings exist
             }).ToList();
 
@@ -66,6 +101,7 @@ namespace AuthService.Services.DesktopService
                 Data = formattedUsers
             };
         }
+
 
         // Fetch customer booking history based on email
         public async Task<Status> GetCustomerBookingHistoryAsync(string email)
@@ -171,37 +207,42 @@ namespace AuthService.Services.DesktopService
                 return new Status { Code = "1001", Message = "Client not found", Data = null };
             }
 
-            // Update only the User fields that are relevant to the client search results
-            client.Name = request.Name;
-            client.Surname = request.Surname;
-            client.Cell = request.Telephone; // Assuming the Telephone is used to update the Cell in User table
+            // Optimized updating of fields, only update if not null or empty
+            client.Name = string.IsNullOrEmpty(request.Name) ? client.Name : request.Name;
+            client.Surname = string.IsNullOrEmpty(request.Surname) ? client.Surname : request.Surname;
+            client.Cell = string.IsNullOrEmpty(request.Telephone) ? client.Cell : request.Telephone;
 
-            // Update Membership information (for example, updating the expiry date)
+            // Update Name in MembershipUsers table as well
             var membership = await _context.MembershipUsers.FirstOrDefaultAsync(m => m.Email == request.Email);
             if (membership != null)
             {
-              //  membership.CardNumber = request.CardNumber ?? membership.CardNumber; // Only update if provided
-                membership.ExpiryDate = request.FitCardExpiryDate; // Update Expiry Date
+                // Update fields only if provided
+                membership.ExpiryDate = request.FitCardExpiryDate != null ? request.FitCardExpiryDate : membership.ExpiryDate;
+                membership.CardNumber = string.IsNullOrEmpty(request.CardNumber) ? membership.CardNumber : request.CardNumber; // Update if provided
+
+                // Update IsVerified if provided in the request
+                if (request.IsVerified.HasValue)
+                {
+                    membership.IsVerified = request.IsVerified.Value; // Set IsVerified from the request
+                }
+
+                // Update Name in MembershipUsers table as well
+                membership.FirstName = string.IsNullOrEmpty(request.Name) ? membership.FirstName : request.Name;
+                membership.LastName = string.IsNullOrEmpty(request.Surname) ? membership.LastName : request.Surname;
             }
             else
             {
-                // If the MembershipUser doesn't exist, you can choose to add a new one
                 var newMembership = new MembershipUser
                 {
                     Email = request.Email,
-                   // CardNumber = request.CardNumber,
-                    ExpiryDate = request.FitCardExpiryDate
+                    CardNumber = request.CardNumber,
+                    ExpiryDate = request.FitCardExpiryDate,
+                    IsVerified = request.IsVerified ?? false, // Default to false if not provided
+                    FirstName = request.Name,  // Add Name to Membership table
+                    LastName = request.Surname // Add Surname to Membership table
                 };
                 _context.MembershipUsers.Add(newMembership);
             }
-
-            // Only update bookings if necessary, no changes are specified for bookings in the request.
-            // If you want to update something in the bookings, uncomment and adjust this section as needed.
-            // var bookings = await _context.Bookings.Where(b => b.Email == request.Email).ToListAsync();
-            // foreach (var booking in bookings)
-            // {
-            //     booking.SportType = request.SportType; // Example: Update SportType in bookings
-            // }
 
             await _context.SaveChangesAsync();
 

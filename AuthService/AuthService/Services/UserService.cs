@@ -29,7 +29,20 @@ namespace AuthService.Services
             {
                 Code = "0000",
                 Message = "User profile fetched successfully",
-                Data = new { user.Name, user.Surname, user.Email, user.Cell }
+                Data = new
+                {
+                    user.Id,
+                    user.Name,
+                    user.Surname,
+                    user.Email,
+                    user.Cell,
+                    user.ProfilePicture,  
+                    user.IsEmailVerified,  
+                    user.IsPhoneVerified,  
+                    user.IsActive,         
+                    user.IsFitMember,      
+                    user.IsMarketing       
+                }
             };
         }
 
