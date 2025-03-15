@@ -39,7 +39,7 @@ namespace AuthService.Controllers
         }
 
         
-        [HttpPut("update-profile")]
+        [HttpPatch("update-profile")]
         public async Task<IActionResult> UpdateUserProfile([FromBody] UpdateProfileRequest request)
         {
             var result = await _userService.UpdateUserProfileAsync(request);

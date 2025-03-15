@@ -63,6 +63,7 @@
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Cell { get; set; }
+        public string ProfilePicture { get; set; }
     }
 
 

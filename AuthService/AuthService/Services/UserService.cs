@@ -65,6 +65,7 @@ namespace AuthService.Services
             user.Surname = request.Surname;
             user.Cell = request.Cell;
             user.Email = request.Email;
+            user.ProfilePicture = request.ProfilePicture;
 
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
