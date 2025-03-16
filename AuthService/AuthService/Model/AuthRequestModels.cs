@@ -53,17 +53,17 @@
 
     public class UpdatePasswordRequest
     {
-        public string Email { get; set; }
-        public string CurrentPassword { get; set; }
-        public string NewPassword { get; set; }
+        public string? Email { get; set; }
+        public string? CurrentPassword { get; set; }
+        public string? NewPassword { get; set; }
     }
     public class UpdateProfileRequest
     {
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Email { get; set; }
-        public string Cell { get; set; }
-        public string ProfilePicture { get; set; }
+        public string? Name { get; set; }
+        public string? Surname { get; set; }
+        public string? Email { get; set; }
+        public string? Cell { get; set; }
+        public string? ProfilePicture { get; set; }
     }
 
 

@@ -19,7 +19,7 @@ namespace AuthService.Services.DesktopService
 
         public async Task<Status> GetAllUsersAsync()
         {
-            var users = await _context.Users
+            /*var users = await _context.Users
                                        .Select(u => new
                                        {
                                            ClientName = u.Name,
@@ -60,7 +60,29 @@ namespace AuthService.Services.DesktopService
                                                                .Select(b => b.SportType)
                                                                .FirstOrDefault() // Get the first sport type if multiple exist
                                        })
-                                       .ToListAsync();
+                                       .ToListAsync();*/
+            var users = await _context.Users
+         .Join(
+             _context.MembershipUsers,
+             u => u.Email,
+             m => m.Email,
+             (u, m) => new { User = u, MembershipUser = m }
+         )
+         .Join(
+             _context.Bookings.Where(b => b.FlagBooked),
+             userMembership => userMembership.User.Email,
+             b => b.Email,
+             (userMembership, b) => new
+             {
+                 userMembership.User.Name,
+                 userMembership.User.Surname,
+                 userMembership.User.Email,
+                 userMembership.User.Cell,
+                 Membership = userMembership.MembershipUser,
+                 PlayerType = b.SportType
+             })
+         .ToListAsync();
+
 
             if (users == null || !users.Any())
             {
@@ -69,13 +91,13 @@ namespace AuthService.Services.DesktopService
 
             var formattedUsers = users.Select(user => new
             {
-                user.ClientName,
-                user.CustomerSurname,
+                user.Name,
+                user.Surname,
                 user.Email,
-                user.Telephone,
-                FITCardExpiryDate = user.Membership?.FITCardExpiryDate, // Nullable if membership doesn't exist
-                MedicalCertificateExpiryDate = user.Membership?.MedicalCertificateExpiryDate, // Nullable
-                MedicalCertificatePath = user.Membership?.MedicalCertificatePath,
+                user.Cell,
+                FITCardExpiryDate = user.Membership?.ExpiryDate, 
+                MedicalCertificateExpiryDate = user.Membership?.MedicalCertificateDate,
+                //MedicalCertificatePath = user.Membership?.MedicalCertificatePath,
                 FirstName = user.Membership?.FirstName,
                 LastName = user.Membership?.LastName,
                 Gender = user.Membership?.Gender,
@@ -138,7 +160,29 @@ namespace AuthService.Services.DesktopService
             };
         }
 
+        public async Task<Status> RenewMembershipAsync(string email)
+        {
+            var membershipUser = await _context.MembershipUsers
+                .FirstOrDefaultAsync(m => m.Email == email);
 
+            if (membershipUser == null)
+            {
+                return new Status { Code = "1001", Message = "Membership not found for the provided email", Data = null };
+            }
+
+            // Update ExpiryDate and IsVerified
+            membershipUser.ExpiryDate = null;
+            membershipUser.IsVerified = false;
+
+            await _context.SaveChangesAsync();  // Save changes to the database
+
+            return new Status
+            {
+                Code = "0000",
+                Message = "Membership renewed successfully",
+                Data = null
+            };
+        }
         // Search client by email and fetch relevant data
         public async Task<Status> SearchDesktopClientByEmailAsync(string email)
         {

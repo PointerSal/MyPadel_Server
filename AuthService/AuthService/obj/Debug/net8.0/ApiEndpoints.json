@@ -426,6 +426,22 @@
   },
   {
     "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
+    "Method": "RenewMembership",
+    "RelativePath": "api/desktop-client/renew-membership",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
     "Method": "SearchDesktopClient",
     "RelativePath": "api/desktop-client/search",
     "HttpMethod": "GET",
@@ -516,6 +532,22 @@
         "Name": "request",
         "Type": "AuthService.Model.MembershipUserRequest",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.DesktopController.PictureController",
+    "Method": "GetMedicalCertificate",
+    "RelativePath": "api/Picture/medical-certificate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -660,7 +692,7 @@
     "ContainingType": "AuthService.Controllers.UserController",
     "Method": "UpdateUserProfile",
     "RelativePath": "api/user/update-profile",
-    "HttpMethod": "PUT",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [

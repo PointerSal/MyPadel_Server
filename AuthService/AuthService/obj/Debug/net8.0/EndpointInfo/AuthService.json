@@ -558,6 +558,27 @@
         }
       }
     },
+    "/api/desktop-client/renew-membership": {
+      "post": {
+        "tags": [
+          "DesktopClient"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/desktop-client/booking-history": {
       "get": {
         "tags": [
@@ -884,6 +905,27 @@
         }
       }
     },
+    "/api/Picture/medical-certificate": {
+      "get": {
+        "tags": [
+          "Picture"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/price": {
       "get": {
         "tags": [
@@ -1095,7 +1137,7 @@
       }
     },
     "/api/user/update-profile": {
-      "put": {
+      "patch": {
         "tags": [
           "User"
         ],
@@ -1524,6 +1566,9 @@
           "email": {
             "type": "string",
             "nullable": true
+          },
+          "isVerified": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -1603,6 +1648,10 @@
           },
           "isMarketing": {
             "type": "boolean"
+          },
+          "profilePicture": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1725,6 +1774,10 @@
             "nullable": true
           },
           "cell": {
+            "type": "string",
+            "nullable": true
+          },
+          "profilePicture": {
             "type": "string",
             "nullable": true
           }

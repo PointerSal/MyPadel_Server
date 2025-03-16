@@ -18,6 +18,10 @@ namespace AuthService.Controllers.DesktopController
         public async Task<IActionResult> GetAllUsers() =>
             Ok(await _desktopClientService.GetAllUsersAsync());
 
+        [HttpPost("renew-membership")]
+        public async Task<IActionResult> RenewMembership([FromQuery] string email) => 
+            Ok(await _desktopClientService.RenewMembershipAsync(email));
+
 
         // Get customer booking history
         [HttpGet("booking-history")]

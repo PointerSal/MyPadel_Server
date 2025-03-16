@@ -95,21 +95,21 @@ namespace AuthService.Services
             }
 
 
-            var startTime = request.Date;
-            var endTime = startTime.AddMinutes(request.Duration);
+                var startTime = request.Date;
+                var endTime = startTime.AddMinutes(request.Duration);
 
-            // Check if the booking date is in the past
-            if (startTime.Date == DateTime.Now.Date) // Same day, check time
-            {
-                if (startTime < DateTime.Now) // If the time is in the past, reject
+                // Check if the booking date is in the past
+                if (startTime.Date == DateTime.Now.Date) // Same day, check time
                 {
-                    return new Status { Code = "1007", Message = "You cannot book a slot for a past time today." };
+                    if (startTime < DateTime.Now) // If the time is in the past, reject
+                    {
+                        return new Status { Code = "1007", Message = "You cannot book a slot for a past time today." };
+                    }
                 }
-            }
-            else if (startTime < DateTime.Now) // Future date, but in the past
-            {
-                return new Status { Code = "1007", Message = "You cannot book a slot for a past date." };
-            }
+                else if (startTime < DateTime.Now) // Future date, but in the past
+                {
+                    return new Status { Code = "1007", Message = "You cannot book a slot for a past date." };
+                }
 
             var conflictingBooking = await _context.Bookings
                 .Where(b => b.FieldId == request.FieldId && !b.FlagCanceled
@@ -141,21 +141,21 @@ namespace AuthService.Services
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
             // Send confirmation email to the user
-            string messageBody = $@"
-        Dear {user.Name} {user.Surname},
+                        string messageBody = $@"
+                    Dear {user.Name} {user.Surname},
         
-        Your booking for {request.SportType} has been successfully made!
+                    Your booking for {request.SportType} has been successfully made!
         
-        Booking Details:
-        Date: {startTime.ToString("MMMM dd, yyyy")}
-        Time: {startTime.ToString("hh:mm tt")}
-        Duration: {request.Duration} minutes
-        Field: {request.FieldId}
-        Payment Method: {request.PaymentMethod}
-        Amount: {request.Amount}
+                    Booking Details:
+                    Date: {startTime.ToString("MMMM dd, yyyy")}
+                    Time: {startTime.ToString("hh:mm tt")}
+                    Duration: {request.Duration} minutes
+                    Field: {request.FieldId}
+                    Payment Method: {request.PaymentMethod}
+                    Amount: {request.Amount}
         
-        Thank you for booking with us!
-    ";
+                    Thank you for booking with us!
+                ";
 
             bool emailSent = _emailService.SendEmail(user.Email, "Booking Confirmation", messageBody);
 

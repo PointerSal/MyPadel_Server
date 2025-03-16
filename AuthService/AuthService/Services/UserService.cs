@@ -60,12 +60,20 @@ namespace AuthService.Services
                 return new Status { Code = "1001", Message = "User not found", Data = null };
             }
 
-            
-            user.Name = request.Name;
-            user.Surname = request.Surname;
-            user.Cell = request.Cell;
-            user.Email = request.Email;
-            user.ProfilePicture = request.ProfilePicture;
+
+            /* user.Name = request.Name;
+             user.Surname = request.Surname;
+             user.Cell = request.Cell;
+             user.Email = request.Email;
+             user.ProfilePicture = request.ProfilePicture;*/
+
+            // Only update fields if they are provided (not null)
+            user.Name = !string.IsNullOrEmpty(request.Name) ? request.Name : user.Name;
+            user.Surname = !string.IsNullOrEmpty(request.Surname) ? request.Surname : user.Surname;
+            user.Cell = !string.IsNullOrEmpty(request.Cell) ? request.Cell : user.Cell;
+            user.ProfilePicture = !string.IsNullOrEmpty(request.ProfilePicture) ? request.ProfilePicture : user.ProfilePicture;
+
+
 
             _context.Users.Update(user);
             await _context.SaveChangesAsync();

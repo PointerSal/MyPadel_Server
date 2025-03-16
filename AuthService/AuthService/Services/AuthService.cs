@@ -62,6 +62,9 @@ namespace AuthService.Services
                 await _context.Users.AddAsync(newUser);
                 await _context.SaveChangesAsync();
 
+                var membershipUser = await _context.MembershipUsers.FirstOrDefaultAsync(m => m.Email == request.Email);
+                bool isFitVerified = membershipUser?.IsVerified ?? false;
+
                 var token = _tokenService.GenerateToken(newUser.Id.ToString(), newUser.Email);
 
 
@@ -79,9 +82,9 @@ namespace AuthService.Services
                         newUser.Cell,
                         newUser.IsEmailVerified,
                         newUser.IsPhoneVerified,
+                        IsFitVerified = isFitVerified,
                         newUser.IsFitMember,
                         newUser.IsMarketing,
-                        newUser.ProfilePicture,
                         Token = token
                     };
 
@@ -133,7 +136,8 @@ namespace AuthService.Services
             {
                 return new Status { Code = "1002", Message = "Invalid email or password", Data = null };
             }
-
+            var membershipUser = await _context.MembershipUsers.FirstOrDefaultAsync(m => m.Email == request.Email);
+            bool isFitVerified = membershipUser?.IsVerified ?? false;
             var token = _tokenService.GenerateToken(user.Id.ToString(), user.Email);
 
             var responseData = new
@@ -146,6 +150,7 @@ namespace AuthService.Services
                 user.IsEmailVerified,
                 user.IsPhoneVerified,
                 user.IsFitMember,
+                IsFitVerified = isFitVerified,
                 Token = token
             };
 

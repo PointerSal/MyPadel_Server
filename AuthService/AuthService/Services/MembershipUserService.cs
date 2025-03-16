@@ -43,7 +43,8 @@ namespace AuthService.Services
                     ResidentialAddress = request.ResidentialAddress,
                     PhoneNumber = request.PhoneNumber,
                     PaymentMethod = request.PaymentMethod,
-                    Email = request.Email
+                    Email = request.Email,
+                    IsVerified = request.IsVerified=true
                 };
 
                 _context.MembershipUsers.Add(membershipUser);

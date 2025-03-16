@@ -91,6 +91,8 @@ namespace AuthService
             services.AddScoped<IDesktopCourtSportsService, DesktopCourtSportsService>();
             services.AddScoped<IDesktopBookingService, DesktopBookingService>();
             services.AddScoped<IDesktopClientService, DesktopClientService>();
+            services.AddScoped<IPictureService, PictureService>();
+
 
 
 

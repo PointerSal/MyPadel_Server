@@ -20,12 +20,12 @@ namespace AuthService.Controllers
 
         [HttpPost("register")]
         public async Task<IActionResult> RegisterMembershipUser([FromBody] MembershipUserRequest request) =>
-            (await _membershipUserService.RegisterMembershipUser(request)).Code == "0000" ? Ok(await _membershipUserService.RegisterMembershipUser(request)) : StatusCode(500, await _membershipUserService.RegisterMembershipUser(request));
+            Ok(await _membershipUserService.RegisterMembershipUser(request));
 
 
         [HttpPatch("fit")]
         public async Task<IActionResult> AlreadyFitMember([FromBody] FitMembershipRequest request) =>
-            (await _membershipUserService.AlreadyFitMember(request)).Code == "0000" ? Ok(await _membershipUserService.AlreadyFitMember(request)) : StatusCode(500, await _membershipUserService.AlreadyFitMember(request));
+         Ok(await _membershipUserService.AlreadyFitMember(request));
 
 
 

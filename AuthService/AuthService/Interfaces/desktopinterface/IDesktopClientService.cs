@@ -11,6 +11,7 @@ namespace AuthService.Interfaces.DesktopInterface
         Task<Status> GetCustomerBookingHistoryAsync(string email);
         Task<Status> GetCustomerStatisticsAsync(string email);
 
+        Task<Status> RenewMembershipAsync(string email);
         Task<Status> DeleteUserAsync(string email);
 
 
