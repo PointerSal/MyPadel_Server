@@ -112,9 +112,10 @@ namespace AuthService.Services
                 }
 
             var conflictingBooking = await _context.Bookings
-                .Where(b => b.FieldId == request.FieldId && !b.FlagCanceled
-                            && ((b.Date < endTime && b.EndTime > startTime) || (b.Date < startTime && b.EndTime > startTime)))
-                .FirstOrDefaultAsync();
+     .Where(b => b.FieldId == request.FieldId && b.SportType == request.SportType
+                 && !b.FlagCanceled
+                 && ((b.Date < endTime && b.EndTime > startTime) || (b.Date < startTime && b.EndTime > startTime)))
+     .FirstOrDefaultAsync();
 
             if (conflictingBooking != null)
                 return new Status { Code = "1003", Message = "The selected time slot is already booked." };
