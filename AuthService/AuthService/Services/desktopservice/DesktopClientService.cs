@@ -19,72 +19,88 @@ namespace AuthService.Services.DesktopService
 
         public async Task<Status> GetAllUsersAsync()
         {
-            /*var users = await _context.Users
-                                       .Select(u => new
-                                       {
-                                           ClientName = u.Name,
-                                           CustomerSurname = u.Surname,
-                                           Email = u.Email,
-                                           Telephone = u.Cell,
-
-                                           Membership = _context.MembershipUsers
-                                                                .Where(m => m.Email == u.Email)
-                                                                .Select(m => new
-                                                                {
-                                                                    m.Id,
-                                                                    m.CardNumber,
-                                                                    FITCardExpiryDate = m.ExpiryDate,
-                                                                    MedicalCertificateExpiryDate = m.MedicalCertificateDate,
-                                                                    m.MedicalCertificatePath,
-                                                                    m.FirstName,
-                                                                    m.LastName,
-                                                                    m.Gender,
-                                                                    m.BirthDate,
-                                                                    m.ProvinceOfBirth,
-                                                                    m.MunicipalityOfBirth,
-                                                                    m.TaxCode,
-                                                                    m.Citizenship,
-                                                                    m.ProvinceOfResidence,
-                                                                    m.MunicipalityOfResidence,
-                                                                    m.PostalCode,
-                                                                    m.ResidentialAddress,
-                                                                    m.PhoneNumber,
-                                                                    m.PaymentMethod,
-                                                                    m.Email,
-                                                                    m.IsVerified
-                                                                })
-                                                                .FirstOrDefault(),
-
-                                           PlayerType = _context.Bookings
-                                                               .Where(b => b.Email == u.Email && b.FlagBooked)
-                                                               .Select(b => b.SportType)
-                                                               .FirstOrDefault() // Get the first sport type if multiple exist
-                                       })
-                                       .ToListAsync();*/
             var users = await _context.Users
                 .AsNoTracking()  // Disable change tracking to improve performance
-                     .Join(
-                    _context.MembershipUsers,
-                    u => u.Email,
-                    m => m.Email,
-                    (u, m) => new { User = u, MembershipUser = m }
-                )
-                .Join(
-                    _context.Bookings.Where(b => b.FlagBooked),
-                    userMembership => userMembership.User.Email,
-                    b => b.Email,
-                    (userMembership, b) => new
-                    {
-                        userMembership.User.Name,
-                        userMembership.User.Surname,
-                        userMembership.User.Email,
-                        userMembership.User.Cell,
-                        Membership = userMembership.MembershipUser,
-                        PlayerType = b.SportType
-                    })
+                .Select(u => new
+                {
+                    u.Name,
+                    u.Surname,
+                    u.Email,
+                    u.Cell,
+                    FITCardExpiryDate = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.ExpiryDate)
+                        .FirstOrDefault(),
+                    MedicalCertificateExpiryDate = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.MedicalCertificateDate)
+                        .FirstOrDefault(),
+                    FirstName = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.FirstName)
+                        .FirstOrDefault(),
+                    LastName = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.LastName)
+                        .FirstOrDefault(),
+                    Gender = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.Gender)
+                        .FirstOrDefault(),
+                    BirthDate = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.BirthDate)
+                        .FirstOrDefault(),
+                    ProvinceOfBirth = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.ProvinceOfBirth)
+                        .FirstOrDefault(),
+                    MunicipalityOfBirth = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.MunicipalityOfBirth)
+                        .FirstOrDefault(),
+                    TaxCode = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.TaxCode)
+                        .FirstOrDefault(),
+                    Citizenship = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.Citizenship)
+                        .FirstOrDefault(),
+                    ProvinceOfResidence = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.ProvinceOfResidence)
+                        .FirstOrDefault(),
+                    MunicipalityOfResidence = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.MunicipalityOfResidence)
+                        .FirstOrDefault(),
+                    PostalCode = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.PostalCode)
+                        .FirstOrDefault(),
+                    ResidentialAddress = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.ResidentialAddress)
+                        .FirstOrDefault(),
+                    PhoneNumber = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.PhoneNumber)
+                        .FirstOrDefault(),
+                    PaymentMethod = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.PaymentMethod)
+                        .FirstOrDefault(),
+                    IsVerified = _context.MembershipUsers
+                        .Where(m => m.Email == u.Email)
+                        .Select(m => m.IsVerified)
+                        .FirstOrDefault(),
+                    PlayerType = _context.Bookings
+                        .Where(b => b.Email == u.Email && b.FlagBooked)
+                        .Select(b => b.SportType)
+                        .FirstOrDefault()
+                })
                 .ToListAsync();
-
-
 
             if (users == null || !users.Any())
             {
@@ -97,25 +113,24 @@ namespace AuthService.Services.DesktopService
                 user.Surname,
                 user.Email,
                 user.Cell,
-                FITCardExpiryDate = user.Membership?.ExpiryDate, 
-                MedicalCertificateExpiryDate = user.Membership?.MedicalCertificateDate,
-                //MedicalCertificatePath = user.Membership?.MedicalCertificatePath,
-                FirstName = user.Membership?.FirstName,
-                LastName = user.Membership?.LastName,
-                Gender = user.Membership?.Gender,
-                BirthDate = user.Membership?.BirthDate,
-                ProvinceOfBirth = user.Membership?.ProvinceOfBirth,
-                MunicipalityOfBirth = user.Membership?.MunicipalityOfBirth,
-                TaxCode = user.Membership?.TaxCode,
-                Citizenship = user.Membership?.Citizenship,
-                ProvinceOfResidence = user.Membership?.ProvinceOfResidence,
-                MunicipalityOfResidence = user.Membership?.MunicipalityOfResidence,
-                PostalCode = user.Membership?.PostalCode,
-                ResidentialAddress = user.Membership?.ResidentialAddress,
-                PhoneNumber = user.Membership?.PhoneNumber,
-                PaymentMethod = user.Membership?.PaymentMethod,
-                IsVerified = user.Membership?.IsVerified,
-                PlayerType = user?.PlayerType // Nullable if no bookings exist
+                FITCardExpiryDate = user.FITCardExpiryDate,
+                MedicalCertificateExpiryDate = user.MedicalCertificateExpiryDate,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Gender = user.Gender,
+                BirthDate = user.BirthDate,
+                ProvinceOfBirth = user.ProvinceOfBirth,
+                MunicipalityOfBirth = user.MunicipalityOfBirth,
+                TaxCode = user.TaxCode,
+                Citizenship = user.Citizenship,
+                ProvinceOfResidence = user.ProvinceOfResidence,
+                MunicipalityOfResidence = user.MunicipalityOfResidence,
+                PostalCode = user.PostalCode,
+                ResidentialAddress = user.ResidentialAddress,
+                PhoneNumber = user.PhoneNumber,
+                PaymentMethod = user.PaymentMethod,
+                IsVerified = user.IsVerified,
+                PlayerType = user.PlayerType
             }).ToList();
 
             return new Status
@@ -125,6 +140,7 @@ namespace AuthService.Services.DesktopService
                 Data = formattedUsers
             };
         }
+
 
 
         // Fetch customer booking history based on email
