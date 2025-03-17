@@ -23,35 +23,74 @@ namespace AuthService.Services.desktopservice
         {
             try
             {
-                var bookings = await (from b in _context.Bookings
-                                      join u in _context.Users on b.Email equals u.Email into userEmailJoin
-                                      from u in userEmailJoin.DefaultIfEmpty()
-                                      join p in _context.Users on b.PhoneNumber equals p.Cell into userPhoneJoin
-                                      from p in userPhoneJoin.DefaultIfEmpty()
-                                      join c in _context.CourtSports on b.FieldId equals c.Id // Join with CourtSports to get FieldName
-                                      where b.Date.Date == date.Date
-                                      select new
-                                      {
-                                          b.Id,
-                                          b.Date,
-                                          b.EndTime,
-                                          b.SportType,
-                                          b.FieldId,
-                                          c.FieldName,
-                                          b.PaymentMethod,
-                                          b.Amount,
-                                          FirstName = u != null ? u.Name : p.Name,  // Use Name from either email or phone number
-                                          LastName = u != null ? u.Surname : p.Surname, // Use Surname from either email or phone number
-                                          Duration = b.EndTime.Subtract(b.Date).TotalMinutes,
-                                          Status = b.FlagArchived ? "Archived" : b.FlagCanceled ? "Canceled" : b.FlagBooked ? "Booked" : "Unknown"
-                                      })
-                 .ToListAsync();
+                // Step 1: Fetch bookings for the given date using AsNoTracking() for performance improvement
+                var bookings = await _context.Bookings
+                    .AsNoTracking()  // Prevent entity tracking for read-only operations
+                    .Where(b => b.Date.Date == date.Date)
+                    .ToListAsync();
 
+                // If no bookings are found, return early
+                if (!bookings.Any())
+                {
+                    return new Status
+                    {
+                        Code = "1002",
+                        Message = "No bookings found for the given date",
+                        Data = null
+                    };
+                }
+
+                // Step 2: Process each booking and check against CourtSports table
+                var result = new List<object>();
+
+                // Fetch court sport data with AsNoTracking() as we only need read access
+                var courtSports = await _context.CourtSports
+                    .AsNoTracking()
+                    .ToListAsync();
+
+                // Fetch user data with AsNoTracking() to improve performance
+                var users = await _context.Users
+                    .AsNoTracking()
+                    .ToListAsync();
+
+                foreach (var booking in bookings)
+                {
+                    // Find matching CourtSports record based on SportType and FieldId
+                    var courtSport = courtSports
+                        .FirstOrDefault(c => c.SportsName == booking.SportType && c.FieldType == booking.FieldId.ToString());
+
+                    // Find user details (either by email or phone number)
+                    var user = users.FirstOrDefault(u => u.Email == booking.Email);
+                    var phoneUser = users.FirstOrDefault(p => p.Cell == booking.PhoneNumber);
+
+                    if (courtSport != null)
+                    {
+                        result.Add(new
+                        {
+                            booking.Id,
+                            booking.Date,
+                            booking.EndTime,
+                            booking.SportType,
+                            booking.FieldId,
+                            courtSport.FieldName,
+                            booking.PaymentMethod,
+                            booking.Amount,
+                            FirstName = user?.Name ?? phoneUser?.Name ?? "Unknown",
+                            LastName = user?.Surname ?? phoneUser?.Surname ?? "Unknown",
+                            Duration = booking.EndTime.Subtract(booking.Date).TotalMinutes,
+                            Status = booking.FlagArchived ? "Archived" :
+                                     booking.FlagCanceled ? "Canceled" :
+                                     booking.FlagBooked ? "Booked" : "Unknown"
+                        });
+                    }
+                }
+
+                // Step 3: Return the results
                 return new Status
                 {
                     Code = "0000",
                     Message = "Bookings fetched successfully",
-                    Data = bookings
+                    Data = result
                 };
             }
             catch (Exception ex)

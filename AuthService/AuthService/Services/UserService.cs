@@ -19,7 +19,9 @@ namespace AuthService.Services
 
         public async Task<Status> GetUserProfileAsync(string email)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            var user = await _context.Users
+                                        .AsNoTracking()  
+                                        .FirstOrDefaultAsync(u => u.Email == email);
             if (user == null)
             {
                 return new Status { Code = "1001", Message = "User not found", Data = null };

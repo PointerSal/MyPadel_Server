@@ -19,6 +19,7 @@ namespace AuthService.Services.DesktopService
         {
             // Direct query to fetch only the necessary fields (MedicalCertificatePath) from MembershipUsers using email
             var medicalCertificatePath = await _context.MembershipUsers
+                .AsNoTracking() // Disable change tracking for improved performance
                 .Where(m => m.Email == email)
                 .Select(m => m.MedicalCertificatePath)
                 .FirstOrDefaultAsync();
@@ -37,5 +38,6 @@ namespace AuthService.Services.DesktopService
                 Data = new { MedicalCertificatePath = medicalCertificatePath }
             };
         }
+
     }
 }

@@ -62,26 +62,28 @@ namespace AuthService.Services.DesktopService
                                        })
                                        .ToListAsync();*/
             var users = await _context.Users
-         .Join(
-             _context.MembershipUsers,
-             u => u.Email,
-             m => m.Email,
-             (u, m) => new { User = u, MembershipUser = m }
-         )
-         .Join(
-             _context.Bookings.Where(b => b.FlagBooked),
-             userMembership => userMembership.User.Email,
-             b => b.Email,
-             (userMembership, b) => new
-             {
-                 userMembership.User.Name,
-                 userMembership.User.Surname,
-                 userMembership.User.Email,
-                 userMembership.User.Cell,
-                 Membership = userMembership.MembershipUser,
-                 PlayerType = b.SportType
-             })
-         .ToListAsync();
+                .AsNoTracking()  // Disable change tracking to improve performance
+                     .Join(
+                    _context.MembershipUsers,
+                    u => u.Email,
+                    m => m.Email,
+                    (u, m) => new { User = u, MembershipUser = m }
+                )
+                .Join(
+                    _context.Bookings.Where(b => b.FlagBooked),
+                    userMembership => userMembership.User.Email,
+                    b => b.Email,
+                    (userMembership, b) => new
+                    {
+                        userMembership.User.Name,
+                        userMembership.User.Surname,
+                        userMembership.User.Email,
+                        userMembership.User.Cell,
+                        Membership = userMembership.MembershipUser,
+                        PlayerType = b.SportType
+                    })
+                .ToListAsync();
+
 
 
             if (users == null || !users.Any())
@@ -302,7 +304,7 @@ namespace AuthService.Services.DesktopService
 
             // Fetch all relevant bookings for the user
             var bookings = await _context.Bookings
-                                          .Where(b => b.Email == email && b.FlagBooked) // Ensure the booking is confirmed
+                                          .Where(b => b.Email == email && b.FlagBooked) 
                                           .ToListAsync();
 
             if (!bookings.Any())
