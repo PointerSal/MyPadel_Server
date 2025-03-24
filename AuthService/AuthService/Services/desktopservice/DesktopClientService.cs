@@ -1,6 +1,7 @@
 ﻿using AuthService.Bridge;
 using AuthService.Interfaces.DesktopInterface;
 using AuthService.Model;
+using AuthService.Models;
 using AuthService.Models.DesktopModel;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -167,7 +168,11 @@ namespace AuthService.Services.DesktopService
 
             if (!bookings.Any())
             {
-                return new Status { Code = "1001", Message = "No booking history found", Data = null };
+                return new Status {
+                    Code = "0000",
+                    Message = "No bookings found for the given User",
+                    Data = new List<object>()
+                };
             }
 
             return new Status
@@ -259,57 +264,120 @@ namespace AuthService.Services.DesktopService
             };
         }
 
-        // Update client information
 
-        public async Task<Status> UpdateDesktopClientInformationAsync(DesktopClientUpdateRequest request)
+
+
+        public async Task<Status> AddUserAsync(AddUserRequest request)
         {
-            var client = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
-            if (client == null)
+            try
             {
-                return new Status { Code = "1001", Message = "Client not found", Data = null };
-            }
+                // Hash the password using BCrypt
+                var hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
 
-            // Optimized updating of fields, only update if not null or empty
-            client.Name = string.IsNullOrEmpty(request.Name) ? client.Name : request.Name;
-            client.Surname = string.IsNullOrEmpty(request.Surname) ? client.Surname : request.Surname;
-            client.Cell = string.IsNullOrEmpty(request.Telephone) ? client.Cell : request.Telephone;
-
-            // Update Name in MembershipUsers table as well
-            var membership = await _context.MembershipUsers.FirstOrDefaultAsync(m => m.Email == request.Email);
-            if (membership != null)
-            {
-                // Update fields only if provided
-                membership.ExpiryDate = request.FitCardExpiryDate != null ? request.FitCardExpiryDate : membership.ExpiryDate;
-                membership.CardNumber = string.IsNullOrEmpty(request.CardNumber) ? membership.CardNumber : request.CardNumber; // Update if provided
-
-                // Update IsVerified if provided in the request
-                if (request.IsVerified.HasValue)
+                // Create a new User object and save to Users table
+                var newUser = new User
                 {
-                    membership.IsVerified = request.IsVerified.Value; // Set IsVerified from the request
-                }
+                    Id = Guid.NewGuid(),
+                    Name = request.Name,
+                    Surname = request.Surname,
+                    Email = request.Email,
+                    Password = hashedPassword,
+                    IsMarketing = request.IsMarketing,
+                    ProfilePicture = request.ProfilePicture
+                };
 
-                // Update Name in MembershipUsers table as well
-                membership.FirstName = string.IsNullOrEmpty(request.Name) ? membership.FirstName : request.Name;
-                membership.LastName = string.IsNullOrEmpty(request.Surname) ? membership.LastName : request.Surname;
-            }
-            else
-            {
-                var newMembership = new MembershipUser
+                _context.Users.Add(newUser);
+                await _context.SaveChangesAsync();
+
+                // Create a new MembershipUser object and save to MembershipUsers table
+                var membershipUser = new MembershipUser
                 {
                     Email = request.Email,
                     CardNumber = request.CardNumber,
-                    ExpiryDate = request.FitCardExpiryDate,
-                    IsVerified = request.IsVerified ?? false, // Default to false if not provided
-                    FirstName = request.Name,  // Add Name to Membership table
-                    LastName = request.Surname // Add Surname to Membership table
+                    ExpiryDate = request.ExpiryDate,
+                    MedicalCertificateDate = request.MedicalCertificateDate,
+                    MedicalCertificatePath = request.MedicalCertificatePath,
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
+                    Gender = request.Gender,
+                    BirthDate = request.BirthDate,
+                    ProvinceOfBirth = request.ProvinceOfBirth,
+                    MunicipalityOfBirth = request.MunicipalityOfBirth,
+                    TaxCode = request.TaxCode,
+                    Citizenship = request.Citizenship,
+                    ProvinceOfResidence = request.ProvinceOfResidence,
+                    MunicipalityOfResidence = request.MunicipalityOfResidence,
+                    PostalCode = request.PostalCode,
+                    ResidentialAddress = request.ResidentialAddress,
+                    PhoneNumber = request.PhoneNumber,
+                    PaymentMethod = request.PaymentMethod,
+                    IsVerified = request.IsVerified
                 };
-                _context.MembershipUsers.Add(newMembership);
+
+                _context.MembershipUsers.Add(membershipUser);
+                await _context.SaveChangesAsync();
+
+                return new Status { Code = "0000", Message = "User added successfully", Data = null };
             }
-
-            await _context.SaveChangesAsync();
-
-            return new Status { Code = "0000", Message = "Client information updated successfully", Data = null };
+            catch (Exception ex)
+            {
+                return new Status { Code = "1001", Message = $"Error adding user: {ex.Message}", Data = null };
+            }
         }
+
+        public async Task<Status> UpdateDesktopClientInformationAsync(DesktopClientUpdateRequest request)
+            {
+                var client = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+                if (client == null)
+                {
+                    return new Status { Code = "1001", Message = "Client not found", Data = null };
+                }
+
+                // Optimized updating of fields, only update if not null or empty
+                client.Name = string.IsNullOrEmpty(request.Name) ? client.Name : request.Name;
+                client.Surname = string.IsNullOrEmpty(request.Surname) ? client.Surname : request.Surname;
+                client.Cell = string.IsNullOrEmpty(request.Telephone) ? client.Cell : request.Telephone;
+
+                // Update Name in MembershipUsers table as well
+                var membership = await _context.MembershipUsers.FirstOrDefaultAsync(m => m.Email == request.Email);
+                if (membership != null)
+                {
+                    // Update fields only if provided
+                    membership.ExpiryDate = request.FitCardExpiryDate != null ? request.FitCardExpiryDate : membership.ExpiryDate;
+                    membership.CardNumber = string.IsNullOrEmpty(request.CardNumber) ? membership.CardNumber : request.CardNumber; // Update if provided
+                    membership.MedicalCertificatePath = string.IsNullOrEmpty(request.MedicalCertificate) ? membership.MedicalCertificatePath : request.MedicalCertificate;
+                    membership.MedicalCertificateDate = request.MedicalCertificateDate != null ? request.MedicalCertificateDate : membership.MedicalCertificateDate;
+
+                // Update IsVerified if provided in the request
+                if (request.IsVerified.HasValue)
+                    {
+                        membership.IsVerified = request.IsVerified.Value; // Set IsVerified from the request
+                    }
+
+                    // Update Name in MembershipUsers table as well
+                    membership.FirstName = string.IsNullOrEmpty(request.Name) ? membership.FirstName : request.Name;
+                    membership.LastName = string.IsNullOrEmpty(request.Surname) ? membership.LastName : request.Surname;
+                }
+                else
+                {
+                    var newMembership = new MembershipUser
+                    {
+                        Email = request.Email,
+                        CardNumber = request.CardNumber,
+                        ExpiryDate = request.FitCardExpiryDate,
+                        IsVerified = request.IsVerified ?? false, 
+                        FirstName = request.Name,   
+                        LastName = request.Surname,
+                        MedicalCertificatePath = request.MedicalCertificate ?? null,
+                        MedicalCertificateDate = request.MedicalCertificateDate
+                    };
+                    _context.MembershipUsers.Add(newMembership);
+                }
+
+                await _context.SaveChangesAsync();
+
+                return new Status { Code = "0000", Message = "Client information updated successfully", Data = null };
+            }
 
         public async Task<Status> GetCustomerStatisticsAsync(string email)
         {

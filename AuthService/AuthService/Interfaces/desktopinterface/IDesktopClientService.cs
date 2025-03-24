@@ -8,6 +8,8 @@ namespace AuthService.Interfaces.DesktopInterface
         Task<Status> SearchDesktopClientByEmailAsync(string email);
         Task<Status> UpdateDesktopClientInformationAsync(DesktopClientUpdateRequest request);
         Task<Status> GetAllUsersAsync();
+        Task<Status> AddUserAsync(AddUserRequest request);
+
         Task<Status> GetCustomerBookingHistoryAsync(string email);
         Task<Status> GetCustomerStatisticsAsync(string email);
 

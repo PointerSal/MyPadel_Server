@@ -34,9 +34,9 @@ namespace AuthService.Services.desktopservice
                 {
                     return new Status
                     {
-                        Code = "1002",
+                        Code = "0000",
                         Message = "No bookings found for the given date",
-                        Data = null
+                        Data = new List<object>()
                     };
                 }
 
@@ -159,6 +159,11 @@ namespace AuthService.Services.desktopservice
             var startTime = request.Date;
             var endTime = startTime.AddMinutes(request.Duration);
 
+            var italyTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Europe/Rome");
+            var currentTimeInItaly = TimeZoneInfo.ConvertTime(DateTime.Now, italyTimeZone);
+
+
+
             // Check if the booking date is in the past
             if (startTime.Date == DateTime.Now.Date) // Same day, check time
             {
@@ -198,6 +203,7 @@ namespace AuthService.Services.desktopservice
                 PhoneNumber = request.PhoneNumber,
                 EndTime = endTime,
                 PaymentStatus = null,
+                BookingDate = currentTimeInItaly,
                 PaymentId = ""
             };
 

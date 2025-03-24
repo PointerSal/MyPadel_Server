@@ -43,7 +43,6 @@
         public string? MunicipalityOfResidence { get; set; }
         public string? PostalCode { get; set; }
         public string? ResidentialAddress { get; set; }
-        public string? PhoneNumber { get; set; }
         public string? PaymentMethod { get; set; }
         public string? Email { get; set; }
         public bool IsVerified { get; set; } 

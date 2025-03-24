@@ -18,6 +18,11 @@ namespace AuthService.Controllers.DesktopController
         public async Task<IActionResult> GetAllUsers() =>
             Ok(await _desktopClientService.GetAllUsersAsync());
 
+        [HttpPost("add-user")]
+        public async Task<IActionResult> AddUser([FromBody] AddUserRequest request) =>
+              Ok(await _desktopClientService.AddUserAsync(request));
+
+
         [HttpPost("renew-membership")]
         public async Task<IActionResult> RenewMembership([FromQuery] string email) => 
             Ok(await _desktopClientService.RenewMembershipAsync(email));

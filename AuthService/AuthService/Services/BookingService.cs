@@ -98,8 +98,13 @@ namespace AuthService.Services
                 var startTime = request.Date;
                 var endTime = startTime.AddMinutes(request.Duration);
 
-                // Check if the booking date is in the past
-                if (startTime.Date == DateTime.Now.Date) // Same day, check time
+            var italyTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Europe/Rome");
+            var currentTimeInItaly = TimeZoneInfo.ConvertTime(DateTime.Now, italyTimeZone);
+
+
+
+            // Check if the booking date is in the past
+            if (startTime.Date == DateTime.Now.Date) // Same day, check time
                 {
                     if (startTime < DateTime.Now) // If the time is in the past, reject
                     {
@@ -112,10 +117,10 @@ namespace AuthService.Services
                 }
 
             var conflictingBooking = await _context.Bookings
-     .Where(b => b.FieldId == request.FieldId && b.SportType == request.SportType
+                .Where(b => b.FieldId == request.FieldId && b.SportType == request.SportType
                  && !b.FlagCanceled
                  && ((b.Date < endTime && b.EndTime > startTime) || (b.Date < startTime && b.EndTime > startTime)))
-     .FirstOrDefaultAsync();
+                 .FirstOrDefaultAsync();
 
             if (conflictingBooking != null)
                 return new Status { Code = "1003", Message = "The selected time slot is already booked." };
@@ -135,7 +140,8 @@ namespace AuthService.Services
                 FlagArchived = isArchived,
                 Email = request.Email,
                 EndTime = endTime,
-                PaymentStatus = null,  
+                PaymentStatus = null,
+                 BookingDate = currentTimeInItaly,
                 PaymentId = ""
              };
 

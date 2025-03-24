@@ -50,7 +50,9 @@ namespace AuthService.Controllers
         /// Verifies email with OTP
         /// </summary>
         [HttpPost("verify-email")]
-        
+        [AllowAnonymous]
+
+
         public async Task<IActionResult> VerifyEmail([FromBody] VerifyEmailRequest request)
         {
             var result = await _authService.VerifyEmail(request);
@@ -58,6 +60,7 @@ namespace AuthService.Controllers
         }
 
         [HttpPost("resendEmail-otp")]
+        [AllowAnonymous]
         public async Task<IActionResult> ResendOTP([FromBody] ResendOTPRequest request)
         {
             var result = await _authService.ResendEmailOTP(request.Email);
@@ -67,6 +70,8 @@ namespace AuthService.Controllers
         }
         
         [HttpPost("add-phone-number")]
+        [AllowAnonymous]
+
         public async Task<IActionResult> AddPhoneNumber([FromBody] AddPhoneNumberRequest request)
         {
             var result = await _authService.AddPhoneNumber(request.Email, request.Cell);
@@ -77,6 +82,8 @@ namespace AuthService.Controllers
         /// Verifies phone with OTP
         /// </summary>
         [HttpPost("verify-phone")]
+        [AllowAnonymous]
+
         public async Task<IActionResult> VerifyPhone([FromBody] VerifyPhoneRequest request)
         {
             var result = await _authService.VerifyPhone(request);
@@ -87,6 +94,8 @@ namespace AuthService.Controllers
         /// Resets password
         /// </summary>
         [HttpPost("reset-password")]
+        [AllowAnonymous]
+
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordRequest request)
         {
             var result = await _authService.ResetPassword(request);
@@ -94,6 +103,8 @@ namespace AuthService.Controllers
         }
 
         [HttpPut("update-password")]
+        [AllowAnonymous]
+
         public async Task<IActionResult> UpdatePassword([FromBody] UpdatePasswordRequest request)
         {
             var result = await _authService.UpdatePassword(request);            

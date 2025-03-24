@@ -368,6 +368,22 @@
   },
   {
     "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
+    "Method": "AddUser",
+    "RelativePath": "api/desktop-client/add-user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AuthService.Models.DesktopModel.AddUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthService.Controllers.DesktopController.DesktopClientController",
     "Method": "GetCustomerBookingHistory",
     "RelativePath": "api/desktop-client/booking-history",
     "HttpMethod": "GET",

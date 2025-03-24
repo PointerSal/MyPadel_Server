@@ -6,7 +6,9 @@ namespace AuthService.Model
     public class Booking
     {
         public int Id { get; set; }                     
-        public string SportType { get; set; }        
+        public string SportType { get; set; }
+
+        public DateTime? BookingDate { get; set; }
         public DateTime Date { get; set; }            
         public DateTime EndTime { get; set; }         
         public string? TimeSlot { get; set; }         

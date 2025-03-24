@@ -558,6 +558,37 @@
         }
       }
     },
+    "/api/desktop-client/add-user": {
+      "post": {
+        "tags": [
+          "DesktopClient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddUserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddUserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/desktop-client/renew-membership": {
       "post": {
         "tags": [
@@ -1184,6 +1215,113 @@
         },
         "additionalProperties": false
       },
+      "AddUserRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "surname": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "isMarketing": {
+            "type": "boolean"
+          },
+          "profilePicture": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "medicalCertificateDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "medicalCertificatePath": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "provinceOfBirth": {
+            "type": "string",
+            "nullable": true
+          },
+          "municipalityOfBirth": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "citizenship": {
+            "type": "string",
+            "nullable": true
+          },
+          "provinceOfResidence": {
+            "type": "string",
+            "nullable": true
+          },
+          "municipalityOfResidence": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "residentialAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "isVerified": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "CancelBookingRequest": {
         "type": "object",
         "properties": {
@@ -1380,6 +1518,15 @@
             "type": "string",
             "nullable": true
           },
+          "medicalCertificate": {
+            "type": "string",
+            "nullable": true
+          },
+          "medicalCertificateDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
           "isVerified": {
             "type": "boolean",
             "nullable": true
@@ -1552,10 +1699,6 @@
             "nullable": true
           },
           "residentialAddress": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumber": {
             "type": "string",
             "nullable": true
           },

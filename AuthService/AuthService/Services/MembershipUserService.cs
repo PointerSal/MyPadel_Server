@@ -41,7 +41,7 @@ namespace AuthService.Services
                     MunicipalityOfResidence = request.MunicipalityOfResidence,
                     PostalCode = request.PostalCode,
                     ResidentialAddress = request.ResidentialAddress,
-                    PhoneNumber = request.PhoneNumber,
+                    //PhoneNumber = request.PhoneNumber,
                     PaymentMethod = request.PaymentMethod,
                     Email = request.Email,
                     IsVerified = request.IsVerified=true
