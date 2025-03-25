@@ -379,6 +379,7 @@ namespace AuthService.Services.DesktopService
                 return new Status { Code = "0000", Message = "Client information updated successfully", Data = null };
             }
 
+
         public async Task<Status> GetCustomerStatisticsAsync(string email)
         {
             if (string.IsNullOrEmpty(email))
@@ -388,7 +389,7 @@ namespace AuthService.Services.DesktopService
 
             // Fetch all relevant bookings for the user
             var bookings = await _context.Bookings
-                                          .Where(b => b.Email == email && b.FlagBooked) 
+                                          .Where(b => b.Email == email && b.FlagBooked)
                                           .ToListAsync();
 
             if (!bookings.Any())
@@ -401,26 +402,37 @@ namespace AuthService.Services.DesktopService
                     {
                         TotalBookings = 0,
                         AverageMonthlyBookings = 0,
+                        AverageMonthlyPrice = 0,
                         FavoriteField = "",
                         CancelledBookings = 0,
-                        LifetimeValueInEuros = 0
+                        LifetimeValueInEuros = 0,
+                        CurrentMonthTotal = 0
                     }
                 };
             }
 
             var totalBookings = bookings.Count;
-            var cancelledBookings = bookings.Count(b => b.FlagCanceled); // Check using FlagCanceled for cancellations
+            var cancelledBookings = bookings.Count(b => b.FlagCanceled);
             var favoriteField = bookings
                 .GroupBy(b => b.SportType)
                 .OrderByDescending(g => g.Count())
                 .FirstOrDefault()?.Key;
 
-            var totalAmount = bookings.Sum(b => b.Amount); // Assuming Amount is stored in the booking
+            var totalAmount = bookings.Sum(b => b.Amount);
 
+            // Unique months in which bookings were made
             var uniqueMonths = bookings.Select(b => b.Date.Month).Distinct().Count();
             var averageMonthlyBookings = uniqueMonths > 0 ? totalBookings / uniqueMonths : 0;
 
+            // Average monthly price (Total Amount / Unique Months)
+            var averageMonthlyPrice = uniqueMonths > 0 ? totalAmount / uniqueMonths : 0;
+
             var lifetimeValueInEuros = totalAmount; // Assuming Amount is in local currency and converting to Euros as needed
+
+            // Current month booking total (using the current date to get this month)
+            var currentMonth = DateTime.Now.Month;
+            var currentMonthBookings = bookings.Where(b => b.Date.Month == currentMonth);
+            var currentMonthTotal = currentMonthBookings.Sum(b => b.Amount);
 
             return new Status
             {
@@ -430,12 +442,15 @@ namespace AuthService.Services.DesktopService
                 {
                     TotalBookings = totalBookings,
                     AverageMonthlyBookings = averageMonthlyBookings,
+                    AverageMonthlyPrice = averageMonthlyPrice,
                     FavoriteField = favoriteField,
                     CancelledBookings = cancelledBookings,
-                    LifetimeValueInEuros = lifetimeValueInEuros
+                    LifetimeValueInEuros = lifetimeValueInEuros,
+                    CurrentMonthTotal = currentMonthTotal
                 }
             };
         }
+
 
         public async Task<Status> DeleteUserAsync(string email)
         {
