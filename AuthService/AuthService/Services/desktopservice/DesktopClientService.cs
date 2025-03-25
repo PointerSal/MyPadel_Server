@@ -160,7 +160,8 @@ namespace AuthService.Services.DesktopService
                                              Field = b.SportType,            // Sport Type
                                              StartingHour = b.Date,          // Start Time from Date field
                                              Duration = b.TimeSlot, // Calculate duration in minutes
-                                             Amount = b.Amount,              // Payment amount
+                                             Amount = b.Amount,
+                                             BookingDate = b.BookingDate,
                                              PaymentMethod = b.PaymentMethod // Payment method used
                                          })
                                          .OrderByDescending(b => b.Date) // Show latest bookings first
@@ -211,31 +212,36 @@ namespace AuthService.Services.DesktopService
         {
             // Fetch client from User table and MembershipUser table by joining through email
             var client = await _context.Users
-                                       .Where(u => u.Email == email) // Search by email in the User table
-                                       .Select(u => new
-                                       {
-                                           u.Name,
-                                           u.Surname,
-                                           u.Email,
-                                           u.Cell,
-                                           Membership = _context.MembershipUsers
-                                                               .Where(m => m.Email == u.Email)
-                                                               .Select(m => new
-                                                               {
-                                                                   m.CardNumber,
-                                                                   m.ExpiryDate // ExpiryDate from MembershipUser table
-                                                               })
-                                                               .FirstOrDefault(), // Get the first membership matching the email
-                                           Bookings = _context.Bookings
-                                                              .Where(b => b.Email == u.Email && b.FlagBooked) // Only fetch booked bookings
-                                                              .Select(b => new
-                                                              {
-                                                                  b.SportType, // Player type related to SportType
-                                                                  b.Date,
-                                                                  b.TimeSlot
-                                                              })
-                                       })
-                                       .FirstOrDefaultAsync();
+                            .AsNoTracking() // Disable change tracking
+                            .Where(u => u.Email == email)
+                            .Select(u => new
+                            {
+                                u.Name,
+                                u.Surname,
+                                u.Email,
+                                u.Cell,
+                                Membership = _context.MembershipUsers
+                                                     .AsNoTracking() // Disable change tracking for MembershipUser
+                                                     .Where(m => m.Email == u.Email)
+                                                     .Select(m => new
+                                                     {
+                                                         m.CardNumber,
+                                                         m.ExpiryDate
+                                                     })
+                                                     .FirstOrDefault(),
+                                Bookings = _context.Bookings
+                                                   .AsNoTracking() // Disable change tracking for Bookings
+                                                   .Where(b => b.Email == u.Email && b.FlagBooked)
+                                                   .Select(b => new
+                                                   {
+                                                       b.SportType,
+                                                       b.Date,
+                                                       b.TimeSlot
+                                                   })
+                                                   .ToList() // Convert to list for projection
+                            })
+                            .FirstOrDefaultAsync();
+
 
             if (client == null)
             {
